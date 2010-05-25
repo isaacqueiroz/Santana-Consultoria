@@ -1,0 +1,49 @@
+<h1>Contate-nos</h1>
+
+<% for contato in @contatos %>
+    <h2><%=h contato.title %></h2>
+    <h3><%=h contato.sub_title %></h3>
+    <p><%= contato.body %></p>
+		<% if !(current_user.blank?) && (current_user.has_role?('administrator')) %>
+          <p class="helper">Administrador, use as opções a seguir para atualizar o site.</p>
+          <p><%= link_to 'Exibir', contato %></p>
+          <p><%= link_to 'Editar', edit_contato_path(contato) %></p>
+          <p><%= link_to 'Excluir', contato, :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></p>
+		<% end %>
+<% end %>
+
+<br />
+
+<% if !(current_user.blank?) && (current_user.has_role?('administrator')) %>
+	<%= link_to 'Novo Texto para "Contate-nos"', new_contato_path %>
+<% end %>
+
+<h2>Use o formulário abaixo para contato:</h2>
+
+<% form_tag :action => "send_mail" do %>
+  <p>
+    <%= label :email, :name, "Nome Completo/Nome da Empresa" %><br />
+    <%= text_field :email, :name %>
+  </p>
+
+  <p>
+    <%= label :email, :address, "Endereço de E-mail" %><br />
+    <%= text_field :email, :address %>
+  </p>
+
+  <p>
+    <%= label :email, :subject, "Assunto" %><br />
+    <%= text_field :email, :subject %>
+  </p>
+
+  <p>
+    <%= label :email, :body, "Sua mensagem" %><br />
+    <%= text_area :email, :body, :rows => 8, :cols => 50 %>
+  </p>
+
+  <p>
+    <%= submit_tag "Enviar Mensagem" %>
+  </p>
+<% end %>
+
+

@@ -1,0 +1,28 @@
+<h1>Seção de Testes</h1>
+
+<p>Aqui estão cadastrados todos os testes que podem ser aplicados utilizando o sistema
+de testes online. Nesta parte, pode-se criar novos testes, editar testes existentes e
+ainda, adicionar novas questões para cada teste.</p>
+
+<table>
+  <tr>
+    <th>Teste</th>
+    <th>Descrição</th>
+  </tr>
+
+<% @test_tabs.each do |test_tab| %>
+  <tr>
+    <td><%=h test_tab.nome %></td>
+    <td><%=h truncate(test_tab.descricao, 200) %></td>
+	<td><%= link_to 'Elaborar Questão', new_test_tab_question_tab_path(test_tab.id) %></td>
+	<td><%= link_to 'Listar Questões', test_tab_question_tabs_path(test_tab.id)%></td>
+    <td><%= link_to 'Mais informações', test_tab %></td>
+    <td><%= link_to 'Editar', edit_test_tab_path(test_tab) %></td>
+    <td><%= link_to 'Excluir', test_tab, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Elaborar novo teste', new_test_tab_path %>

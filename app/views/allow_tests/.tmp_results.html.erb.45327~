@@ -1,0 +1,12 @@
+<h1>Resultados de Testes</h1>
+
+<p>Por favor, selecione dentre os testes da lista o que deseja ver os resultados:</p>
+
+<% form_for(@test) do |f| %>
+  <%= f.error_messages %>
+  <%= select(:test, :test_tab_id, @test_tabs)  %>
+    <%= f.submit 'Resultados' %>
+  </p>
+<% end %>
+
+<%= link_to 'Voltar', user_tests_path(@user) %>

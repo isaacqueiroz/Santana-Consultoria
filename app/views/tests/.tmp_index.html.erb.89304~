@@ -1,0 +1,10 @@
+<h1>Página de Testes</h1>
+
+<p>Seja bem-vindo à página de testes da Santana Consultoria em R.H.</p>
+<p>Para realizar um teste, selecione "Realizar Teste" para começar. 
+Lembre-se de que você deve possuir uma autorização para fazer o teste. 
+Esta autorização deverá ser fornecida por um funcionário da Santana 
+Consultoria ou da empresa que solicitou o teste.</p>
+<p><b>Boa Sorte!</b></p>
+
+<%= link_to 'Realizar Teste', new_user_test_path(@user) %>

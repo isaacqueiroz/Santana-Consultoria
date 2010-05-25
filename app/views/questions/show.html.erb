@@ -1,0 +1,19 @@
+<h1>Listagem de Questões</h1>
+
+<p>Aqui estão listadas as questões respondidas pelo usuário.</p>
+
+<table>
+  <tr>
+    <th>Questão</th>
+    <th>Resposta</th>
+  </tr>
+
+<% @questions.each do |question| %>
+  <tr>
+    <td><%=h question.question_tab_id %></td>
+    <td><%=h question.resposta %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Voltar', tests_path %>

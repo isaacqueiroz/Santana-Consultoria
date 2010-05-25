@@ -1,0 +1,36 @@
+<h1>Listando Questões</h1>
+<h2>Teste: <%=h @test_tab.nome%></h2>
+
+<p>Aqui são listadas todas as questões de determinado teste. As questões podem ser 
+editadas, excluídas e elaboradas.</p>
+
+<%= link_to 'Voltar a página de testes', test_tabs_path %> <br>
+<%= link_to 'Elaborar nova questão', new_test_tab_question_tab_path %>
+
+<table>
+  <tr>
+    <th>Título</th>
+    <th>Texto</th>
+    <th>Imagem</th>
+  </tr>
+
+<% @question_tabs.each do |question_tab| %>
+  <tr>
+    <td><%=h question_tab.titulo %></td>
+    <td><%=h truncate(question_tab.texto, 50) %></td>
+	<%if !question_tab.picture_file_size.blank?%>
+    	<td><b>Sim</b></td>
+	<%else%>
+		<td>Não</td>
+	<%end%>
+    <td><%= link_to 'Mais informações', test_tab_question_tab_path(question_tab.test_tab, question_tab) %></td>
+    <td><%= link_to 'Editar', edit_test_tab_question_tab_path(question_tab.test_tab, question_tab) %></td>
+    <td><%= link_to 'Excluir', test_tab_question_tab_path(question_tab.test_tab, question_tab), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Voltar a página de testes', test_tabs_path %> <br>
+<%= link_to 'Elaborar nova questão', new_test_tab_question_tab_path %>

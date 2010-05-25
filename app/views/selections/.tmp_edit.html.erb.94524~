@@ -1,0 +1,36 @@
+<h1>Editando Coluna de Seleções</h1>
+
+<p class="helper">Bem vindo à seção de edição da coluna de seleções. Aqui você
+pode editar o texto de uma determinada seleção, atualizando seu estado, bem como
+suas informações.
+Para cada seleção, crie um texto com Título, Sub-Título e conteúdo, mantendo assim
+o padrão de formatação.</p>
+<p class="helper">Se for necessário a criação de mais de um bloco de texto (com título,
+sub-título e conteúdo), basta criar este bloco e, na próxima tela, clicar em "Novo texto
+para Seleções".</p>
+
+<%= error_messages_for :selection %>
+
+<% form_for(@selection) do |f| %>
+  <p>
+    <b>Título</b><br />
+    <%= f.text_field :title %>
+  </p>
+  <p class="helper">Título do texto (letra grande).</p>
+  <p>
+    <b>Sub-título</b><br />
+    <%= f.text_field :sub_title %>
+  </p>
+  <p class="helper">Sub-Título do texto (letra mediana).</p>
+  <p>
+    <b>Conteúdo</b><br />
+    <%= f.text_area :body %>
+  </p>
+  <p class="helper">Conteúdo do texto (letra de texto).</p>
+  <p>
+    <%= f.submit "Atualizar" %>
+  </p>
+<% end %>
+
+<%= link_to 'Exibir', @selection %> |
+<%= link_to 'Voltar', selections_path, :confirm => 'Tem certeza que deseja voltar? Todas as alterações serão perdidas!' %>

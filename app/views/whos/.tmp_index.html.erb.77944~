@@ -1,0 +1,18 @@
+<h1>Conheça-nos</h1>
+
+<% for who in @whos %>
+    <h2><%=h who.title %></h2>
+    <h3><%=h who.sub_title %></h3>
+    <p><%= who.body %></p>
+		<% if !(current_user.blank?) && (current_user.has_role?('administrator')) %>
+          <p class="helper">Administrador, use as opções a seguir para atualizar o site.</p>
+          <p><%= link_to 'Exibir', who %></p>
+          <p><%= link_to 'Editar', edit_who_path(who) %></p>
+          <p><%= link_to 'Excluir', who, :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></p>
+		<% end %>
+<% end %>
+
+<br />
+<% if !(current_user.blank?) && (current_user.has_role?('administrator')) %>
+	<%= link_to 'Novo Texto para "Conheça-nos"', new_who_path %>
+<% end %>

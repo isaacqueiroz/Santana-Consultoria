@@ -1,0 +1,13 @@
+<h1>
+  <b>Área:</b>
+  <%=h @area.name %>
+</h1>
+
+<p>
+  <%=h @area.description %>
+</p>
+
+<%= link_to 'Voltar', areas_path %>
+<% if !(current_user.blank?) && (current_user.has_role?('administrator')) %>
+	<%= link_to 'Editar', edit_area_path(area)%>
+<% end %>

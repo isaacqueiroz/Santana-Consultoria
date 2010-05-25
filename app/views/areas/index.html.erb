@@ -1,0 +1,22 @@
+<h1>Áreas de Interesse Disponíveis</h1>
+<p class="helper">Aqui você encontrará as áreas de contratação disponíveis 
+atualmente. Estas áreas podem ser escolhidas no momento de criação de seu
+currículo.</p>
+
+<% @areas.each do |area| %>
+<div style="border-top:dashed; border-top-color:#00628B; border-top-width:thin; padding-top:5px;">
+	<p><b>Área: </b><%=h area.name %></p>
+	<p><b>Descrição: </b><%=h truncate(area.description, 160, "...")%></p>
+	<p><%= link_to 'Mais...', area %></p>	
+	<% if !(current_user.blank?) && (current_user.has_role?('administrator')) %>
+		<%= link_to 'Editar', edit_area_path(area)%> | <%link_to 'Excluir', area, :confirm => 'Tem certeza?', :method => :delete %>
+	<% end %>
+
+</div>
+<% end %>
+
+<%=will_paginate @areas, :previous_label => "« Anterior", :next_label => "Próximo »"%>
+
+<% if !(current_user.blank?) && (current_user.has_role?('administrator')) %>
+	<%= link_to 'Nova área de interesse', new_noticia_path %>
+<% end %>

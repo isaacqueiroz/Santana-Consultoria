@@ -1,0 +1,31 @@
+<div class="exp_div">
+	<% fields_for_exp(exp) do |exp_form| %>
+		<p>
+			Nome da Empresa:
+			<%= exp_form.text_field :local , :size => 55 %>
+		</p>
+		<p>
+			Departamento de Atuação: 
+			<%= exp_form.text_field :departamento %>
+		</p>
+		<p>
+			Cargo de Atuação: 
+			<%= exp_form.text_field :cargo %>
+		</p>
+		<p>
+			Experiência profissional adquirida: <br>
+			<%= exp_form.text_area :experiencia, :cols => 40, :rows => 10 %>
+		</p>
+		<p>
+			Motivo da Saída:
+			<%= exp_form.text_field :motivo_saida %>
+		</p>
+		<p>
+			Data de Saída:
+			<%= exp_form.date_select(:data_fim, :use_month_names => %w[Janeiro Fevereiro Março Abril Maio Junho Julho Agosto Setembro Outubro Novembro Dezembro], :order=>[:month, :year], :start_year => 1930, :end_year => Time.now.year, :index => exp.id)  %>
+			Data de Entrada:
+			<%= exp_form.date_select(:data_inicio, :use_month_names => %w[Janeiro Fevereiro Março Abril Maio Junho Julho Agosto Setembro Outubro Novembro Dezembro], :order=>[:month, :year], :start_year => 1930, :end_year => Time.now.year, :index => exp.id)  %>
+		</p>
+		<p><%= link_to_function "Remover Experiência", "$(this).up('.exp_div').remove()" %></p>
+	<%end%>	
+</div>

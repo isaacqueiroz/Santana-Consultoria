@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  local: MyString
+  estado: 
+  tipo_curso: 
+  area: MyString
+
+two:
+  local: MyString
+  estado: 
+  tipo_curso: 
+  area: MyString

@@ -1,0 +1,32 @@
+<h1>Mudança de Senha</h1>
+
+<% form_tag url_for(:action => "update") do %>
+  <p class="helper">Bem vindo ao menu de mudança de senha. Aqui, é possível
+  escolher uma nova senha para garantir que sua conta seja sempre segura.</p>
+  <p class="helper">Lembre-se de trocar sua senha ocasionalmente e de nunca
+  fornecê-la à terceiros. A Santana Consultoria nunca pedirá sua senha ou qualquer
+  dado via e-mail.</p>
+  <p class="helper">Para garantir a segurança de sua conta, lembre-se das seguintes
+  orientações de segurança:</p>
+  <ul>
+    <li class="helper">Evite a repetição de números ou letras;</li>
+    <li class="helper">Procure colocar letras maiúsculas e/ou símbolos em sua senha (*&%#);</li>
+    <li class="helper">Nunca coloque datas de aniversário ou números de telefones como sua senha.</li>
+  </ul>
+  <br>
+  <p><label for="old_password" class="block">Senha Antiga:</label><br />
+  <%= password_field_tag 'old_password', @old_password, :size => 45 %></p>
+  <p class="helper">Em caso de perda da senha antiga, entre no menu "Esqueci minha senha"
+  recuperá-la.</p>
+  <p><label for="password" class="block">Nova senha:</label><br />
+  <%= password_field_tag 'password', {}, :size => 45 %><br /></p>
+  <p class="helper">A senha deverá ter entre 4 e 40 caracteres.</p>
+
+  <p><label for="password_confirmation"  class="block">Confirmar nova senha:</label><br />
+  <%= password_field_tag 'password_confirmation', {}, :size => 45 %></p>
+  <p class="helper">Digite novamente sua senha.</p>
+
+  <%= submit_tag 'Alterar Senha' %>
+
+<% end %>
+

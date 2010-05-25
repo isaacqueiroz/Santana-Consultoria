@@ -1,0 +1,91 @@
+.loginButton{
+	border:none;
+	background-color:#E6E6DC;
+	color: #0C0C5A;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+#logo{
+	background-image:url(../images/b3.png);
+	background-repeat:repeat-x;
+}
+
+#menuDiv{
+	background-image:url(../images/bgmenu.png);
+	background-repeat:repeat-x;
+	padding-bottom:1px;	
+}
+
+a.menu{
+	font-weight:bold;
+	color:#E6E6DC;
+	width:120px;
+	text-align:center;
+	padding:4px;
+	text-decoration:none;
+	margin-left:20px;
+}
+a.menu:hover,a.menu:active
+{
+	background-color:#E6E6DC;
+	color:#00628B;
+}
+
+#painel
+{
+	background-color:#E6E6DC;
+	min-height:450px;
+}
+
+#painel h1,h2
+{
+	color:#00628B;
+}
+#painel p
+{
+	color:#0C0C5A;
+}
+#painel a
+{
+	color:#0C0C5A;
+	text-decoration:none;
+	padding:4px;
+}
+#content
+{
+	background-color:#FFFFFF;
+	padding-left:15px;
+	min-height:450px;
+}
+#content h1
+{
+	color:#00628B;	
+}
+#content h2
+{
+	color:#81A594;
+}
+#content h3
+{
+	color:#81A594;
+	font-size:small;
+}
+#ads
+{	
+	background-color:#E6E6DC;
+	float:right;
+	text-align:center;
+
+}
+#foot
+{
+	background-image:url(../images/bgt.png);
+	text-align:center;
+	color:#E6E6DC;
+}
+.helper
+{
+	color:#00628B;
+	font: Verdana;
+	font-size:small;
+}

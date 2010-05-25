@@ -1,0 +1,20 @@
+<h1>Editing question</h1>
+
+<% form_for([@test,@question]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :question_tab_id %><br />
+    <%= f.text_field :question_tab_id %>
+  </p>
+  <p>
+    <%= f.label :resposta %><br />
+    <%= f.text_field :resposta %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', ([@test,@question]) %> |
+<%= link_to 'Back', test_questions_path(@test) %>

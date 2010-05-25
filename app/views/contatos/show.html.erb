@@ -1,0 +1,10 @@
+<h1>Contate-nos</h1>
+  <h2><%=h @contato.title %></h2>
+
+  <h3><%=h @contato.sub_title %></h3>
+
+  <p><%= @contato.body %></p>
+
+<%= link_to 'Editar', edit_contato_path(@contato) %> |
+<%= link_to 'Voltar', contatos_path %> |
+<%= link_to 'Novo Texto para "Contate-nos"', new_contato_path %>

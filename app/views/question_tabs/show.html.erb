@@ -1,0 +1,20 @@
+<h2>Teste: <%=h @test_tab.nome%></h2>
+
+<p>
+  <b>Título:</b>
+  <%=h @question_tab.titulo %>
+</p>
+
+<p>
+  <b>Texto:</b>
+  <%=h @question_tab.texto %>
+</p>
+<%if !@question_tab.picture_file_size.blank?%>
+	<p>
+	  <b>Imagem:</b>
+	  <%= image_tag @question_tab.picture.url() %>
+	</p>
+<%end%>
+
+<%= link_to 'Editar', edit_test_tab_question_tab_path(@test_tab,@question_tab) %> |
+<%= link_to 'Voltar', test_tab_question_tabs_path(@test_tab) %> 

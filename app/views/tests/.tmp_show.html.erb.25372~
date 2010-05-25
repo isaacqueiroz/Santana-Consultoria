@@ -1,0 +1,6 @@
+<h1>Página de teste: <%=h @test_tab.nome%></h1>
+
+<p><%=h @test_tab.descricao%></p>
+
+<%= link_to 'Iniciar Teste', test_questions_path(@test) %> |
+<%= link_to 'Voltar', user_tests_path(@user)  %>

@@ -1,0 +1,54 @@
+<h1>Listing curriculos</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Sobrenome</th>
+    <th>Data nasc</th>
+    <th>Estado civil</th>
+    <th>Empregado</th>
+    <th>Escolaridade</th>
+    <th>Filhos</th>
+    <th>Endereco</th>
+    <th>Numero</th>
+    <th>Complemento</th>
+    <th>Bairro</th>
+    <th>Cidade</th>
+    <th>Estado</th>
+    <th>Celular</th>
+    <th>Telefone</th>
+    <th>Area</th>
+    <th>Sub area</th>
+    <th>Salario</th>
+  </tr>
+
+<% @curriculos.each do |curriculo| %>
+  <tr>
+    <td><%=h curriculo.nome %></td>
+    <td><%=h curriculo.sobrenome %></td>
+    <td><%=h curriculo.data_nasc %></td>
+    <td><%=h curriculo.estado_civil %></td>
+    <td><%=h curriculo.empregado %></td>
+    <td><%=h curriculo.escolaridade %></td>
+    <td><%=h curriculo.filhos %></td>
+    <td><%=h curriculo.endereco %></td>
+    <td><%=h curriculo.numero %></td>
+    <td><%=h curriculo.complemento %></td>
+    <td><%=h curriculo.bairro %></td>
+    <td><%=h curriculo.cidade %></td>
+    <td><%=h curriculo.estado %></td>
+    <td><%=h curriculo.celular %></td>
+    <td><%=h curriculo.telefone %></td>
+    <td><%=h curriculo.area_id %></td>
+    <td><%=h curriculo.sub_area_id %></td>
+    <td><%=h curriculo.salario %></td>
+    <td><%= link_to 'Show', curriculo %></td>
+    <td><%= link_to 'Edit', edit_curriculo_path(curriculo) %></td>
+    <td><%= link_to 'Destroy', curriculo, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New curriculo', new_curriculo_path %>

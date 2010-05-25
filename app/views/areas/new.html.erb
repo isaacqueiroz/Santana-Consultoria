@@ -1,0 +1,26 @@
+<h1>Nova Área de Interesse</h1>
+<p class="helper">Você está prestes a elaborar uma nova área de interesse. 
+Tenha em mente que, ao criar o currículo, o usuário terá acesso apenas ao
+nome da Área e, por isso, procure ser objetivo, evitando abreviações ou 
+nomes pouco conhecidos.</p>
+
+<p class="helper">Se achar necessário, crie nomes como "Vendas - Gerente" e
+procure sempre manter o padrão utilizado inicialmente.</p>
+
+<% form_for(@area) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label "Nome: " %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+	<%= f.label "Descrição da Área: " %> <br>
+    <%= f.text_area :description, :cols => 20, :rows => 5 %>
+  </p>
+  <p>
+    <%= f.submit 'Criar' %>
+  </p>
+<% end %>
+
+<%= link_to 'Voltar', areas_path %>

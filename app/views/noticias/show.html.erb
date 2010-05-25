@@ -1,0 +1,7 @@
+  <h2><%=h @noticia.title %></h2>
+
+  <p><%= @noticia.body %></p>
+
+<%= link_to 'Editar', edit_noticia_path(@noticia) %> |
+<%= link_to 'Voltar', noticias_path %> |
+<%= link_to 'Novo texto para "Noticias"', new_noticia_path %>

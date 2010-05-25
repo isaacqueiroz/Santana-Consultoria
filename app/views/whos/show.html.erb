@@ -1,0 +1,9 @@
+<h2><%=h @who.title %></h2>
+
+  <h3><%=h @who.sub_title %></h3>
+
+  <p><%= @who.body %></p>
+
+<%= link_to 'Editar', edit_who_path(@who) %> |
+<%= link_to 'Voltar', whos_path %> |
+<%= link_to 'Novo Texto para "Seleções"', new_who_path %>

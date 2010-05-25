@@ -1,0 +1,19 @@
+<h1>Serviços Oferecidos</h1>
+
+<% for servico in @servicos %>
+  <tr>
+    <h2><%=h servico.title %></h2>
+    <h3><%=h servico.sub_title %></h3>
+    <p><%= servico.body %></p>
+		<% if !(current_user.blank?) && (current_user.has_role?('administrator')) %>
+        <p class="helper">Administrador, use as opções a seguir para atualizar o site.</p>
+	    <p><%= link_to 'Exibir', servico %></p>
+	    <p><%= link_to 'Editar', edit_servico_path(servico) %></p>
+	    <p><%= link_to 'Excluir', servico, :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></p>
+		<% end %>
+<% end %>
+
+<br />
+<% if !(current_user.blank?) && (current_user.has_role?('administrator')) %>
+	<%= link_to 'Novo Texto para Serviços', new_servico_path %>
+<% end %>

@@ -1,0 +1,30 @@
+<h1>Editando Coluna de Notícias</h1>
+
+<p class="helper">Bem vindo à seção de edição da coluna de notícias. Aqui é possível
+editar o conteúdo que o usuário não-autenticado verá na página principal, além de manter
+o público informado das atualizações referentes a empresa. Procure
+manter sempre o padrão de Título (letra grante) e
+conteúdo (letra de texto).</p>
+<p class="helper">Se for necessário a criação de mais de um bloco de texto (com título,
+sub-título e conteúdo), basta criar este bloco e, na próxima tela, clicar em "Novo texto
+para Notícias".</p>
+
+<%= error_messages_for :noticia %>
+<% form_for(@noticia) do |f| %>
+  <p>
+    <b>Título</b><br />
+    <%= f.text_field :title %>
+  </p>
+  <p class="helper">Título do texto (letra grande).</p>
+  <p>
+    <b>Conteúdo</b><br />
+    <%= f.text_area :body %>
+  </p>
+  <p class="helper">Conteúdo do texto (letra de texto).</p>
+  <p>
+    <%= f.submit "Atualizar" %>
+  </p>
+<% end %>
+
+<%= link_to 'Exibir', @noticia %> |
+<%= link_to 'Voltar', noticias_path, :confirm => 'Tem certeza que deseja voltar? Todas as alterações serão perdidas!' %>

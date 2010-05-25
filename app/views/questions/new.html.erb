@@ -1,0 +1,28 @@
+<%if !@question_tab.blank?%>
+	<h1><%=h @question_tab.titulo%></h1>
+	
+	<%if !@question_tab.texto.blank?%>
+	
+	<p><%=h @question_tab.texto%></p>
+	
+	<%end%>
+	
+	<%if !@question_tab.picture_file_size.blank?%>
+	
+		<%= image_tag @question_tab.picture.url() %>
+	
+	<%end%>
+	
+	<% form_for([@test,@question]) do |f| %>
+		<%= f.error_messages %>
+		<p>Resposta:</p>
+		<%= f.text_field :resposta %>
+		<%= f.submit 'Avançar' %>
+	<% end %>
+<%else%>
+	<h1>Fim do Teste!</h1>
+	<p>Você concluiu o teste e suas respostas já estão em nossas mãos. 
+	Agora, basta aguardar o resultado via e-mail ou telefone.</p>
+	<%= link_to 'Página de Testes', tests_path%>
+	<%revoque_autorization%>
+<%end%>

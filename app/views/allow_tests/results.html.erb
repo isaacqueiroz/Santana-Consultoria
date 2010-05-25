@@ -1,0 +1,10 @@
+<h1>Resultados de Testes</h1>
+
+<p>Por favor, selecione dentre os testes da lista o que deseja ver os resultados:</p>
+
+<% form_for @test, :url => {:controller => "questions", :action => "show"} do |f| %>
+	<%= select(:test, :test_tab_id, @test_tabs)  %>
+	<%= submit_tag "Ver Resultados" %>
+<%end%>
+
+<%= link_to 'Voltar', allow_tests_path %>

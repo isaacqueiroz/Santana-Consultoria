@@ -1,0 +1,16 @@
+<h1>Realizar Teste</h1>
+<%if !@test_tabs.blank?%>
+	<p>Por favor, selecione dentre os testes da lista o que lhe foi solicitado:</p>
+	
+	<% form_for(@test) do |f| %>
+		<%= f.error_messages %>
+		<%= select(:test, :test_tab_id, @test_tabs)  %>
+		<%= f.submit 'Realizar' %>
+		</p>
+	<% end %>
+<%else%>
+	<p>Você não está autorizado a fazer nenhum teste. Entre em contato com nossa equipe
+	caso você tenha sido convocado para teste.</p>
+<%end%>
+
+<%= link_to 'Voltar', user_tests_path(@user) %>

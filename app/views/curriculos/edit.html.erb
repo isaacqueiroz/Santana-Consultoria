@@ -1,0 +1,86 @@
+<h1>Editing curriculo</h1>
+
+<% form_for(@curriculo) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </p>
+
+  <p>
+    <%= f.label :sobrenome %><br />
+    <%= f.text_field :sobrenome %>
+  </p>
+  <p>
+    <%= f.label :data_nasc %><br />
+    <%= f.datetime_select :data_nasc %>
+  </p>
+  <p>
+    <%= f.label :estado_civil %><br />
+    <%= f.text_field :estado_civil %>
+  </p>
+  <p>
+    <%= f.label :empregado %><br />
+    <%= f.check_box :empregado %>
+  </p>
+  <p>
+    <%= f.label :escolaridade %><br />
+    <%= f.text_field :escolaridade %>
+  </p>
+  <p>
+    <%= f.label :filhos %><br />
+    <%= f.check_box :filhos %>
+  </p>
+  <p>
+    <%= f.label :endereco %><br />
+    <%= f.text_field :endereco %>
+  </p>
+  <p>
+    <%= f.label :numero %><br />
+    <%= f.text_field :numero %>
+  </p>
+  <p>
+    <%= f.label :complemento %><br />
+    <%= f.text_field :complemento %>
+  </p>
+  <p>
+    <%= f.label :bairro %><br />
+    <%= f.text_field :bairro %>
+  </p>
+  <p>
+    <%= f.label :cidade %><br />
+    <%= f.text_field :cidade %>
+  </p>
+  <p>
+    <%= f.label :estado %><br />
+    <%= f.text_field :estado %>
+  </p>
+  <p>
+    <%= f.label :celular %><br />
+    <%= f.text_field :celular %>
+  </p>
+  <p>
+    <%= f.label :telefone %><br />
+    <%= f.text_field :telefone %>
+  </p>
+  <p>
+    <%= f.label :area_id %><br />
+    <%= f.text_field :area_id %>
+  </p>
+  <p>
+    <%= f.label :sub_area_id %><br />
+    <%= f.text_field :sub_area_id %>
+  </p>
+  <p>
+    <%= f.label :salario %><br />
+    <%= f.text_field :salario %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+
+<% end %>
+
+<%= link_to 'Show', @curriculo %> |
+<%= link_to 'Back', curriculos_path %>

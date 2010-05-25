@@ -1,0 +1,2 @@
+module TestTabsHelper
+end

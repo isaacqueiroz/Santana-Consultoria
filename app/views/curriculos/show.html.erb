@@ -1,0 +1,122 @@
+<h1>Sistema de Visualização de Currículos</h1>
+
+  <h2>Informações Pessoais:</h2>
+  <p>
+    <b>Nome:</b>
+    <%=h @curriculo.nome %>  
+    <%=h @curriculo.sobrenome %>
+	<b>Data de Nascimento: </b>
+    <%=h @curriculo.data_nasc %> 
+  </p>
+  <p>
+  	<b>Estado Civíl: </b>
+	<%=h @curriculo.estado_civil %>
+	<b>Empregado? </b>
+	<%if @curriculo.empregado%>
+	Sim
+	<%else%>
+	Não
+	<%end%>
+	<b>Tem filhos?</b>
+	<%if @curriculo.filhos%>
+	Sim
+	<%else%>
+	Não
+	<%end%>
+  </p>
+  <p>
+
+  </p>
+  <p>
+    <b>Escolaridade:</b> <%=h escol_method(@curriculo.escolaridade)%>
+  </p>
+  <h2>Endereço e Contato:</h2>
+  <p>
+    <b>Endereço:</b>
+    <%=h @curriculo.endereco%>
+	<b>Número:</b>
+    <%=h @curriculo.numero%>
+  </p>
+  <p>
+    <b>Complemento:</b>
+    <%=h @curriculo.complemento%>
+	<b>Bairro:</b>
+	<%=h @curriculo.bairro%>
+
+  </p>
+  <p>
+	<b>Estado:</b>
+	<%=h @curriculo.estado%>
+	<b>Cidade:</b> 
+    <%=h @curriculo.cidade%>
+  </p>
+  <p>
+    <b>Celular:</b>
+   	<%=h @curriculo.celular%>
+	<b>Telefone:</b>
+    <%=h @curriculo.telefone%>
+  </p>
+	<h2>Informações Profissionais:</h2>
+  <p>
+    <b>Pretensão salarial:</b>
+    <%=h @curriculo.salario%>
+  </p>
+  <p><b>Áreas de Atuação:</b></p>
+  <p><b>Área 1:</b> <%=h @area1.name%></p>
+  <p><b>Área 2:</b> <%=h @area2.name%></p>
+  <p><b>Área 3:</b> <%=h @area3.name%></p>
+  <p><b>Nível de inglês: </b><%=h @curriculo.english%> 
+  <b>Nível de espanhol: </b><%=h @curriculo.spanish%>
+  <p><b>Nível de conhecimentos em informática: </b><%=h @curriculo.informatica%></p>
+  
+  <h2>Informações de Escolaridade:</h2>
+	
+	<%@escolaridades.each do |escolaridade|%>
+	  <h3></h>
+	  	<b><%=h get_tipo_curso(escolaridade.tipo_curso)%></b>
+	  </h3>		  
+	  <p>
+	  	<b>Instituição do curso:</b>
+		<%=h escolaridade.local%>
+	  </p>
+	  <p>
+	  	<b>Estado do Curso:</b>
+		<%= get_estado_curso(escolaridade.estado)%>
+	  </p>
+	  <p>
+	  	<b>Área do Curso:</b>
+		<%=h escolaridade.area%>
+	  </p>
+	<%end%>
+  <h2>Experiência Profissional:</h2>
+	
+	<%@exps.each do |exp|%>
+		<h3><b>
+			<%=h exp.local%>
+		</b></h3>
+		<p>
+			<b>Departamento de Atuação:</b>
+			<%=h exp.departamento%>
+		</p>
+		<p>
+			<b>Cargo de Atuação:</b> 
+			<%=h exp.cargo%>
+		</p>
+		<p>
+			<b>Experiência profissional adquirida:</b> <br>
+			<%=h exp.experiencia%>
+		</p>
+		<p>
+			<b>Motivo da Saída:</b>
+			<%=h exp.motivo_saida %>
+		</p>
+		<p>
+			<b>Data de Saída:</b>
+			<%=h exp.data_fim%>
+			<b>Data de Entrada:</b>
+			<%=h exp.data_inicio%>
+	<%end%>	
+</div>
+
+<p><%= link_to 'Voltar', curriculos_path %> | 
+<%= link_to 'Editar', edit_curriculo_path(@curriculo) %></p>

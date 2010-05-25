@@ -1,0 +1,10 @@
+<h2>Esqueci minha Senha</h2>
+<% form_tag url_for(:action => 'create') do %>
+  <p>Qual o e-mail usado para criar sua conta?</p>
+  <%= text_field_tag :email, "", :size => 50 %><br />
+  <%= submit_tag 'Reiniciar senha' %>
+  <br>
+  <p>Caso não se lembre do e-mail usado na criação da conta, entre em contato com
+  o administrador ou crie uma nova conta.</p>
+<% end %>
+

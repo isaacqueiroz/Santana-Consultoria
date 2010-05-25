@@ -1,0 +1,19 @@
+<h1>Vagas Atuais</h1>
+
+<% for selection in @selections %>
+    <p class="date"><%=h selection.created_at.strftime("%d/%m/%Y - %H")%></p>
+    <h2><%=h selection.title %></h2>
+    <h3><%=h selection.sub_title %></h3>
+    <p><%= selection.body %></p>
+		<% if !(current_user.blank?) && (current_user.has_role?('administrator')) %>
+        <p class="helper">Administrador, use as opções a seguir para atualizar o site.</p>
+	    <p><%= link_to 'Exibir', selection %></p>
+	    <p><%= link_to 'Editar', edit_selection_path(selection) %></p>
+	    <p><%= link_to 'Excluir', selection, :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></p>
+		<% end %>
+<% end %>
+
+<br />
+<% if !(current_user.blank?) && (current_user.has_role?('administrator')) %>
+	<%= link_to 'Novo Texto para "Seleções"', new_selection_path %>
+<% end %>

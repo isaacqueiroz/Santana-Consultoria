@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  local: MyString
+  departamento: MyString
+  cargo: MyString
+  experiencia: MyText
+  motivo_saida: MyString
+  data_inicio: 2010-01-16 02:34:54
+  data_fim: 2010-01-16 02:34:54
+
+two:
+  local: MyString
+  departamento: MyString
+  cargo: MyString
+  experiencia: MyText
+  motivo_saida: MyString
+  data_inicio: 2010-01-16 02:34:54
+  data_fim: 2010-01-16 02:34:54

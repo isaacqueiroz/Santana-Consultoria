@@ -1,0 +1,15 @@
+<h1>Central de Autorizações de Testes</h1>
+<table>
+	<tr>
+		<th>Email do Usuário</th>
+	</tr>
+	
+	<% @users.each do |user|%>
+	<tr>
+		<td><%=h user.email%></td>
+		<td><%= link_to 'Nova Autorização', new_user_allow_test_path(user.id)%></td>
+		<td><%= link_to 'Listar Autorizações', :action => "show", :user_id => user.id %></td>
+		<td><%= link_to 'Resultados', {:controller => "results", :action => "test_selection", :user_id => user.id} %></td>
+	</tr>	
+	<%end%>
+</table>

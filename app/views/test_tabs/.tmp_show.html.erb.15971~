@@ -1,0 +1,11 @@
+<h1><%=h @test_tab.nome %></h1>
+
+<p>
+  <b>Descrição:</b>
+  <%=h @test_tab.descricao %>
+</p>
+
+
+<%= link_to 'Editar', edit_test_tab_path(@test_tab) %> |
+<%= link_to 'Voltar', test_tabs_path %> | 
+<%= link_to 'Elaborar nova questão', new_test_tab_question_tab_path(@test_tab) %>

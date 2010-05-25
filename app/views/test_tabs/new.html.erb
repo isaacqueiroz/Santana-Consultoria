@@ -1,0 +1,19 @@
+<h1>Elaborador de Testes</h1>
+
+<% form_for(@test_tab) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </p>
+  <p>
+    <%= f.label :descrição %><br />
+    <%= f.text_area :descricao %>
+  </p>
+  <p>
+    <%= f.submit 'Elaborar' %>
+  </p>
+<% end %>
+
+<%= link_to 'Voltar', test_tabs_path %>

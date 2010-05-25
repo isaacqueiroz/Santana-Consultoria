@@ -1,0 +1,18 @@
+<h1>Resultados de Testes</h1>
+
+<%if !@test_tabs.blank? %>
+	<p>Para prosseguir, por favor, selecione o teste que deseja ver os resultados:</p>
+	
+	<% form_for [@test, @user], :url => { :action => "test_results"} do |f| %>
+		<p>
+			<%= f.error_messages %>
+			<%= select(:test, :test_tab_id, @test_tabs)  %>
+			<%= f.submit 'Verificar Resultados' %>
+		</p>
+	<% end %>
+	
+	<p><%link_to "Voltar", allow_tests_path%></p>
+<%else%>
+	<p>Este usuário ainda não realizou nenhum teste.</p>
+	<p><%link_to "Voltar", allow_tests_path%></p>
+<% end %>

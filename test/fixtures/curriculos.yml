@@ -1,0 +1,41 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nome: MyString
+  sobrenome: MyString
+  data_nasc: 2010-01-12 22:07:58
+  estado_civil: MyString
+  empregado: false
+  escolaridade: 1
+  filhos: false
+  endereco: MyString
+  numero: 1
+  complemento: MyString
+  bairro: MyString
+  cidade: MyString
+  estado: 
+  celular: MyString
+  telefone: MyString
+  area_id: 1
+  sub_area_id: 1
+  salario: 1
+
+two:
+  nome: MyString
+  sobrenome: MyString
+  data_nasc: 2010-01-12 22:07:58
+  estado_civil: MyString
+  empregado: false
+  escolaridade: 1
+  filhos: false
+  endereco: MyString
+  numero: 1
+  complemento: MyString
+  bairro: MyString
+  cidade: MyString
+  estado: 
+  celular: MyString
+  telefone: MyString
+  area_id: 1
+  sub_area_id: 1
+  salario: 1

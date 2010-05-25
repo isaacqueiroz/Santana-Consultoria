@@ -1,0 +1,28 @@
+<h2>Todos os Usuários - Área Avançada</h2>
+
+<p class="helper">Bem vindo ao painel de controle dos usuários. Aqui, os usuários ganham
+suas permissões de acesso, além de ser possível bloquear o acesso dos usuários. As exclusões
+de usuários, bem como criação de permissões estão escaladas para o administrador do sistema
+(não para o usuário administrador).</p>
+<p class="helper">Para criar permissões, excluir usuários ou recuperar códigos de ativação,
+bem como a realização de consultas complexas ou alterações diretas no banco de dados, por
+favor, entre em contato com o administrador do sistema.</p>
+<p class="helper">Lembre-se de que este é um sistema em estágio Beta, ou seja, não está
+em sua versão final. Por isso, qualquer dúvida ou sugestão é muito bem vinda para o aprimoramento
+do sistema. Por favor, entre em contato com o administrador do sistema caso sinta necessidade
+e você estará contribuindo para um sistema melhor.</p>
+<p class="helper">Contato com o Administrador do Sistema: queiroz.isaac@gmail.com</p>
+<p class="helper">Versão do Sistema: 0.1.02 - Estágio Beta</p>
+<p class="helper">Notas de versão:</p>
+<p class="helper">*Adicionado formulário para contato. Os e-mails serão enviados para contato@santanarh.com.br</p>
+
+<table>
+	<tr>
+      <th>Nome de usuário</th>
+      <th>Email</th>
+      <th>Ativado?</th>
+      <th>Permissões</th>
+  </tr>
+  <%= render :partial => 'user', :collection => @users %>
+</table>
+

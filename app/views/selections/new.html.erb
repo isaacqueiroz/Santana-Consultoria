@@ -1,0 +1,36 @@
+<h1>Novo Texto para a Coluna Seleções</h1>
+
+<p class="helper">Bem vindo à seção de criação de seleção. Aqui você poderá criar
+o texto que descreverá uma seleção que está ocorrendo ou acontecerá. Desta forma,
+você poderá manter o público atualizado quanto às atividades de contratação da empresa,
+o que acaba por ter um papel fundamental na manutenção da imagem e do marketing da empresa.</p>
+<p class="helper">Lembre-se: Quanto mais conteúdo, mais acesso serão direcionados dos
+buscadores eletrônicos.</p>
+<p class="helper">Para cada seleção, crie um novo bloco de texto (com título,
+sub-título e conteúdo) na próxima tela, clicando em "Novo texto para Seleções".</p>
+
+<%= error_messages_for :selection %>
+
+<% form_for(@selection) do |f| %>
+  <p>
+    <b>Título</b><br />
+    <%= f.text_field :title %>
+  </p>
+  <p class="helper">Título do texto (letra grande).</p>
+  <p>
+    <b>Sub-título</b><br />
+    <%= f.text_field :sub_title %>
+  </p>
+  <p class="helper">Sub-Título do texto (letra mediana).</p>
+  <p>
+    <b>Conteúdo</b><br />
+    <%= f.text_area :body %>
+  </p>
+  <p class="helper">Conteúdo do texto (letra de texto).</p>
+  <p>
+    <%= f.submit "Criar" %>
+  </p>
+<% end %>
+
+<%= link_to 'Voltar', selections_path, :confirm => 'Tem certeza que deseja voltar? Todas as alterações serão perdidas!' %>
+

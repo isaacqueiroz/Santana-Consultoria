@@ -1,0 +1,37 @@
+<h1>Editando Coluna de Conheça-nos</h1>
+
+<p class="helper">Bem vindo à seção de edição da coluna "Conheça-nos". Aqui você
+pode editar as informações do pessoal interno à empresa, colocando informações úteis
+como formação, dados pessoais relevantes, bem como fotos (implementação futura).
+Para cada pessoa, crie um texto com Título, Sub-Título e conteúdo, mantendo assim
+o padrão de formatação.</p>
+<p class="helper">Se for necessário a criação de mais de um bloco de texto (com título,
+sub-título e conteúdo), basta criar este bloco e, na próxima tela, clicar em "Novo texto
+para Conheça-nos".</p>
+
+<%= error_messages_for :who %>
+
+<% form_for(@who) do |f| %>
+  <p>
+    <b>Título</b><br />
+    <%= f.text_field :title %>
+  </p>
+  <p class="helper">Título do texto (letra grande).</p>
+  <p>
+    <b>Sub-título</b><br />
+    <%= f.text_field :sub_title %>
+  </p>
+  <p class="helper">Sub-Título do texto (letra mediana).</p>
+  <p>
+    <b>Conteúdo</b><br />
+    <%= f.text_area :body %>
+  </p>
+  <p class="helper">Conteúdo do texto (letra de texto).</p>
+
+  <p>
+    <%= f.submit "Atualizar" %>
+  </p>
+<% end %>
+
+<%= link_to 'Exibir', @who %> |
+<%= link_to 'Voltar', whos_path, :confirm => 'Tem certeza que deseja voltar? Todas as alterações serão perdidas!' %>

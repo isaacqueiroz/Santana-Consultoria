@@ -1,0 +1,9 @@
+<h2><%=h @selection.title %></h2>
+
+<h3><%=h @selection.sub_title %></h3>
+
+<p><%= @selection.body %></p>
+
+<%= link_to 'Editar', edit_selection_path(@selection) %> |
+<%= link_to 'Voltar', selections_path %> |
+<%= link_to 'Novo Texto para "Seleções"', new_selection_path %>

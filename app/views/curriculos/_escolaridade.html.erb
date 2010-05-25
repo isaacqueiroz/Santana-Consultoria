@@ -1,0 +1,30 @@
+<div class="esc_div">
+	<% fields_for_escolaridade(escolaridade) do |escolaridade_form| %>
+	  <p>
+	  	Tipo do Curso:  
+		<%= escolaridade_form.select(:tipo_curso, [['Primeiro Grau', 0],
+							['Segundo Grau', 1],
+							['Ensino Superior', 2],
+							['Pós-Graduação', 3],
+							['Mestrado', 4],
+							['Doutorado', 5],
+							['Técnico', 6]])%>
+	  </p>		  
+	  <p>
+	  	Instituição do curso: 
+		<%= escolaridade_form.text_field :local %>
+	  </p>
+	  <p>
+	  	Estado do Curso:  
+		<%= escolaridade_form.select (:estado, [['Concluído', 0],
+					['Incompleto', 1], ['Em andamento', 2]] ) %>
+	  </p>
+	  <p class="helper">O próximo campo é apenas para cursos superiores, 
+	  pós-graduação, mestrado, doutorado ou técnicos.</p>
+	  <p>
+	  	Área do Curso: 
+		<%= escolaridade_form.text_field :area %>
+	  </p>
+	  <p><%= link_to_function "Remover Curso", "$(this).up('.esc_div').remove()" %></p>
+	<%end%>	
+</div>

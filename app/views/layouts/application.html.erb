@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="title" content="Santana Consultoria em RH" />
+    <meta name="url" content="www.santanarh.com.br" />
+    <meta name="description" content="Site da Santana Consultoria em RH. Seleções e recrutamentos em Franca e interior de São Paulo." />
+    <meta name="keywords" content="Consultoria, Relacionamentos humanos, RH, Santana Consultoria, Franca, São Paulo, Ribeirão preto, Interior de São Paulo, Seleção de pessoal, Seleção, pessoal, recrutamento, clima interno, seleção 360, profissionais, vagas, empregos" />
+    <meta name="charset" content="UTF-8" />
+    <meta name="autor" content="Isaac Queiroz" />
+    <meta name="company" content="Santana Consultoria em RH" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Santana Consultoria em R.H.</title>
+	<%= javascript_include_tag "jrails.js", "jquery.js", "jquery-ui.js", "elastic.js", :defaults, :cache => true%>
+	<%= yield :javascript %>
+	<%= stylesheet_link_tag "elastic", "default"%>
+</head>
+
+<div class=”unit”> 
+    <!-- Div do Logo -->
+    <div id="logo" class="container">
+    	<%= link_to image_tag("logo.png"), noticias_path%>    	
+    </div>
+    <!-- Div do menu -->
+    <div id="menuDiv" class="container">
+    	<p>
+        	<%= link_to 'Notícias', noticias_path, :class => "menu" %>
+			<%= link_to 'Conheça-nos', whos_path, :class => "menu" %>
+            <%= link_to 'Vagas Atuais', selections_path, :class => "menu" %>
+            <%= link_to 'Serviços Oferecidos', servicos_path, :class => "menu" %>
+            <%= link_to 'Contate-nos', contatos_path, :class => "menu" %>
+			<%= link_to 'Cadastre-se', new_user_path, :class => "menu" %> 
+        </p>
+    </div>
+</div>
+
+<!-- Content Div -->
+<div class="unit on-4 columns same-height">  
+    <div id="painel" class="column">  
+        <div id="usrCont" class="container" style="padding-left:5px;">
+			<h1>Painel do Usuário</h1>
+ 			<% if logged_in? %>
+				<p>Seja Bem Vindo, <b><%= link_to h(current_user.login.capitalize), user_path(current_user) %></b></p>
+				<ul class="usrMenu">
+					<li><%= link_to 'Editar Perfil', edit_user_path(current_user)%></li>
+					<li><%= link_to 'Mudar Senha', change_password_path %></li>
+					<li><%= link_to 'Seção de Testes', user_tests_path(current_user) %></li>
+					<li><%= link_to 'Sair', logout_url %></li>
+				</ul>
+				<% if !(current_user.blank?) && (current_user.has_role?('administrator')) %>
+					<p>Opções de Administrador:</p>
+					<ul>
+						<li><%= link_to 'Administrar Contate-nos', contatos_path %></li>
+						<li><%= link_to 'Administrar Notícias', noticias_path %></li>
+						<li><%= link_to 'Administrar Conheça-nos', whos_path %></li>
+						<li><%= link_to 'Administrar Vagas', selections_path %></li>
+						<li><%= link_to 'Administrar Serviços Realizados', servicos_path %></li>
+						<li><%= link_to 'Elaborar Teste', test_tabs_path %></li>
+						<li><%= link_to 'Central de Testes e Resultados', allow_tests_path %></li>
+						<li><%= link_to 'Seção Avançada - Usuários', users_path %></li>
+					</ul>
+				<% end %>
+			<% else %>
+				<% form_tag (session_path) do %>
+					<p><label for="login">Login: </label><%= text_field_tag 'login','', :size => 15 %></p>
+					<p><label for="password">Senha: </label><%= password_field_tag 'password','', :size => 10 %></p>
+					<p><label for="remember_me">Continuar conectado </label><%= check_box_tag 'remember_me' %></p>					 
+					<p style="text-align:center"><%= submit_tag 'Entrar', :class => "loginButton" %> | <%= link_to "Cadastrar", new_user_path %></p>
+				<% end %>
+			<% end %>
+    	</div> 
+	</div>
+	<div class="column span-2" >  
+        <div id="content" class="container">
+        	<p style="color: green"><%= flash[:notice] %></p>
+            <p style="color: red"><%= flash[:error] %></p>
+            <%= yield  %>
+        </div> 
+    </div>
+	<div id="ads" class="column">  
+        <!-- Div de Ads -->    
+        <div id="addCont" id="painel" class="unit" style="padding-top:20px;">        	
+            <p><%= image_tag("ads.png")%></p>
+            <p><%= image_tag("ads.png")%></p>
+            <p><%= image_tag("ads.png")%></p>
+        </div>
+    </div>  
+	</div>  
+<!-- Rodapé -->
+<div id="foot" class="unit">
+	<p>Melhor visualizado em 1024x768</p>
+	<p>© 2009 Santana Consultoria em R.H. LTDA. Todos os direitos reservados.</p>
+</div>
+</body>
+</html>

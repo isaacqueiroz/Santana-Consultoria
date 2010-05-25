@@ -1,0 +1,16 @@
+<h1>Últimas Notícias</h1>
+
+<% for noticias in @noticias %>
+  <p class="date"><%=h noticias.created_at.strftime("%d/%m/%Y - %H:%Mh")%></p>
+  <h2><%=h noticias.title %></h2>
+  <p><%=h noticias.body %></p>
+    <% if !(current_user.blank?) && (current_user.has_role?('administrator')) %>
+      <p class="helper">Administrador, use as opções a seguir para atualizar o site.</p>
+      <p><%= link_to 'Editar', edit_noticia_path(noticias) %></p>
+      <p><%= link_to 'Excluir', noticias, :confirm => 'Tem certeza que deseja excluir?', :method => :delete %></p>
+    <% end %>
+<% end %>
+<br />
+<% if !(current_user.blank?) && (current_user.has_role?('administrator')) %>
+	<%= link_to 'Novo texto para "Noticias"', new_noticia_path %>
+<% end %>

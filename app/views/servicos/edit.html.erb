@@ -1,0 +1,38 @@
+<h1>Editando Coluna de Serviços</h1>
+
+<p class="helper">Bem vindo à seção de edição da coluna de serviços oferecidos.
+Aqui é possível editar o conteúdo que o usuário não-autenticado verá na página de serviçoes
+oferecidos pela empresa, mostrando assim as vantagens de contratar a empresa para as
+áreas de atuação aqui descritas. Para cada serviço, crie um texto com Título, Sub-Título
+e conteúdo, mantendo assim o padrão de formatação.</p>
+<p class="helper">Se for necessário a criação de mais de um bloco de texto (com título,
+sub-título e conteúdo), basta criar este bloco e, na próxima tela, clicar em "Novo texto
+para Serviços".</p>
+
+<%= error_messages_for :servico %>
+
+<% form_for(@servico) do |f| %>
+  <p>
+    <b>Título</b><br />
+    <%= f.text_field :title %>
+  </p>
+  <p class="helper">Título do texto (letra grande).</p>
+
+  <p>
+    <b>Sub-título</b><br />
+    <%= f.text_field :sub_title %>
+  </p>
+  <p class="helper">Sub-Título do texto (letra mediana).</p>
+  <p>
+    <b>Conteúdo</b><br />
+    <%= f.text_area :body %>
+  </p>
+  <p class="helper">Conteúdo do texto (letra de texto).</p>
+
+  <p>
+    <%= f.submit "Atualizar" %>
+  </p>
+<% end %>
+
+<%= link_to 'Exibir', @servico %> |
+<%= link_to 'Voltar', servicos_path, :confirm => 'Tem certeza que deseja voltar? Todas as alterações serão perdidas!' %>

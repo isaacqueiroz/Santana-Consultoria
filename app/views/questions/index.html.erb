@@ -1,0 +1,10 @@
+<h1>Página de Testes</h1>
+<p>Bem vindo a página de testes. Confira abaixo se este é o teste que você deseja 
+realizar. Pressione "Iniciar Teste" para começar a prova.</p>
+
+<p><b>Nome do Teste:</b></p>
+<p><%=h @test_tab.nome%></p>
+
+<p>Para iniciar o Teste, clique no link abaixo:</p>
+
+<p><%= link_to 'Iniciar o Teste', new_test_question_path(@test) %></p>

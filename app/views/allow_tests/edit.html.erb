@@ -1,0 +1,16 @@
+<h1>Editing allow_test</h1>
+
+<% form_for(@allow_test) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :authorization %><br />
+    <%= f.check_box :authorization %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @allow_test %> |
+<%= link_to 'Back', allow_tests_path %>

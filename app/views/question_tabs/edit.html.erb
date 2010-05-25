@@ -1,0 +1,20 @@
+<h1>Editando Questão Número <%=h @question_tab.id%></h1>
+<h2>Teste: <%=h @test_tab.nome%></h2>
+
+<% form_for([@test_tab,@question_tab]) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :título %><br />
+    <%= f.text_field :titulo %>
+  </p>
+  <p>
+    <%= f.label :texto %><br />
+    <%= f.text_area :texto %>
+  </p>
+  <p>
+    <%= f.submit 'Atualizar' %>
+  </p>
+<% end %>
+
+<%= link_to 'Voltar', test_tab_question_tabs_path(@test_tab) %>

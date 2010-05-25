@@ -1,0 +1,9 @@
+<h2><%=h @servico.title %></h2>
+
+<h3><%=h @servico.sub_title %></h3>
+
+<p><%=h @servico.body %></p>
+
+<%= link_to 'Editar', edit_servico_path(@servico) %> |
+<%= link_to 'Voltar', servicos_path %> |
+<%= link_to 'Novo Texto para Serviços', new_servico_path %>

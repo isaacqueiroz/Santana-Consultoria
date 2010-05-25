@@ -1,0 +1,19 @@
+<h1>Página de Autorizações</h1>
+<h2>Usuário: <%=h @user.email%></h2>
+
+<%if !@allow_tests.blank?%>
+	<table>
+	<% @allow_tests.each do |allow_test| %>
+	  <tr>
+	    <td><b>Nome do Teste:</b> <%=h @test_tabs[(allow_test.test_tab_id-1)].nome%></td>
+	    <td><b>Autorizado?</b> <%=h (allow_test.authorization==true ? "Sim" : "Não")%></td>
+	    <td><%= link_to 'Excluir autorização', allow_test, :confirm => 'Tem certeza?', :method => :delete %></td>
+	  </tr>
+	<% end %>
+	</table>
+<%else%>
+	<p>Este usutário não possui autorizações ainda!</p>
+<%end%>
+
+<%= link_to 'Nova Autorização', new_user_allow_test_path(@user.id)%> | 
+<%= link_to 'Voltar', :action => "index" %>

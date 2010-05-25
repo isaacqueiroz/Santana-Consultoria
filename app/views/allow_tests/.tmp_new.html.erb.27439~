@@ -1,0 +1,15 @@
+<h1>Nova Autorização para Teste</h1>
+
+<p>Administrador, por favor, selecione o teste para o qual a autorização está
+sendo criada. O usuário selecionado poderá começar o teste assim que a
+autorização for emitida.</p>
+
+<% form_for(@allow_test, :url => { :action => "create" }) do |f| %>
+  <%= f.error_messages %>
+  <p>
+	<%= select(:allow_test, :test_tab_id, @test_tabs)  %>
+  </p>
+  <p>
+    <%= f.submit 'Autorizar' %>
+  </p>
+<% end %>

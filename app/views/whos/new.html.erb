@@ -1,0 +1,35 @@
+<h1>Novo Texto para a Coluna Conheça-nos</h1>
+
+<p class="helper">Bem vindo à seção de criação de textp da coluna "Conheça-nos".
+Aqui você poderá criar um texto responsavel por identificar os recursos humanos
+presentes na empresa, citando seus nomes, dados relevantes, formação relevante
+bem como sua atuação no dia-a-dia da empresa.</p>
+<p class="helper">Lembre-se: Quanto mais conteúdo, mais acesso serão direcionados dos
+buscadores eletrônicos.</p>
+<p class="helper">Para cada seleção, crie um novo bloco de texto (com título,
+sub-título e conteúdo) na próxima tela, clicando em "Novo texto para Conheça-nos".</p>
+
+<%= error_messages_for :who %>
+
+<% form_for(@who) do |f| %>
+  <p>
+    <b>Título</b><br />
+    <%= f.text_field :title %>
+  </p>
+  <p class="helper">Título do texto (letra grande).</p>
+  <p>
+    <b>Sub-título</b><br />
+    <%= f.text_field :sub_title %>
+  </p>
+  <p class="helper">Sub-Título do texto (letra mediana).</p>
+  <p>
+    <b>Conteúdo</b><br />
+    <%= f.text_area :body %>
+  </p>
+  <p class="helper">Conteúdo do texto (letra de texto).</p>
+  <p>
+    <%= f.submit "Criar" %>
+  </p>
+<% end %>
+
+<%= link_to 'Voltar', whos_path, :confirm => 'Tem certeza que deseja voltar? Todas as alterações serão perdidas!' %>
