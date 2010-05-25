@@ -23,7 +23,7 @@ class CurriculosController < ApplicationController
   # GET /curriculos/1.xml
   def show
     
-    @curriculo = Curriculo.find(params[:id])
+    @curriculo = @user.curriculo
     @area1 = Area.find(@curriculo.area_id1)
     @area2 = Area.find(@curriculo.area_id2)
     @area3 = Area.find(@curriculo.area_id3)
@@ -40,7 +40,6 @@ class CurriculosController < ApplicationController
     @curriculo.escolaridades.build
     @curriculo.exps.build
     get_areas
-    respond_to do |format|
     render :layout => 'curriculo'
   end
 
@@ -52,12 +51,12 @@ class CurriculosController < ApplicationController
   # POST /curriculos
   # POST /curriculos.xml
   def create
-    @curriculo = @user.build_curriculo(params[:curriculo])
+    @curriculo = @user.create_curriculo(params[:curriculo])
 
     respond_to do |format|
       if @curriculo.save
         flash[:notice] = 'Seu currículo foi criado com sucesso.'
-        format.html { redirect_to(@curriculo) }
+        format.html { redirect_to(@user, @curriculo) }
         format.xml  { render :xml => @curriculo, :status => :created, :location => @curriculo }
       else
         format.html { render :action => "new" }
@@ -107,5 +106,5 @@ private
     @areas = Area.all
     @areas = @areas.map{|u|[u.name,u.id]}
   end
-end
+
 

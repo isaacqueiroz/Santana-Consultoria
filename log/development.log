@@ -46864,3 +46864,672 @@ Rendering rescues/layout (internal_server_error)
     ./script/server:3
     -e:2:in `load'
     -e:2
+  [4;36;1mSQL (109.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (31.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing NoticiasController#index (for 127.0.0.1 at 2010-05-25 18:31:30) [GET]
+  [4;36;1mNoticia Load (187.2ms)[0m   [0;1mSELECT * FROM `noticias` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering noticias/index
+Completed in 5522ms (View: 5320, DB: 328) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-05-25 18:32:52) [GET]
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 120ms (View: 20, DB: 5) | 200 OK [http://127.0.0.1/users/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-05-25 18:33:21) [POST]
+  Parameters: {"recaptcha_response_field"=>"saloon the", "recaptcha_challenge_field"=>"02PhCmqt6OaTx16pVQ3dCdnii8m7k7EiZ-YvzuvJ2AP8AvWBb4_AUKLNghF41SwjrB61ZDprtkeCdubqHiTIS_TlByMZPjPyH5zGhGqt4O1Ayhry-Hg4qFf0eX-R_I3cZEbux9-TD3A5FXFRMwwR4bpVtgdDJ5Ujujr2L43joIR4MQiUv55aSC7xZvJfDwYkvHvU3O-pX41kSEvixDCozeC1_imv6NnAaE_mnRfl9f5KtPfXAgtM07TvDY1E1KA3a2cO-oitJjL0IW76A1q_PsQ8lLxrsB", "commit"=>"Sign up", "authenticity_token"=>"Wsz41jmskL8cO9FFUK9lVMNfaI5Y4t2JwVC1sZ0N+oo=", "user"=>{"name"=>"Treco", "password_confirmation"=>"886516", "password"=>"886516", "login"=>"Treco", "surname"=>"Treco", "email"=>"treco@gmail.com"}}
+  [4;36;1mUser Columns (20.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+WARNING: Can't mass-assign these protected attributes: name, surname
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'treco') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'treco@gmail.com') LIMIT 1[0m
+  [4;36;1mUser Create (22.5ms)[0m   [0;1mINSERT INTO `users` (`salt`, `name`, `created_at`, `activated_at`, `crypted_password`, `remember_token_expires_at`, `updated_at`, `password_reset_code`, `activation_code`, `enabled`, `remember_token`, `curriculo_id`, `login`, `surname`, `email`) VALUES('5dee936edd38db8cf336bf07138703970571fc5f', NULL, '2010-05-25 21:33:22', NULL, 'a165673d47d4f1bdb4fcc5a4e56ff2f80901dfe1', NULL, '2010-05-25 21:33:22', NULL, '66adc5b4c6bfd9ec591da3e7c2b7253204a4b290', 1, NULL, NULL, 'Treco', NULL, 'treco@gmail.com')[0m
+  [4;35;1mSQL (22.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/login
+Completed in 1003ms (DB: 65) | 302 Found [http://127.0.0.1/users]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-05-25 18:33:22) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 28ms (View: 23, DB: 0) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#show (for 127.0.0.1 at 2010-05-25 18:34:05) [GET]
+  Parameters: {"id"=>"66adc5b4c6bfd9ec591da3e7c2b7253204a4b290"}
+  [4;36;1mUser Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`activation_code` = '66adc5b4c6bfd9ec591da3e7c2b7253204a4b290') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Update (12.5ms)[0m   [0mUPDATE `users` SET `updated_at` = '2010-05-25 21:34:06', `activated_at` = '2010-05-25 21:34:05' WHERE `id` = 7[0m
+  [4;36;1mSQL (27.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/login
+Completed in 565ms (DB: 45) | 302 Found [http://127.0.0.1/activate/66adc5b4c6bfd9ec591da3e7c2b7253204a4b290]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-05-25 18:34:06) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 13ms (View: 10, DB: 0) | 200 OK [http://127.0.0.1/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-05-25 18:34:10) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"Wsz41jmskL8cO9FFUK9lVMNfaI5Y4t2JwVC1sZ0N+oo=", "login"=>"treco", "password"=>"886516"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (login = 'treco') LIMIT 1[0m
+  [4;36;1mUser Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Redirected to http://127.0.0.1:3000/users/7
+Completed in 35ms (DB: 3) | 302 Found [http://127.0.0.1/session]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-25 18:34:10) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 7) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mRole Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 7)) LIMIT 1[0m
+Completed in 68ms (View: 38, DB: 7) | 200 OK [http://127.0.0.1/users/7]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#new (for 127.0.0.1 at 2010-05-25 18:35:05) [GET]
+  Parameters: {"user_id"=>"7"}
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 7) LIMIT 1[0m
+  [4;35;1mCurriculo Load (0.0ms)[0m   [0mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 7) LIMIT 1[0m
+  [4;36;1mCurriculo Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mEscolaridade Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `escolaridades`[0m
+  [4;36;1mExp Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `exps`[0m
+  [4;35;1mArea Load (0.0ms)[0m   [0mSELECT * FROM `areas` [0m
+  [4;36;1mArea Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `areas`[0m
+Rendering template within layouts/curriculo
+Rendering curriculos/new
+Rendered curriculos/_escolaridade (5.0ms)
+Rendered curriculos/_exp (14.0ms)
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 7)) LIMIT 1[0m
+
+NoMethodError (undefined method `call' for nil:NilClass):
+  app/controllers/curriculos_controller.rb:43:in `new'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (2.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#show (for 127.0.0.1 at 2010-05-25 18:35:17) [GET]
+  Parameters: {"user_id"=>"7"}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 7) LIMIT 1[0m
+
+ActiveRecord::RecordNotFound (Couldn't find Curriculo without an ID):
+  app/controllers/curriculos_controller.rb:26:in `show'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#new (for 127.0.0.1 at 2010-05-25 19:13:56) [GET]
+  Parameters: {"user_id"=>"7"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 7) LIMIT 1[0m
+  [4;35;1mCurriculo Load (0.0ms)[0m   [0mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 7) LIMIT 1[0m
+  [4;36;1mCurriculo Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mEscolaridade Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `escolaridades`[0m
+  [4;36;1mExp Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `exps`[0m
+  [4;35;1mArea Load (2.5ms)[0m   [0mSELECT * FROM `areas` [0m
+  [4;36;1mArea Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `areas`[0m
+Rendering template within layouts/curriculo
+Rendering curriculos/new
+Rendered curriculos/_escolaridade (0.0ms)
+Rendered curriculos/_exp (12.5ms)
+  [4;35;1mRole Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (2.5ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 7)) LIMIT 1[0m
+
+NoMethodError (undefined method `call' for nil:NilClass):
+  app/controllers/curriculos_controller.rb:43:in `new'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#new (for 127.0.0.1 at 2010-05-25 19:15:19) [GET]
+  Parameters: {"user_id"=>"7"}
+
+SyntaxError (C:/Users/Darvius/Desktop/Santana-Consultoria/Santana-Testes/app/controllers/curriculos_controller.rb:109: syntax error, unexpected kEND, expecting $end):
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (25.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#new (for 127.0.0.1 at 2010-05-25 19:15:53) [GET]
+  Parameters: {"user_id"=>"7"}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 7) LIMIT 1[0m
+  [4;35;1mCurriculo Load (2.5ms)[0m   [0mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 7) LIMIT 1[0m
+  [4;36;1mCurriculo Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mEscolaridade Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `escolaridades`[0m
+  [4;36;1mExp Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `exps`[0m
+  [4;35;1mArea Load (0.0ms)[0m   [0mSELECT * FROM `areas` [0m
+  [4;36;1mArea Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `areas`[0m
+Rendering template within layouts/curriculo
+Rendering curriculos/new
+Rendered curriculos/_escolaridade (0.0ms)
+Rendered curriculos/_exp (12.5ms)
+  [4;35;1mRole Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 7)) LIMIT 1[0m
+Completed in 265ms (View: 198, DB: 20) | 200 OK [http://127.0.0.1/users/7/curriculo/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#create (for 127.0.0.1 at 2010-05-25 19:17:05) [POST]
+  Parameters: {"commit"=>"Criar Curriculo", "authenticity_token"=>"Wsz41jmskL8cO9FFUK9lVMNfaI5Y4t2JwVC1sZ0N+oo=", "curriculo"=>{"complemento"=>"1231", "endereco"=>"212", "telefone"=>"123123", "new_exp_att"=>[{"local"=>"1233", "motivo_saida"=>"4124", "data_fim(2i)"=>"5", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2010", "departamento"=>"313", "cargo"=>"231", "data_inicio(2i)"=>"5", "data_inicio(3i)"=>"1", "experiencia"=>"323", "data_fim(1i)"=>"2010"}], "spanish"=>"Intermediário", "data_nasc(1i)"=>"2010", "nome"=>"Testando", "informatica"=>"Intermediário", "area_id1"=>"1", "empregado"=>"True", "data_nasc(2i)"=>"5", "new_escolaridade_att"=>[{"local"=>"123", "tipo_curso"=>"0", "area"=>"414", "estado"=>"0"}], "english"=>"Básico", "area_id2"=>"3", "data_nasc(3i)"=>"25", "area_id3"=>"6", "escolaridade"=>"0", "bairro"=>"23123", "cidade"=>"2312", "estado"=>"Acre", "numero"=>"123", "estado_civil"=>"Solteiro(a)", "celular"=>"123", "sobrenome"=>"Curriculo", "salario"=>"1231"}}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 7) LIMIT 1[0m
+  [4;35;1mCurriculo Load (2.5ms)[0m   [0mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 7) LIMIT 1[0m
+  [4;36;1mCurriculo Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mExp Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `exps`[0m
+  [4;36;1mEscolaridade Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `escolaridades`[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mCurriculo Create (37.5ms)[0m   [0;1mINSERT INTO `curriculos` (`endereco`, `complemento`, `telefone`, `created_at`, `data_nasc`, `spanish`, `nome`, `updated_at`, `empregado`, `informatica`, `area_id1`, `filhos`, `english`, `area_id2`, `escolaridade`, `user_id`, `area_id3`, `bairro`, `estado_civil`, `numero`, `cidade`, `estado`, `sobrenome`, `celular`, `salario`) VALUES('212', '1231', '123123', '2010-05-25 22:17:05', '2010-05-25 00:00:00', 'Intermediário', 'Testando', '2010-05-25 22:17:05', 0, 'Intermediário', 1, NULL, 'Básico', 3, 0, 7, 6, '23123', 'Solteiro(a)', 123, '2312', 'Acre', 'Curriculo', '123', 1231)[0m
+  [4;35;1mEscolaridade Create (2.5ms)[0m   [0mINSERT INTO `escolaridades` (`local`, `created_at`, `updated_at`, `tipo_curso`, `area`, `curriculo_id`, `estado`) VALUES('123', '2010-05-25 22:17:05', '2010-05-25 22:17:05', 0, '414', 4, 0)[0m
+  [4;36;1mExp Create (25.0ms)[0m   [0;1mINSERT INTO `exps` (`local`, `motivo_saida`, `created_at`, `updated_at`, `departamento`, `cargo`, `data_inicio`, `curriculo_id`, `experiencia`, `data_fim`) VALUES('1233', '4124', '2010-05-25 22:17:05', '2010-05-25 22:17:05', '313', '231', '2010-05-01 00:00:00', 4, '323', '2010-05-01 00:00:00')[0m
+  [4;35;1mSQL (22.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/curriculos/4
+Completed in 148ms (DB: 103) | 302 Found [http://127.0.0.1/curriculos]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#show (for 127.0.0.1 at 2010-05-25 19:17:05) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mUser Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 7) LIMIT 1[0m
+  [4;36;1mCurriculo Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mCurriculo Load (2.5ms)[0m   [0mSELECT * FROM `curriculos` WHERE (`curriculos`.`id` = 4) [0m
+  [4;36;1mArea Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `areas`[0m
+  [4;35;1mArea Load (0.0ms)[0m   [0mSELECT * FROM `areas` WHERE (`areas`.`id` = 1) [0m
+  [4;36;1mArea Load (0.0ms)[0m   [0;1mSELECT * FROM `areas` WHERE (`areas`.`id` = 3) [0m
+  [4;35;1mArea Load (2.5ms)[0m   [0mSELECT * FROM `areas` WHERE (`areas`.`id` = 6) [0m
+  [4;36;1mEscolaridade Load (0.0ms)[0m   [0;1mSELECT * FROM `escolaridades` WHERE (`escolaridades`.curriculo_id = 4) [0m
+  [4;35;1mExp Load (0.0ms)[0m   [0mSELECT * FROM `exps` WHERE (`exps`.curriculo_id = 4) [0m
+Rendering template within layouts/curriculo_show
+Rendering curriculos/show
+  [4;36;1mEscolaridade Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `escolaridades`[0m
+  [4;35;1mExp Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `exps`[0m
+  [4;36;1mRole Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (2.5ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 7)) LIMIT 1[0m
+Completed in 108ms (View: 40, DB: 23) | 200 OK [http://127.0.0.1/curriculos/4]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#show (for 127.0.0.1 at 2010-05-25 19:17:23) [GET]
+  Parameters: {"user_id"=>"7"}
+  [4;36;1mUser Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 7) LIMIT 1[0m
+
+ActiveRecord::RecordNotFound (Couldn't find Curriculo without an ID):
+  app/controllers/curriculos_controller.rb:26:in `show'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (110.0ms)
+Rendered rescues/_request_and_response (2.5ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#show (for 127.0.0.1 at 2010-05-25 19:18:06) [GET]
+  Parameters: {"user_id"=>"7"}
+  [4;36;1mUser Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 7) LIMIT 1[0m
+
+ActiveRecord::RecordNotFound (Couldn't find Curriculo without an ID):
+  app/controllers/curriculos_controller.rb:26:in `show'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (27.5ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#destroy (for 127.0.0.1 at 2010-05-25 20:34:35) [GET]
+  [4;36;1mUser Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 7) LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/login
+Completed in 30ms (DB: 3) | 302 Found [http://127.0.0.1/logout]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-05-25 20:34:35) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 13ms (View: 10, DB: 0) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-05-25 20:34:37) [GET]
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering users/new
+Completed in 43ms (View: 18, DB: 5) | 200 OK [http://127.0.0.1/users/new]
+  [4;35;1mSQL (2.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-05-25 20:35:02) [POST]
+  Parameters: {"recaptcha_response_field"=>"uhren weeks", "recaptcha_challenge_field"=>"02eCRXJdsY2yHGef27qsNMOSV9rUITnHZJskUco-IyZxSaQwzSLTJeyK4wqcE-4xcM0bJnd-U3-2KZbtd_zum0MkzkjQJXU3H60rs4QFYDiwn7vgyTXH293qJKdJG3qgPb0pz_RcpuA2nAWFW9H7s-2MPr1_T-tcPNW8OzDBQAaPlhj_UmRste9v1MM07R-sHTb7PPAXLLck_95wCAkbpnOiUEilAQLkdgm2GbaNNgMrahaM6o8vYeb_2ytXtbgcg9lQpmUdJCkSOAzovSOeXy_YJWgmAB", "commit"=>"Sign up", "authenticity_token"=>"6peuyk5/QfHOpTtwzSiSgRluCwIb/TzsMgMBk0EUYaQ=", "user"=>{"name"=>"outro", "password_confirmation"=>"886516", "password"=>"886516", "login"=>"outro", "surname"=>"outro", "email"=>"outro@gmail.com"}}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+WARNING: Can't mass-assign these protected attributes: name, surname
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`login`) = BINARY 'outro') LIMIT 1[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT `users`.id FROM `users` WHERE (LOWER(`users`.`email`) = BINARY 'outro@gmail.com') LIMIT 1[0m
+  [4;35;1mUser Create (2.5ms)[0m   [0mINSERT INTO `users` (`salt`, `name`, `created_at`, `activated_at`, `crypted_password`, `remember_token_expires_at`, `updated_at`, `password_reset_code`, `activation_code`, `enabled`, `remember_token`, `curriculo_id`, `login`, `surname`, `email`) VALUES('3439008d53c8a1cbdeda25b4a30341eb9a01fb0f', NULL, '2010-05-25 23:35:03', NULL, '163b211b392dbb847726729aabc24bd9c09562df', NULL, '2010-05-25 23:35:03', NULL, '56d2bc83d5c1c08e266e9161153abc768939dc0c', 1, NULL, NULL, 'outro', NULL, 'outro@gmail.com')[0m
+  [4;36;1mSQL (27.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/login
+Completed in 920ms (DB: 35) | 302 Found [http://127.0.0.1/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-05-25 20:35:03) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 17ms (View: 15, DB: 0) | 200 OK [http://127.0.0.1/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing AccountsController#show (for 127.0.0.1 at 2010-05-25 20:35:37) [GET]
+  Parameters: {"id"=>"56d2bc83d5c1c08e266e9161153abc768939dc0c"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`activation_code` = '56d2bc83d5c1c08e266e9161153abc768939dc0c') LIMIT 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Update (0.0ms)[0m   [0;1mUPDATE `users` SET `updated_at` = '2010-05-25 23:35:37', `activated_at` = '2010-05-25 23:35:37' WHERE `id` = 8[0m
+  [4;35;1mSQL (22.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/login
+Completed in 123ms (DB: 30) | 302 Found [http://127.0.0.1/activate/56d2bc83d5c1c08e266e9161153abc768939dc0c]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-05-25 20:35:37) [GET]
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 13ms (View: 10, DB: 0) | 200 OK [http://127.0.0.1/login]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-05-25 20:35:41) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"6peuyk5/QfHOpTtwzSiSgRluCwIb/TzsMgMBk0EUYaQ=", "login"=>"outro", "password"=>"886516"}
+  [4;36;1mUser Load (5.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (login = 'outro') LIMIT 1[0m
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Redirected to http://127.0.0.1:3000/users/8
+Completed in 35ms (DB: 10) | 302 Found [http://127.0.0.1/session]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-25 20:35:41) [GET]
+  Parameters: {"id"=>"8"}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mRole Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (2.5ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 8)) LIMIT 1[0m
+Completed in 60ms (View: 27, DB: 10) | 200 OK [http://127.0.0.1/users/8]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#new (for 127.0.0.1 at 2010-05-25 20:35:46) [GET]
+  Parameters: {"user_id"=>"8"}
+  [4;36;1mUser Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+  [4;36;1mCurriculo Load (0.0ms)[0m   [0;1mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 8) LIMIT 1[0m
+  [4;35;1mCurriculo Columns (7.5ms)[0m   [0mSHOW FIELDS FROM `curriculos`[0m
+  [4;36;1mEscolaridade Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `escolaridades`[0m
+  [4;35;1mExp Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `exps`[0m
+  [4;36;1mArea Load (0.0ms)[0m   [0;1mSELECT * FROM `areas` [0m
+  [4;35;1mArea Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `areas`[0m
+Rendering template within layouts/curriculo
+Rendering curriculos/new
+Rendered curriculos/_escolaridade (2.5ms)
+Rendered curriculos/_exp (15.0ms)
+  [4;36;1mRole Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 8)) LIMIT 1[0m
+Completed in 351ms (View: 259, DB: 22) | 200 OK [http://127.0.0.1/users/8/curriculo/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#create (for 127.0.0.1 at 2010-05-25 20:36:27) [POST]
+  Parameters: {"commit"=>"Criar Curriculo", "authenticity_token"=>"6peuyk5/QfHOpTtwzSiSgRluCwIb/TzsMgMBk0EUYaQ=", "curriculo"=>{"complemento"=>"1231", "endereco"=>"1231", "telefone"=>"1231", "new_exp_att"=>[{"local"=>"3123123", "motivo_saida"=>"31231", "data_fim(2i)"=>"5", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2010", "departamento"=>"123123", "cargo"=>"123", "data_inicio(2i)"=>"5", "data_inicio(3i)"=>"1", "experiencia"=>"123123", "data_fim(1i)"=>"2010"}], "spanish"=>"Intermediário", "data_nasc(1i)"=>"2010", "nome"=>"outro", "informatica"=>"Avançado", "area_id1"=>"4", "empregado"=>"True", "data_nasc(2i)"=>"5", "new_escolaridade_att"=>[{"local"=>"123123", "tipo_curso"=>"0", "area"=>"123123", "estado"=>"0"}, {"local"=>"123123", "tipo_curso"=>"0", "area"=>"1231231", "estado"=>"0"}], "english"=>"Intermediário", "area_id2"=>"6", "filhos"=>"False", "data_nasc(3i)"=>"25", "area_id3"=>"3", "escolaridade"=>"0", "bairro"=>"23123", "cidade"=>"23123", "estado"=>"Acre", "numero"=>"23123", "estado_civil"=>"Solteiro(a)", "celular"=>"123123", "sobrenome"=>"outro", "salario"=>"2312"}}
+  [4;36;1mUser Columns (7.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+  [4;36;1mCurriculo Load (0.0ms)[0m   [0;1mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 8) LIMIT 1[0m
+  [4;35;1mCurriculo Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `curriculos`[0m
+  [4;36;1mExp Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `exps`[0m
+  [4;35;1mEscolaridade Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `escolaridades`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCurriculo Create (0.0ms)[0m   [0mINSERT INTO `curriculos` (`endereco`, `complemento`, `telefone`, `created_at`, `data_nasc`, `spanish`, `nome`, `updated_at`, `empregado`, `informatica`, `area_id1`, `filhos`, `english`, `area_id2`, `escolaridade`, `user_id`, `area_id3`, `bairro`, `estado_civil`, `numero`, `cidade`, `estado`, `sobrenome`, `celular`, `salario`) VALUES('1231', '1231', '1231', '2010-05-25 23:36:27', '2010-05-25 00:00:00', 'Intermediário', 'outro', '2010-05-25 23:36:27', 0, 'Avançado', 4, 0, 'Intermediário', 6, 0, 8, 3, '23123', 'Solteiro(a)', 23123, '23123', 'Acre', 'outro', '123123', 2312)[0m
+  [4;36;1mEscolaridade Create (0.0ms)[0m   [0;1mINSERT INTO `escolaridades` (`local`, `created_at`, `updated_at`, `tipo_curso`, `area`, `curriculo_id`, `estado`) VALUES('123123', '2010-05-25 23:36:27', '2010-05-25 23:36:27', 0, '123123', 5, 0)[0m
+  [4;35;1mEscolaridade Create (0.0ms)[0m   [0mINSERT INTO `escolaridades` (`local`, `created_at`, `updated_at`, `tipo_curso`, `area`, `curriculo_id`, `estado`) VALUES('123123', '2010-05-25 23:36:27', '2010-05-25 23:36:27', 0, '1231231', 5, 0)[0m
+  [4;36;1mExp Create (0.0ms)[0m   [0;1mINSERT INTO `exps` (`local`, `motivo_saida`, `created_at`, `updated_at`, `departamento`, `cargo`, `data_inicio`, `curriculo_id`, `experiencia`, `data_fim`) VALUES('3123123', '31231', '2010-05-25 23:36:27', '2010-05-25 23:36:27', '123123', '123', '2010-05-01 00:00:00', 5, '123123', '2010-05-01 00:00:00')[0m
+  [4;35;1mSQL (27.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mROLLBACK[0m
+
+NoMethodError (undefined method `save_tasks' for #<Curriculo:0x7e4fc68>):
+  app/controllers/curriculos_controller.rb:57
+  app/controllers/curriculos_controller.rb:56:in `create'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (42.5ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#create (for 127.0.0.1 at 2010-05-25 20:37:06) [POST]
+  Parameters: {"commit"=>"Criar Curriculo", "authenticity_token"=>"6peuyk5/QfHOpTtwzSiSgRluCwIb/TzsMgMBk0EUYaQ=", "curriculo"=>{"complemento"=>"1231", "endereco"=>"1231", "telefone"=>"1231", "new_exp_att"=>[{"local"=>"3123123", "motivo_saida"=>"31231", "data_fim(2i)"=>"5", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2010", "departamento"=>"123123", "cargo"=>"123", "data_inicio(2i)"=>"5", "data_inicio(3i)"=>"1", "experiencia"=>"123123", "data_fim(1i)"=>"2010"}], "spanish"=>"Intermediário", "data_nasc(1i)"=>"2010", "nome"=>"outro", "informatica"=>"Avançado", "area_id1"=>"4", "empregado"=>"True", "data_nasc(2i)"=>"5", "new_escolaridade_att"=>[{"local"=>"123123", "tipo_curso"=>"0", "area"=>"123123", "estado"=>"0"}, {"local"=>"123123", "tipo_curso"=>"0", "area"=>"1231231", "estado"=>"0"}], "english"=>"Intermediário", "area_id2"=>"6", "filhos"=>"False", "data_nasc(3i)"=>"25", "area_id3"=>"3", "escolaridade"=>"0", "bairro"=>"23123", "cidade"=>"23123", "estado"=>"Acre", "numero"=>"23123", "estado_civil"=>"Solteiro(a)", "celular"=>"123123", "sobrenome"=>"outro", "salario"=>"2312"}}
+  [4;36;1mUser Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+  [4;36;1mCurriculo Load (0.0ms)[0m   [0;1mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 8) LIMIT 1[0m
+  [4;35;1mCurriculo Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `curriculos`[0m
+  [4;36;1mExp Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `exps`[0m
+  [4;35;1mEscolaridade Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `escolaridades`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCurriculo Create (0.0ms)[0m   [0mINSERT INTO `curriculos` (`endereco`, `complemento`, `telefone`, `created_at`, `data_nasc`, `spanish`, `nome`, `updated_at`, `empregado`, `informatica`, `area_id1`, `filhos`, `english`, `area_id2`, `escolaridade`, `user_id`, `area_id3`, `bairro`, `estado_civil`, `numero`, `cidade`, `estado`, `sobrenome`, `celular`, `salario`) VALUES('1231', '1231', '1231', '2010-05-25 23:37:06', '2010-05-25 00:00:00', 'Intermediário', 'outro', '2010-05-25 23:37:06', 0, 'Avançado', 4, 0, 'Intermediário', 6, 0, 8, 3, '23123', 'Solteiro(a)', 23123, '23123', 'Acre', 'outro', '123123', 2312)[0m
+  [4;36;1mEscolaridade Create (0.0ms)[0m   [0;1mINSERT INTO `escolaridades` (`local`, `created_at`, `updated_at`, `tipo_curso`, `area`, `curriculo_id`, `estado`) VALUES('123123', '2010-05-25 23:37:06', '2010-05-25 23:37:06', 0, '123123', 6, 0)[0m
+  [4;35;1mEscolaridade Create (0.0ms)[0m   [0mINSERT INTO `escolaridades` (`local`, `created_at`, `updated_at`, `tipo_curso`, `area`, `curriculo_id`, `estado`) VALUES('123123', '2010-05-25 23:37:06', '2010-05-25 23:37:06', 0, '1231231', 6, 0)[0m
+  [4;36;1mExp Create (0.0ms)[0m   [0;1mINSERT INTO `exps` (`local`, `motivo_saida`, `created_at`, `updated_at`, `departamento`, `cargo`, `data_inicio`, `curriculo_id`, `experiencia`, `data_fim`) VALUES('3123123', '31231', '2010-05-25 23:37:06', '2010-05-25 23:37:06', '123123', '123', '2010-05-01 00:00:00', 6, '123123', '2010-05-01 00:00:00')[0m
+  [4;35;1mSQL (52.5ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCurriculo Update (0.0ms)[0m   [0mUPDATE `curriculos` SET `updated_at` = '2010-05-25 23:37:06', `user_id` = NULL WHERE `id` = 5[0m
+  [4;36;1mEscolaridade Load (0.0ms)[0m   [0;1mSELECT * FROM `escolaridades` WHERE (`escolaridades`.curriculo_id = 5) [0m
+  [4;35;1mExp Load (0.0ms)[0m   [0mSELECT * FROM `exps` WHERE (`exps`.curriculo_id = 5) [0m
+  [4;36;1mSQL (20.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/users/8
+Completed in 160ms (DB: 85) | 302 Found [http://127.0.0.1/curriculos]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-25 20:37:06) [GET]
+  Parameters: {"id"=>"8"}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mRole Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 8)) LIMIT 1[0m
+Completed in 50ms (View: 23, DB: 5) | 200 OK [http://127.0.0.1/users/8]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#show (for 127.0.0.1 at 2010-05-25 20:37:18) [GET]
+  Parameters: {"user_id"=>"8"}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+
+ActiveRecord::RecordNotFound (Couldn't find Curriculo without an ID):
+  app/controllers/curriculos_controller.rb:26:in `show'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (110.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#8 (for 127.0.0.1 at 2010-05-25 20:37:23) [GET]
+  Parameters: {"id"=>"curriculos"}
+
+ActionController::UnknownAction (No action responded to 8. Actions: activate, create, destroy, edit, enable, index, new, show, and update):
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#show (for 127.0.0.1 at 2010-05-25 20:37:26) [GET]
+  Parameters: {"user_id"=>"8"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+
+ActiveRecord::RecordNotFound (Couldn't find Curriculo without an ID):
+  app/controllers/curriculos_controller.rb:26:in `show'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (42.5ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#show (for 127.0.0.1 at 2010-05-25 20:38:07) [GET]
+  Parameters: {"user_id"=>"8"}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+
+NameError (undefined local variable or method `user' for #<CurriculosController:0x8353620>):
+  app/controllers/curriculos_controller.rb:26:in `show'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#show (for 127.0.0.1 at 2010-05-25 20:38:15) [GET]
+  Parameters: {"user_id"=>"8"}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+  [4;35;1mCurriculo Load (0.0ms)[0m   [0mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 8) LIMIT 1[0m
+  [4;36;1mCurriculo Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mArea Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `areas`[0m
+  [4;36;1mArea Load (0.0ms)[0m   [0;1mSELECT * FROM `areas` WHERE (`areas`.`id` = 4) [0m
+  [4;35;1mArea Load (0.0ms)[0m   [0mSELECT * FROM `areas` WHERE (`areas`.`id` = 6) [0m
+  [4;36;1mArea Load (0.0ms)[0m   [0;1mSELECT * FROM `areas` WHERE (`areas`.`id` = 3) [0m
+  [4;35;1mEscolaridade Load (0.0ms)[0m   [0mSELECT * FROM `escolaridades` WHERE (`escolaridades`.curriculo_id = 6) [0m
+  [4;36;1mExp Load (2.5ms)[0m   [0;1mSELECT * FROM `exps` WHERE (`exps`.curriculo_id = 6) [0m
+Rendering template within layouts/curriculo_show
+Rendering curriculos/show
+  [4;35;1mEscolaridade Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `escolaridades`[0m
+  [4;36;1mExp Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `exps`[0m
+  [4;35;1mRole Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (2.5ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 8)) LIMIT 1[0m
+Completed in 93ms (View: 25, DB: 23) | 200 OK [http://127.0.0.1/users/8/curriculo]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#edit (for 127.0.0.1 at 2010-05-25 20:41:10) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 8) LIMIT 1[0m
+  [4;35;1mCurriculo Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `curriculos`[0m
+  [4;36;1mCurriculo Load (2.5ms)[0m   [0;1mSELECT * FROM `curriculos` WHERE (`curriculos`.`id` = 6) [0m
+Rendering template within layouts/application
+Rendering curriculos/edit
+
+ActionView::TemplateError (undefined method `area_id' for #<Curriculo:0x80d9c60>) on line #69 of app/views/curriculos/edit.html.erb:
+66:   </p>
+67:   <p>
+68:     <%= f.label :area_id %><br />
+69:     <%= f.text_field :area_id %>
+70:   </p>
+71:   <p>
+72:     <%= f.label :sub_area_id %><br />
+
+    app/views/curriculos/edit.html.erb:69
+    app/views/curriculos/edit.html.erb:3
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (50.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)

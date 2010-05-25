@@ -3,7 +3,7 @@ class Curriculo < ActiveRecord::Base
   has_many :escolaridades, :dependent => :destroy
   has_many :exps, :dependent => :destroy
    
-  after_update :save_tasks, :save_exp
+  after_update :save_escolaridade, :save_exp
 
   #Atributo especial para permitir a manipulação da tabela escolaridade.
   def new_escolaridade_att=(escolaridade_att)
