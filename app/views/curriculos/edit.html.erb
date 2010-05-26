@@ -1,86 +1,113 @@
-<h1>Editing curriculo</h1>
+<h1>Sistema de Criação de Currículos</h1>
+
+<p class="helper">Seja bem vindo ao nosso Sistema de Criação de Currículos. 
+Nessa página, você poderá editar as informações inseridas em nossos bancos anteriormente.</p>
 
 <% form_for(@curriculo) do |f| %>
   <%= f.error_messages %>
-
+  <h2>Informações Pessoais:</h2>
   <p>
-    <%= f.label :nome %><br />
-    <%= f.text_field :nome %>
-  </p>
-
-  <p>
-    <%= f.label :sobrenome %><br />
+    <%= f.label :nome %>: 
+    <%= f.text_field :nome %> 
+  <%= f.label :sobrenome %>: 
     <%= f.text_field :sobrenome %>
   </p>
   <p>
-    <%= f.label :data_nasc %><br />
-    <%= f.datetime_select :data_nasc %>
+    Data de Nascimento: 
+    <%= f.date_select(:data_nasc, :use_month_names => %w[Janeiro Fevereiro Março Abril Maio Junho Julho Agosto Setembro Outubro Novembro Dezembro], :order=>[:day, :month, :year], :start_year => 1930, :end_year => Time.now.year)  %> 
   </p>
   <p>
-    <%= f.label :estado_civil %><br />
-    <%= f.text_field :estado_civil %>
+    Estado Civíl: 
+  <%= f.select(:estado_civil, %w{ Solteiro(a) Casado(a) Divorciado(a) Viúvo(a)})%>
   </p>
   <p>
-    <%= f.label :empregado %><br />
-    <%= f.check_box :empregado %>
+    Você está empregado atualmente?
+    <%= f.radio_button(:empregado, "True") %>Sim
+  <%= f.radio_button(:empregado, "False") %>Não
   </p>
   <p>
-    <%= f.label :escolaridade %><br />
-    <%= f.text_field :escolaridade %>
+    Escolaridade:
+    <%= f.select(:escolaridade, [['Primeiro Grau (Incompleto)', 0],
+                ['Primeiro Grau (Completo)', 1],
+                ['Segundo Grau (Incompleto)', 2],
+                ['Segundo Grau (Completo)', 3],
+                ['Ensino Superior (Incompleto)', 4],
+                ['Ensino Superior (Completo)', 5],
+                ['Pós Graduação', 6]])%>
+    Você tem filhos?
+  <%= f.radio_button(:filhos, "True") %>Sim
+  <%= f.radio_button(:filhos, "False") %>Não
+  </p>
+  <h2>Endereço e Contato:</h2>
+  <p>
+    Endereço:
+    <%= f.text_field (:endereco, :size => 55)  %>
+  Número:
+    <%= f.text_field (:numero, :size => 5)  %>
   </p>
   <p>
-    <%= f.label :filhos %><br />
-    <%= f.check_box :filhos %>
+    Complemento:
+    <%= f.text_field (:complemento, :size => 20)  %>
+  Bairro:
+    <%= f.text_field (:bairro, :size => 15) %>
+
   </p>
   <p>
-    <%= f.label :endereco %><br />
-    <%= f.text_field :endereco %>
-  </p>
-  <p>
-    <%= f.label :numero %><br />
-    <%= f.text_field :numero %>
-  </p>
-  <p>
-    <%= f.label :complemento %><br />
-    <%= f.text_field :complemento %>
-  </p>
-  <p>
-    <%= f.label :bairro %><br />
-    <%= f.text_field :bairro %>
-  </p>
-  <p>
-    <%= f.label :cidade %><br />
+  Estado:
+  <%= f.select(:estado, ['Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo',
+             'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais',
+             'Pará', 'Paraíba', 'Paraná', 'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte',
+             'Rio Grande do Sul', 'Rondônia', 'Rorâima', 'Santa Catarina', 'São Paulo', 'Sergipe',
+             'Tocantins'])%>
+  Cidade: 
     <%= f.text_field :cidade %>
   </p>
+  <p class="helper">Lembre-se de colocar um telefone válido para contato! 
+  Coloque o DDD, seguido do número do telefone.</p>
   <p>
-    <%= f.label :estado %><br />
-    <%= f.text_field :estado %>
-  </p>
-  <p>
-    <%= f.label :celular %><br />
+    Celular:
     <%= f.text_field :celular %>
-  </p>
-  <p>
-    <%= f.label :telefone %><br />
+  Telefone:
     <%= f.text_field :telefone %>
   </p>
+  <h2>Informações Profissionais:</h2>
   <p>
-    <%= f.label :area_id %><br />
-    <%= f.text_field :area_id %>
-  </p>
-  <p>
-    <%= f.label :sub_area_id %><br />
-    <%= f.text_field :sub_area_id %>
-  </p>
-  <p>
-    <%= f.label :salario %><br />
+    Qual a sua pretensão salarial?
     <%= f.text_field :salario %>
   </p>
+  <p>Selecione três áreas de atuação:</p>
+  <%= select(:curriculo, :area_id1, @areas, :include_blank => true )%><br>
+  <%= select(:curriculo, :area_id2, @areas, :include_blank => true)%><br>
+  <%= select(:curriculo, :area_id3, @areas, :include_blank => true)%><br><br>
+  <p class="helper">Nos níveis de idioma requeridos abaixo, selecione seu nível da seguinte forma:</p>
+  <ul class="helper">
+    <li>Nenhum: Você não possui conhecimento no idioma ou se possui, ele é muito limitado.</li>
+  <li>Básico: Seu conhecimento se restringe ao mínimo necessário para começar um diálogo.</li>
+  <li>Intermediário: Você consegue entender, escrever e falar o suficiente para se expressar de forma objetiva.</li>
+  <li>Avançado: Você entende, escreve e fala o idioma fluentemente.</li>
+  </ul>
+  <p>Selecione o seu nível de inglês:</p>
+  <%= f.select(:english, ['Nenhum', 'Básico', 'Intermediário', 'Avançado'])%><br><br>
+  <p>Selecione o seu nível de espanhol:</p>
+  <%= f.select(:spanish, ['Nenhum', 'Básico', 'Intermediário', 'Avançado'])%><br><br>
+  <p class="helper">No nível de informática abaixo, selecione seu nível da seguinte forma:</p>
+  <ul class="helper">
+    <li>Nenhum: Você não possui conhecimento em informática ou nunca teve contato com um computador.</li>
+  <li>Básico: Você se limita a tarefas básicas como escrever um texto ou olhar seus e-mails.</li>
+  <li>Intermediário: Você possui conhecimentos de navegação e utilização das ferramentas mais comuns de informatica.</li>
+  <li>Avançado: Você possui conhecimentos avançados e pode realizar tarefas de complexidade alta, tanto a nível 
+  de software quanto a nível de hardware.</li>
+  </ul>
+  <p>Selecione o seu nível de conhecimentos em informática:</p>
+  <%= f.select(:informatica, ['Nenhum', 'Básico', 'Intermediário', 'Avançado'])%>
+  <!-- Render the escolarity partials -->
+  <%= render :partial => 'escfields', :locals => { :f => f } %>
+  <!-- Render the exp partials -->
+  <%= render :partial => 'expfields', :locals => { :f => f } %>
+  
   <p>
-    <%= f.submit 'Update' %>
+  <%= f.submit 'Editar' %>
   </p>
-
 <% end %>
 
-<%= link_to 'Show', @curriculo %> |
-<%= link_to 'Back', curriculos_path %>
+<%= link_to 'Voltar', curriculos_path %>

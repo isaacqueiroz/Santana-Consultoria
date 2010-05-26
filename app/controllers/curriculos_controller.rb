@@ -45,7 +45,9 @@ class CurriculosController < ApplicationController
 
   # GET /curriculos/1/edit
   def edit
-   @curriculo = Curriculo.find(params[:id])
+    get_areas
+    @curriculo = @user.curriculo
+    render :layout => 'curriculo'
   end
 
   # POST /curriculos
@@ -68,9 +70,10 @@ class CurriculosController < ApplicationController
   # PUT /curriculos/1
   # PUT /curriculos/1.xml
   def update
-    params[:curriculo][:existing_][:existing_exp_att] ||= {}
-    params[:curriculo][:existing_][:existing_escolaridade_att] ||= {}
-
+    params[:curriculo][:existing_exp_att] ||= {}
+    params[:curriculo][:existing_escolaridade_att] ||= {}
+  
+    @curriculo = @user.curriculo
     respond_to do |format|
       if @curriculo.update_attributes(params[:curriculo])
         flash[:notice] = 'Seu currículo foi atualizado com sucesso.'

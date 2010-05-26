@@ -47533,3 +47533,865 @@ ActionView::TemplateError (undefined method `area_id' for #<Curriculo:0x80d9c60>
 Rendered rescues/_trace (50.0ms)
 Rendered rescues/_request_and_response (0.0ms)
 Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (52.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (17.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing NoticiasController#index (for 127.0.0.1 at 2010-05-26 19:04:05) [GET]
+  [4;36;1mNoticia Load (75.0ms)[0m   [0;1mSELECT * FROM `noticias` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering noticias/index
+Completed in 5286ms (View: 5203, DB: 145) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-05-26 19:04:44) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"NtJTcGQIhtwsyqoULE66PSENuc1wXJ9My3IUk+1CQko=", "login"=>"darvius", "password"=>"886516"}
+  [4;35;1mUser Load (17.5ms)[0m   [0mSELECT * FROM `users` WHERE (login = 'darvius') LIMIT 1[0m
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Redirected to http://127.0.0.1:3000/users/2
+Completed in 535ms (DB: 23) | 302 Found [http://127.0.0.1/session]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-05-26 19:04:44) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mRole Columns (25.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (15.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 2)) LIMIT 1[0m
+Completed in 148ms (View: 83, DB: 45) | 200 OK [http://127.0.0.1/users/2]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#show (for 127.0.0.1 at 2010-05-26 19:04:49) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;35;1mUser Columns (7.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mCurriculo Load (0.0ms)[0m   [0mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 2) LIMIT 1[0m
+  [4;36;1mCurriculo Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mArea Columns (22.5ms)[0m   [0mSHOW FIELDS FROM `areas`[0m
+  [4;36;1mArea Load (0.0ms)[0m   [0;1mSELECT * FROM `areas` WHERE (`areas`.`id` = 5) [0m
+  [4;35;1mArea Load (0.0ms)[0m   [0mSELECT * FROM `areas` WHERE (`areas`.`id` = 6) [0m
+  [4;36;1mArea Load (0.0ms)[0m   [0;1mSELECT * FROM `areas` WHERE (`areas`.`id` = 1) [0m
+  [4;35;1mEscolaridade Load (2.5ms)[0m   [0mSELECT * FROM `escolaridades` WHERE (`escolaridades`.curriculo_id = 1) [0m
+  [4;36;1mExp Load (2.5ms)[0m   [0;1mSELECT * FROM `exps` WHERE (`exps`.curriculo_id = 1) [0m
+Rendering template within layouts/curriculo_show
+Rendering curriculos/show
+  [4;35;1mEscolaridade Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `escolaridades`[0m
+  [4;36;1mExp Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `exps`[0m
+  [4;35;1mRole Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 2)) LIMIT 1[0m
+Completed in 203ms (View: 75, DB: 45) | 200 OK [http://127.0.0.1/users/2/curriculo]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#edit (for 127.0.0.1 at 2010-05-26 19:04:53) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mCurriculo Load (0.0ms)[0m   [0mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 2) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering curriculos/edit
+  [4;36;1mCurriculo Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.inject) on line #79 of app/views/curriculos/edit.html.erb:
+76:     <%= f.text_field :salario %>
+77:   </p>
+78:   <p>Selecione três áreas de atuação:</p>
+79:   <%= select(:curriculo, :area_id1, @areas, :include_blank => true )%><br>
+80:   <%= select(:curriculo, :area_id2, @areas, :include_blank => true)%><br>
+81:   <%= select(:curriculo, :area_id3, @areas, :include_blank => true)%><br><br>
+82:   <p class="helper">Nos níveis de idioma requeridos abaixo, selecione seu nível da seguinte forma:</p>
+
+    app/views/curriculos/edit.html.erb:79
+    app/views/curriculos/edit.html.erb:6
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (55.0ms)
+Rendered rescues/_request_and_response (15.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#edit (for 127.0.0.1 at 2010-05-26 19:05:15) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mArea Load (0.0ms)[0m   [0mSELECT * FROM `areas` [0m
+  [4;36;1mArea Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `areas`[0m
+  [4;35;1mCurriculo Load (0.0ms)[0m   [0mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 2) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering curriculos/edit
+  [4;36;1mCurriculo Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+
+ActionView::TemplateError (undefined method `escolaridades' for nil:NilClass) on line #6 of app/views/curriculos/_escfields.html.erb:
+3:   suas formações academicas. Para cada curso (primeiro grau, segundo grau, etc)
+4:   clique em "Adicionar Curso".</p>
+5:   <div id="esc_divs">
+6:     <%= render :partial => 'escolaridade', :collection => @project.escolaridades %>
+7:   </div>
+8:   <%= add_escolaridade_link "Adicionar Curso" %>
+
+    app/views/curriculos/_escfields.html.erb:6
+    app/views/curriculos/edit.html.erb:104
+    app/views/curriculos/edit.html.erb:6
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (47.5ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#edit (for 127.0.0.1 at 2010-05-26 19:05:55) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mArea Load (0.0ms)[0m   [0mSELECT * FROM `areas` [0m
+  [4;36;1mArea Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `areas`[0m
+  [4;35;1mCurriculo Load (0.0ms)[0m   [0mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 2) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering curriculos/edit
+  [4;36;1mCurriculo Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mEscolaridade Load (0.0ms)[0m   [0mSELECT * FROM `escolaridades` WHERE (`escolaridades`.curriculo_id = 1) [0m
+  [4;36;1mEscolaridade Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `escolaridades`[0m
+Rendered curriculos/_escolaridade (5.0ms)
+Rendered curriculos/_escolaridade (2.5ms)
+Rendered curriculos/_escolaridade (3.5ms)
+Rendered curriculos/_escfields (38.5ms)
+
+ActionView::TemplateError (undefined method `exps' for nil:NilClass) on line #6 of app/views/curriculos/_expfields.html.erb:
+3:   mais recentes. Procure ser sucinto e lembre-se de colocar o nome fantasia da
+4:   empresa para o qual trabalhou, de forma a deixar claro a atividade da empresa.</p>
+5:   <div id="exps_div">
+6:     <%= render :partial => 'exp', :collection => @curriculos.exps %>
+7:   </div>
+8:   <p><%= add_exp_link "Adicionar Experiência" %></p>
+
+    app/views/curriculos/_expfields.html.erb:6
+    app/views/curriculos/edit.html.erb:106
+    app/views/curriculos/edit.html.erb:6
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (42.5ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#edit (for 127.0.0.1 at 2010-05-26 19:06:07) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mArea Load (0.0ms)[0m   [0mSELECT * FROM `areas` [0m
+  [4;36;1mArea Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `areas`[0m
+  [4;35;1mCurriculo Load (2.5ms)[0m   [0mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 2) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering curriculos/edit
+  [4;36;1mCurriculo Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mEscolaridade Load (0.0ms)[0m   [0mSELECT * FROM `escolaridades` WHERE (`escolaridades`.curriculo_id = 1) [0m
+  [4;36;1mEscolaridade Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `escolaridades`[0m
+Rendered curriculos/_escolaridade (2.5ms)
+Rendered curriculos/_escolaridade (2.5ms)
+Rendered curriculos/_escolaridade (2.5ms)
+Rendered curriculos/_escfields (30.0ms)
+
+ActionView::TemplateError (undefined method `exp' for nil:NilClass) on line #6 of app/views/curriculos/_expfields.html.erb:
+3:   mais recentes. Procure ser sucinto e lembre-se de colocar o nome fantasia da
+4:   empresa para o qual trabalhou, de forma a deixar claro a atividade da empresa.</p>
+5:   <div id="exps_div">
+6:     <%= render :partial => 'exp', :collection => @curriculos.exp %>
+7:   </div>
+8:   <p><%= add_exp_link "Adicionar Experiência" %></p>
+
+    app/views/curriculos/_expfields.html.erb:6
+    app/views/curriculos/edit.html.erb:106
+    app/views/curriculos/edit.html.erb:6
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (45.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#edit (for 127.0.0.1 at 2010-05-26 19:06:29) [GET]
+  Parameters: {"user_id"=>"2"}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mArea Load (0.0ms)[0m   [0mSELECT * FROM `areas` [0m
+  [4;36;1mArea Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `areas`[0m
+  [4;35;1mCurriculo Load (0.0ms)[0m   [0mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 2) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering curriculos/edit
+  [4;36;1mCurriculo Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mEscolaridade Load (0.0ms)[0m   [0mSELECT * FROM `escolaridades` WHERE (`escolaridades`.curriculo_id = 1) [0m
+  [4;36;1mEscolaridade Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `escolaridades`[0m
+Rendered curriculos/_escolaridade (2.5ms)
+Rendered curriculos/_escolaridade (2.5ms)
+Rendered curriculos/_escolaridade (2.5ms)
+Rendered curriculos/_escfields (32.5ms)
+  [4;35;1mExp Load (0.0ms)[0m   [0mSELECT * FROM `exps` WHERE (`exps`.curriculo_id = 1) [0m
+  [4;36;1mExp Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `exps`[0m
+Rendered curriculos/_exp (12.5ms)
+Rendered curriculos/_exp (12.5ms)
+Rendered curriculos/_expfields (110.0ms)
+  [4;35;1mRole Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 2)) LIMIT 1[0m
+Completed in 295ms (View: 183, DB: 20) | 200 OK [http://127.0.0.1/users/2/curriculo/edit]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#update (for 127.0.0.1 at 2010-05-26 19:07:02) [PUT]
+  Parameters: {"commit"=>"Criar Curriculo", "authenticity_token"=>"NtJTcGQIhtwsyqoULE66PSENuc1wXJ9My3IUk+1CQko=", "id"=>"1", "curriculo"=>{"complemento"=>"Apto. 21 E", "endereco"=>"Av. Francisco Pereira Lopes", "telefone"=>"", "existing_exp_att"=>{"1"=>{"data_fim(2i)"=>"3", "motivo_saida"=>"Fim do Projeto", "local"=>"Santana Consultoria", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2009", "data_inicio(2i)"=>"1", "cargo"=>"Desenvolvimento Web", "departamento"=>"Marketing", "data_inicio(3i)"=>"1", "data_fim(1i)"=>"2010", "experiencia"=>"Desenvolvimento de um sistema que integra o cadastro de currículos, bem como busca de currículos por área de atuação."}}, "new_exp_att"=>[{"local"=>"123", "motivo_saida"=>"124124", "data_fim(2i)"=>"5", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2010", "departamento"=>"124124", "cargo"=>"12412", "data_inicio(2i)"=>"5", "data_inicio(3i)"=>"1", "experiencia"=>"4124124", "data_fim(1i)"=>"2010"}], "spanish"=>"Básico", "data_nasc(1i)"=>"1988", "nome"=>"Isaac", "informatica"=>"Avançado", "area_id1"=>"5", "data_nasc(2i)"=>"4", "new_escolaridade_att"=>[{"local"=>"124124", "tipo_curso"=>"0", "area"=>"1241241", "estado"=>"0"}], "english"=>"Avançado", "area_id2"=>"6", "data_nasc(3i)"=>"19", "existing_escolaridade_att"=>{"1"=>{"local"=>"Universidade de São Paulo", "area"=>"Bacharelado em Ciências da Computação", "tipo_curso"=>"2", "estado"=>"1"}, "2"=>{"local"=>"COC", "area"=>"", "tipo_curso"=>"1", "estado"=>"0"}}, "area_id3"=>"1", "escolaridade"=>"4", "bairro"=>"Pq. Santa Mônica", "cidade"=>"São Carlos", "estado"=>"São Paulo", "numero"=>"2020", "estado_civil"=>"Solteiro(a)", "celular"=>"16 8128-1502", "sobrenome"=>"Queiroz", "salario"=>"2500"}}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  app/controllers/curriculos_controller.rb:72:in `update'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (27.5ms)
+Rendered rescues/_request_and_response (2.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#update (for 127.0.0.1 at 2010-05-26 19:09:59) [PUT]
+  Parameters: {"commit"=>"Criar Curriculo", "authenticity_token"=>"NtJTcGQIhtwsyqoULE66PSENuc1wXJ9My3IUk+1CQko=", "id"=>"1", "curriculo"=>{"complemento"=>"Apto. 21 E", "endereco"=>"Av. Francisco Pereira Lopes", "telefone"=>"", "existing_exp_att"=>{"1"=>{"data_fim(2i)"=>"3", "motivo_saida"=>"Fim do Projeto", "local"=>"Santana Consultoria", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2009", "data_inicio(2i)"=>"1", "cargo"=>"Desenvolvimento Web", "departamento"=>"Marketing", "data_inicio(3i)"=>"1", "data_fim(1i)"=>"2010", "experiencia"=>"Desenvolvimento de um sistema que integra o cadastro de currículos, bem como busca de currículos por área de atuação."}}, "new_exp_att"=>[{"local"=>"123", "motivo_saida"=>"124124", "data_fim(2i)"=>"5", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2010", "departamento"=>"124124", "cargo"=>"12412", "data_inicio(2i)"=>"5", "data_inicio(3i)"=>"1", "experiencia"=>"4124124", "data_fim(1i)"=>"2010"}], "spanish"=>"Básico", "data_nasc(1i)"=>"1988", "nome"=>"Isaac", "informatica"=>"Avançado", "area_id1"=>"5", "data_nasc(2i)"=>"4", "new_escolaridade_att"=>[{"local"=>"124124", "tipo_curso"=>"0", "area"=>"1241241", "estado"=>"0"}], "english"=>"Avançado", "area_id2"=>"6", "data_nasc(3i)"=>"19", "existing_escolaridade_att"=>{"1"=>{"local"=>"Universidade de São Paulo", "area"=>"Bacharelado em Ciências da Computação", "tipo_curso"=>"2", "estado"=>"1"}, "2"=>{"local"=>"COC", "area"=>"", "tipo_curso"=>"1", "estado"=>"0"}}, "area_id3"=>"1", "escolaridade"=>"4", "bairro"=>"Pq. Santa Mônica", "cidade"=>"São Carlos", "estado"=>"São Paulo", "numero"=>"2020", "estado_civil"=>"Solteiro(a)", "celular"=>"16 8128-1502", "sobrenome"=>"Queiroz", "salario"=>"2500"}}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  app/controllers/curriculos_controller.rb:73:in `update'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (87.5ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#update (for 127.0.0.1 at 2010-05-26 19:10:26) [PUT]
+  Parameters: {"commit"=>"Criar Curriculo", "authenticity_token"=>"NtJTcGQIhtwsyqoULE66PSENuc1wXJ9My3IUk+1CQko=", "id"=>"1", "curriculo"=>{"complemento"=>"Apto. 21 E", "endereco"=>"Av. Francisco Pereira Lopes", "telefone"=>"", "existing_exp_att"=>{"1"=>{"data_fim(2i)"=>"3", "motivo_saida"=>"Fim do Projeto", "local"=>"Santana Consultoria", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2009", "data_inicio(2i)"=>"1", "cargo"=>"Desenvolvimento Web", "departamento"=>"Marketing", "data_inicio(3i)"=>"1", "data_fim(1i)"=>"2010", "experiencia"=>"Desenvolvimento de um sistema que integra o cadastro de currículos, bem como busca de currículos por área de atuação."}}, "new_exp_att"=>[{"local"=>"12312", "motivo_saida"=>"12312", "data_fim(2i)"=>"5", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2010", "departamento"=>"12312", "cargo"=>"3123", "data_inicio(2i)"=>"5", "data_inicio(3i)"=>"1", "experiencia"=>"1231231231", "data_fim(1i)"=>"2010"}], "spanish"=>"Básico", "data_nasc(1i)"=>"1988", "nome"=>"Isaac", "informatica"=>"Avançado", "area_id1"=>"5", "data_nasc(2i)"=>"4", "new_escolaridade_att"=>[{"local"=>"123123", "tipo_curso"=>"0", "area"=>"123123", "estado"=>"0"}], "english"=>"Avançado", "area_id2"=>"6", "data_nasc(3i)"=>"19", "existing_escolaridade_att"=>{"1"=>{"local"=>"Universidade de São Paulo", "area"=>"Bacharelado em Ciências da Computação", "tipo_curso"=>"2", "estado"=>"1"}, "2"=>{"local"=>"COC", "area"=>"", "tipo_curso"=>"1", "estado"=>"0"}}, "area_id3"=>"1", "escolaridade"=>"4", "bairro"=>"Pq. Santa Mônica", "cidade"=>"São Carlos", "estado"=>"São Paulo", "numero"=>"2020", "estado_civil"=>"Solteiro(a)", "celular"=>"16 8128-1502", "sobrenome"=>"Queiroz", "salario"=>"2500"}}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+  app/controllers/curriculos_controller.rb:73:in `update'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (27.5ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#update (for 127.0.0.1 at 2010-05-26 19:12:54) [PUT]
+  Parameters: {"commit"=>"Criar Curriculo", "authenticity_token"=>"NtJTcGQIhtwsyqoULE66PSENuc1wXJ9My3IUk+1CQko=", "id"=>"1", "curriculo"=>{"complemento"=>"Apto. 21 E", "endereco"=>"Av. Francisco Pereira Lopes", "telefone"=>"", "existing_exp_att"=>{"1"=>{"data_fim(2i)"=>"3", "motivo_saida"=>"Fim do Projeto", "local"=>"Santana Consultoria", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2009", "data_inicio(2i)"=>"1", "cargo"=>"Desenvolvimento Web", "departamento"=>"Marketing", "data_inicio(3i)"=>"1", "data_fim(1i)"=>"2010", "experiencia"=>"Desenvolvimento de um sistema que integra o cadastro de currículos, bem como busca de currículos por área de atuação."}}, "new_exp_att"=>[{"local"=>"12312", "motivo_saida"=>"12312", "data_fim(2i)"=>"5", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2010", "departamento"=>"12312", "cargo"=>"3123", "data_inicio(2i)"=>"5", "data_inicio(3i)"=>"1", "experiencia"=>"1231231231", "data_fim(1i)"=>"2010"}], "spanish"=>"Básico", "data_nasc(1i)"=>"1988", "nome"=>"Isaac", "informatica"=>"Avançado", "area_id1"=>"5", "data_nasc(2i)"=>"4", "new_escolaridade_att"=>[{"local"=>"123123", "tipo_curso"=>"0", "area"=>"123123", "estado"=>"0"}], "english"=>"Avançado", "area_id2"=>"6", "data_nasc(3i)"=>"19", "existing_escolaridade_att"=>{"1"=>{"local"=>"Universidade de São Paulo", "area"=>"Bacharelado em Ciências da Computação", "tipo_curso"=>"2", "estado"=>"1"}, "2"=>{"local"=>"COC", "area"=>"", "tipo_curso"=>"1", "estado"=>"0"}}, "area_id3"=>"1", "escolaridade"=>"4", "bairro"=>"Pq. Santa Mônica", "cidade"=>"São Carlos", "estado"=>"São Paulo", "numero"=>"2020", "estado_civil"=>"Solteiro(a)", "celular"=>"16 8128-1502", "sobrenome"=>"Queiroz", "salario"=>"2500"}}
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (7.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+
+NoMethodError (undefined method `curriculos' for #<User:0x7d92320>):
+  app/controllers/curriculos_controller.rb:76:in `update'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (90.0ms)
+Rendered rescues/_request_and_response (2.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#update (for 127.0.0.1 at 2010-05-26 19:13:40) [PUT]
+  Parameters: {"commit"=>"Criar Curriculo", "authenticity_token"=>"NtJTcGQIhtwsyqoULE66PSENuc1wXJ9My3IUk+1CQko=", "id"=>"1", "curriculo"=>{"complemento"=>"Apto. 21 E", "endereco"=>"Av. Francisco Pereira Lopes", "telefone"=>"", "existing_exp_att"=>{"1"=>{"data_fim(2i)"=>"3", "motivo_saida"=>"Fim do Projeto", "local"=>"Santana Consultoria", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2009", "data_inicio(2i)"=>"1", "cargo"=>"Desenvolvimento Web", "departamento"=>"Marketing", "data_inicio(3i)"=>"1", "data_fim(1i)"=>"2010", "experiencia"=>"Desenvolvimento de um sistema que integra o cadastro de currículos, bem como busca de currículos por área de atuação."}}, "new_exp_att"=>[{"local"=>"12312", "motivo_saida"=>"12312", "data_fim(2i)"=>"5", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2010", "departamento"=>"12312", "cargo"=>"3123", "data_inicio(2i)"=>"5", "data_inicio(3i)"=>"1", "experiencia"=>"1231231231", "data_fim(1i)"=>"2010"}], "spanish"=>"Básico", "data_nasc(1i)"=>"1988", "nome"=>"Isaac", "informatica"=>"Avançado", "area_id1"=>"5", "data_nasc(2i)"=>"4", "new_escolaridade_att"=>[{"local"=>"123123", "tipo_curso"=>"0", "area"=>"123123", "estado"=>"0"}], "english"=>"Avançado", "area_id2"=>"6", "data_nasc(3i)"=>"19", "existing_escolaridade_att"=>{"1"=>{"local"=>"Universidade de São Paulo", "area"=>"Bacharelado em Ciências da Computação", "tipo_curso"=>"2", "estado"=>"1"}, "2"=>{"local"=>"COC", "area"=>"", "tipo_curso"=>"1", "estado"=>"0"}}, "area_id3"=>"1", "escolaridade"=>"4", "bairro"=>"Pq. Santa Mônica", "cidade"=>"São Carlos", "estado"=>"São Paulo", "numero"=>"2020", "estado_civil"=>"Solteiro(a)", "celular"=>"16 8128-1502", "sobrenome"=>"Queiroz", "salario"=>"2500"}}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mCurriculo Load (0.0ms)[0m   [0mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 2) LIMIT 1[0m
+  [4;36;1mCurriculo Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mExp Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `exps`[0m
+
+NameError (undefined local variable or method `exp' for #<Curriculo:0x7f2cf18>):
+  app/models/curriculo.rb:41:in `existing_exp_att='
+  app/controllers/curriculos_controller.rb:78
+  app/controllers/curriculos_controller.rb:77:in `update'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.5ms)
+Rendered rescues/_request_and_response (2.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#update (for 127.0.0.1 at 2010-05-26 19:21:50) [PUT]
+  Parameters: {"commit"=>"Criar Curriculo", "authenticity_token"=>"NtJTcGQIhtwsyqoULE66PSENuc1wXJ9My3IUk+1CQko=", "id"=>"1", "curriculo"=>{"complemento"=>"Apto. 21 E", "endereco"=>"Av. Francisco Pereira Lopes", "telefone"=>"", "existing_exp_att"=>{"1"=>{"data_fim(2i)"=>"3", "motivo_saida"=>"Fim do Projeto", "local"=>"Santana Consultoria", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2009", "data_inicio(2i)"=>"1", "cargo"=>"Desenvolvimento Web", "departamento"=>"Marketing", "data_inicio(3i)"=>"1", "data_fim(1i)"=>"2010", "experiencia"=>"Desenvolvimento de um sistema que integra o cadastro de currículos, bem como busca de currículos por área de atuação."}}, "new_exp_att"=>[{"local"=>"12312", "motivo_saida"=>"12312", "data_fim(2i)"=>"5", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2010", "departamento"=>"12312", "cargo"=>"3123", "data_inicio(2i)"=>"5", "data_inicio(3i)"=>"1", "experiencia"=>"1231231231", "data_fim(1i)"=>"2010"}], "spanish"=>"Básico", "data_nasc(1i)"=>"1988", "nome"=>"Isaac", "informatica"=>"Avançado", "area_id1"=>"5", "data_nasc(2i)"=>"4", "new_escolaridade_att"=>[{"local"=>"123123", "tipo_curso"=>"0", "area"=>"123123", "estado"=>"0"}], "english"=>"Avançado", "area_id2"=>"6", "data_nasc(3i)"=>"19", "existing_escolaridade_att"=>{"1"=>{"local"=>"Universidade de São Paulo", "area"=>"Bacharelado em Ciências da Computação", "tipo_curso"=>"2", "estado"=>"1"}, "2"=>{"local"=>"COC", "area"=>"", "tipo_curso"=>"1", "estado"=>"0"}}, "area_id3"=>"1", "escolaridade"=>"4", "bairro"=>"Pq. Santa Mônica", "cidade"=>"São Carlos", "estado"=>"São Paulo", "numero"=>"2020", "estado_civil"=>"Solteiro(a)", "celular"=>"16 8128-1502", "sobrenome"=>"Queiroz", "salario"=>"2500"}}
+  [4;36;1mUser Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;36;1mCurriculo Load (2.5ms)[0m   [0;1mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 2) LIMIT 1[0m
+  [4;35;1mCurriculo Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `curriculos`[0m
+  [4;36;1mExp Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `exps`[0m
+  [4;35;1mExp Load (0.0ms)[0m   [0mSELECT * FROM `exps` WHERE (`exps`.curriculo_id = 1) [0m
+
+NameError (undefined local variable or method `exp' for #<Curriculo:0x81232c8>):
+  app/models/curriculo.rb:42:in `existing_exp_att='
+  app/models/curriculo.rb:41:in `each'
+  app/models/curriculo.rb:41:in `existing_exp_att='
+  app/controllers/curriculos_controller.rb:78
+  app/controllers/curriculos_controller.rb:77:in `update'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.5ms)
+Rendered rescues/_request_and_response (2.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#update (for 127.0.0.1 at 2010-05-26 19:22:19) [PUT]
+  Parameters: {"commit"=>"Criar Curriculo", "authenticity_token"=>"NtJTcGQIhtwsyqoULE66PSENuc1wXJ9My3IUk+1CQko=", "id"=>"1", "curriculo"=>{"complemento"=>"Apto. 21 E", "endereco"=>"Av. Francisco Pereira Lopes", "telefone"=>"", "existing_exp_att"=>{"1"=>{"data_fim(2i)"=>"3", "motivo_saida"=>"Fim do Projeto", "local"=>"Santana Consultoria", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2009", "data_inicio(2i)"=>"1", "cargo"=>"Desenvolvimento Web", "departamento"=>"Marketing", "data_inicio(3i)"=>"1", "data_fim(1i)"=>"2010", "experiencia"=>"Desenvolvimento de um sistema que integra o cadastro de currículos, bem como busca de currículos por área de atuação."}}, "new_exp_att"=>[{"local"=>"12312", "motivo_saida"=>"12312", "data_fim(2i)"=>"5", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2010", "departamento"=>"12312", "cargo"=>"3123", "data_inicio(2i)"=>"5", "data_inicio(3i)"=>"1", "experiencia"=>"1231231231", "data_fim(1i)"=>"2010"}], "spanish"=>"Básico", "data_nasc(1i)"=>"1988", "nome"=>"Isaac", "informatica"=>"Avançado", "area_id1"=>"5", "data_nasc(2i)"=>"4", "new_escolaridade_att"=>[{"local"=>"123123", "tipo_curso"=>"0", "area"=>"123123", "estado"=>"0"}], "english"=>"Avançado", "area_id2"=>"6", "data_nasc(3i)"=>"19", "existing_escolaridade_att"=>{"1"=>{"local"=>"Universidade de São Paulo", "area"=>"Bacharelado em Ciências da Computação", "tipo_curso"=>"2", "estado"=>"1"}, "2"=>{"local"=>"COC", "area"=>"", "tipo_curso"=>"1", "estado"=>"0"}}, "area_id3"=>"1", "escolaridade"=>"4", "bairro"=>"Pq. Santa Mônica", "cidade"=>"São Carlos", "estado"=>"São Paulo", "numero"=>"2020", "estado_civil"=>"Solteiro(a)", "celular"=>"16 8128-1502", "sobrenome"=>"Queiroz", "salario"=>"2500"}}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;36;1mCurriculo Load (0.0ms)[0m   [0;1mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 2) LIMIT 1[0m
+  [4;35;1mCurriculo Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `curriculos`[0m
+  [4;36;1mExp Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `exps`[0m
+  [4;35;1mExp Load (0.0ms)[0m   [0mSELECT * FROM `exps` WHERE (`exps`.curriculo_id = 1) [0m
+
+NameError (undefined local variable or method `exp' for #<Curriculo:0x7e44da8>):
+  app/models/curriculo.rb:42:in `existing_exp_att='
+  app/models/curriculo.rb:41:in `each'
+  app/models/curriculo.rb:41:in `existing_exp_att='
+  app/controllers/curriculos_controller.rb:78
+  app/controllers/curriculos_controller.rb:77:in `update'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (97.5ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#update (for 127.0.0.1 at 2010-05-26 19:22:25) [PUT]
+  Parameters: {"commit"=>"Criar Curriculo", "authenticity_token"=>"NtJTcGQIhtwsyqoULE66PSENuc1wXJ9My3IUk+1CQko=", "id"=>"1", "curriculo"=>{"complemento"=>"Apto. 21 E", "endereco"=>"Av. Francisco Pereira Lopes", "telefone"=>"", "existing_exp_att"=>{"1"=>{"data_fim(2i)"=>"3", "motivo_saida"=>"Fim do Projeto", "local"=>"Santana Consultoria", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2009", "data_inicio(2i)"=>"1", "cargo"=>"Desenvolvimento Web", "departamento"=>"Marketing", "data_inicio(3i)"=>"1", "data_fim(1i)"=>"2010", "experiencia"=>"Desenvolvimento de um sistema que integra o cadastro de currículos, bem como busca de currículos por área de atuação."}}, "new_exp_att"=>[{"local"=>"12312", "motivo_saida"=>"12312", "data_fim(2i)"=>"5", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2010", "departamento"=>"12312", "cargo"=>"3123", "data_inicio(2i)"=>"5", "data_inicio(3i)"=>"1", "experiencia"=>"1231231231", "data_fim(1i)"=>"2010"}], "spanish"=>"Básico", "data_nasc(1i)"=>"1988", "nome"=>"Isaac", "informatica"=>"Avançado", "area_id1"=>"5", "data_nasc(2i)"=>"4", "new_escolaridade_att"=>[{"local"=>"123123", "tipo_curso"=>"0", "area"=>"123123", "estado"=>"0"}], "english"=>"Avançado", "area_id2"=>"6", "data_nasc(3i)"=>"19", "existing_escolaridade_att"=>{"1"=>{"local"=>"Universidade de São Paulo", "area"=>"Bacharelado em Ciências da Computação", "tipo_curso"=>"2", "estado"=>"1"}, "2"=>{"local"=>"COC", "area"=>"", "tipo_curso"=>"1", "estado"=>"0"}}, "area_id3"=>"1", "escolaridade"=>"4", "bairro"=>"Pq. Santa Mônica", "cidade"=>"São Carlos", "estado"=>"São Paulo", "numero"=>"2020", "estado_civil"=>"Solteiro(a)", "celular"=>"16 8128-1502", "sobrenome"=>"Queiroz", "salario"=>"2500"}}
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;36;1mCurriculo Load (2.5ms)[0m   [0;1mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 2) LIMIT 1[0m
+  [4;35;1mCurriculo Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `curriculos`[0m
+  [4;36;1mExp Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `exps`[0m
+
+NameError (undefined local variable or method `exp' for #<Curriculo:0x7f926f0>):
+  app/models/curriculo.rb:41:in `existing_exp_att='
+  app/controllers/curriculos_controller.rb:78
+  app/controllers/curriculos_controller.rb:77:in `update'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.5ms)
+Rendered rescues/_request_and_response (2.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#update (for 127.0.0.1 at 2010-05-26 19:24:21) [PUT]
+  Parameters: {"commit"=>"Criar Curriculo", "authenticity_token"=>"NtJTcGQIhtwsyqoULE66PSENuc1wXJ9My3IUk+1CQko=", "id"=>"1", "curriculo"=>{"complemento"=>"Apto. 21 E", "endereco"=>"Av. Francisco Pereira Lopes", "telefone"=>"", "existing_exp_att"=>{"1"=>{"data_fim(2i)"=>"3", "motivo_saida"=>"Fim do Projeto", "local"=>"Santana Consultoria", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2009", "data_inicio(2i)"=>"1", "cargo"=>"Desenvolvimento Web", "departamento"=>"Marketing", "data_inicio(3i)"=>"1", "data_fim(1i)"=>"2010", "experiencia"=>"Desenvolvimento de um sistema que integra o cadastro de currículos, bem como busca de currículos por área de atuação."}}, "new_exp_att"=>[{"local"=>"12312", "motivo_saida"=>"12312", "data_fim(2i)"=>"5", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2010", "departamento"=>"12312", "cargo"=>"3123", "data_inicio(2i)"=>"5", "data_inicio(3i)"=>"1", "experiencia"=>"1231231231", "data_fim(1i)"=>"2010"}], "spanish"=>"Básico", "data_nasc(1i)"=>"1988", "nome"=>"Isaac", "informatica"=>"Avançado", "area_id1"=>"5", "data_nasc(2i)"=>"4", "new_escolaridade_att"=>[{"local"=>"123123", "tipo_curso"=>"0", "area"=>"123123", "estado"=>"0"}], "english"=>"Avançado", "area_id2"=>"6", "data_nasc(3i)"=>"19", "existing_escolaridade_att"=>{"1"=>{"local"=>"Universidade de São Paulo", "area"=>"Bacharelado em Ciências da Computação", "tipo_curso"=>"2", "estado"=>"1"}, "2"=>{"local"=>"COC", "area"=>"", "tipo_curso"=>"1", "estado"=>"0"}}, "area_id3"=>"1", "escolaridade"=>"4", "bairro"=>"Pq. Santa Mônica", "cidade"=>"São Carlos", "estado"=>"São Paulo", "numero"=>"2020", "estado_civil"=>"Solteiro(a)", "celular"=>"16 8128-1502", "sobrenome"=>"Queiroz", "salario"=>"2500"}}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mCurriculo Load (0.0ms)[0m   [0mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 2) LIMIT 1[0m
+  [4;36;1mCurriculo Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mExp Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `exps`[0m
+
+NameError (undefined local variable or method `exp' for #<Curriculo:0x8186880>):
+  app/models/curriculo.rb:41:in `existing_exp_att='
+  app/controllers/curriculos_controller.rb:78
+  app/controllers/curriculos_controller.rb:77:in `update'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.5ms)
+Rendered rescues/_request_and_response (2.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#update (for 127.0.0.1 at 2010-05-26 19:26:54) [PUT]
+  Parameters: {"commit"=>"Criar Curriculo", "authenticity_token"=>"NtJTcGQIhtwsyqoULE66PSENuc1wXJ9My3IUk+1CQko=", "id"=>"1", "curriculo"=>{"complemento"=>"Apto. 21 E", "endereco"=>"Av. Francisco Pereira Lopes", "telefone"=>"", "existing_exp_att"=>{"1"=>{"data_fim(2i)"=>"3", "motivo_saida"=>"Fim do Projeto", "local"=>"Santana Consultoria", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2009", "data_inicio(2i)"=>"1", "cargo"=>"Desenvolvimento Web", "departamento"=>"Marketing", "data_inicio(3i)"=>"1", "data_fim(1i)"=>"2010", "experiencia"=>"Desenvolvimento de um sistema que integra o cadastro de currículos, bem como busca de currículos por área de atuação."}}, "new_exp_att"=>[{"local"=>"12312", "motivo_saida"=>"12312", "data_fim(2i)"=>"5", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2010", "departamento"=>"12312", "cargo"=>"3123", "data_inicio(2i)"=>"5", "data_inicio(3i)"=>"1", "experiencia"=>"1231231231", "data_fim(1i)"=>"2010"}], "spanish"=>"Básico", "data_nasc(1i)"=>"1988", "nome"=>"Isaac", "informatica"=>"Avançado", "area_id1"=>"5", "data_nasc(2i)"=>"4", "new_escolaridade_att"=>[{"local"=>"123123", "tipo_curso"=>"0", "area"=>"123123", "estado"=>"0"}], "english"=>"Avançado", "area_id2"=>"6", "data_nasc(3i)"=>"19", "existing_escolaridade_att"=>{"1"=>{"local"=>"Universidade de São Paulo", "area"=>"Bacharelado em Ciências da Computação", "tipo_curso"=>"2", "estado"=>"1"}, "2"=>{"local"=>"COC", "area"=>"", "tipo_curso"=>"1", "estado"=>"0"}}, "area_id3"=>"1", "escolaridade"=>"4", "bairro"=>"Pq. Santa Mônica", "cidade"=>"São Carlos", "estado"=>"São Paulo", "numero"=>"2020", "estado_civil"=>"Solteiro(a)", "celular"=>"16 8128-1502", "sobrenome"=>"Queiroz", "salario"=>"2500"}}
+  [4;36;1mUser Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;36;1mCurriculo Load (0.0ms)[0m   [0;1mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 2) LIMIT 1[0m
+  [4;35;1mCurriculo Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `curriculos`[0m
+  [4;36;1mExp Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `exps`[0m
+
+NameError (undefined local variable or method `exp' for #<Curriculo:0x7e7a088>):
+  app/models/curriculo.rb:41:in `existing_exp_att='
+  app/controllers/curriculos_controller.rb:78
+  app/controllers/curriculos_controller.rb:77:in `update'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (32.5ms)
+Rendered rescues/_request_and_response (2.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#update (for 127.0.0.1 at 2010-05-26 19:28:43) [PUT]
+  Parameters: {"commit"=>"Criar Curriculo", "authenticity_token"=>"NtJTcGQIhtwsyqoULE66PSENuc1wXJ9My3IUk+1CQko=", "id"=>"1", "curriculo"=>{"complemento"=>"Apto. 21 E", "endereco"=>"Av. Francisco Pereira Lopes", "telefone"=>"", "existing_exp_att"=>{"1"=>{"data_fim(2i)"=>"3", "motivo_saida"=>"Fim do Projeto", "local"=>"Santana Consultoria", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2009", "data_inicio(2i)"=>"1", "cargo"=>"Desenvolvimento Web", "departamento"=>"Marketing", "data_inicio(3i)"=>"1", "data_fim(1i)"=>"2010", "experiencia"=>"Desenvolvimento de um sistema que integra o cadastro de currículos, bem como busca de currículos por área de atuação."}}, "new_exp_att"=>[{"local"=>"12312", "motivo_saida"=>"12312", "data_fim(2i)"=>"5", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2010", "departamento"=>"12312", "cargo"=>"3123", "data_inicio(2i)"=>"5", "data_inicio(3i)"=>"1", "experiencia"=>"1231231231", "data_fim(1i)"=>"2010"}], "spanish"=>"Básico", "data_nasc(1i)"=>"1988", "nome"=>"Isaac", "informatica"=>"Avançado", "area_id1"=>"5", "data_nasc(2i)"=>"4", "new_escolaridade_att"=>[{"local"=>"123123", "tipo_curso"=>"0", "area"=>"123123", "estado"=>"0"}], "english"=>"Avançado", "area_id2"=>"6", "data_nasc(3i)"=>"19", "existing_escolaridade_att"=>{"1"=>{"local"=>"Universidade de São Paulo", "area"=>"Bacharelado em Ciências da Computação", "tipo_curso"=>"2", "estado"=>"1"}, "2"=>{"local"=>"COC", "area"=>"", "tipo_curso"=>"1", "estado"=>"0"}}, "area_id3"=>"1", "escolaridade"=>"4", "bairro"=>"Pq. Santa Mônica", "cidade"=>"São Carlos", "estado"=>"São Paulo", "numero"=>"2020", "estado_civil"=>"Solteiro(a)", "celular"=>"16 8128-1502", "sobrenome"=>"Queiroz", "salario"=>"2500"}}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mCurriculo Load (0.0ms)[0m   [0mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 2) LIMIT 1[0m
+  [4;36;1mCurriculo Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mExp Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `exps`[0m
+  [4;36;1mExp Load (0.0ms)[0m   [0;1mSELECT * FROM `exps` WHERE (`exps`.curriculo_id = 1) [0m
+
+NameError (undefined local variable or method `exp' for #<Curriculo:0x800b578>):
+  app/models/curriculo.rb:42:in `existing_exp_att='
+  app/models/curriculo.rb:41:in `each'
+  app/models/curriculo.rb:41:in `existing_exp_att='
+  app/controllers/curriculos_controller.rb:78
+  app/controllers/curriculos_controller.rb:77:in `update'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#update (for 127.0.0.1 at 2010-05-26 19:29:16) [PUT]
+  Parameters: {"commit"=>"Criar Curriculo", "authenticity_token"=>"NtJTcGQIhtwsyqoULE66PSENuc1wXJ9My3IUk+1CQko=", "id"=>"1", "curriculo"=>{"complemento"=>"Apto. 21 E", "endereco"=>"Av. Francisco Pereira Lopes", "telefone"=>"", "existing_exp_att"=>{"1"=>{"data_fim(2i)"=>"3", "motivo_saida"=>"Fim do Projeto", "local"=>"Santana Consultoria", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2009", "data_inicio(2i)"=>"1", "cargo"=>"Desenvolvimento Web", "departamento"=>"Marketing", "data_inicio(3i)"=>"1", "data_fim(1i)"=>"2010", "experiencia"=>"Desenvolvimento de um sistema que integra o cadastro de currículos, bem como busca de currículos por área de atuação."}}, "new_exp_att"=>[{"local"=>"12312", "motivo_saida"=>"12312", "data_fim(2i)"=>"5", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2010", "departamento"=>"12312", "cargo"=>"3123", "data_inicio(2i)"=>"5", "data_inicio(3i)"=>"1", "experiencia"=>"1231231231", "data_fim(1i)"=>"2010"}], "spanish"=>"Básico", "data_nasc(1i)"=>"1988", "nome"=>"Isaac", "informatica"=>"Avançado", "area_id1"=>"5", "data_nasc(2i)"=>"4", "new_escolaridade_att"=>[{"local"=>"123123", "tipo_curso"=>"0", "area"=>"123123", "estado"=>"0"}], "english"=>"Avançado", "area_id2"=>"6", "data_nasc(3i)"=>"19", "existing_escolaridade_att"=>{"1"=>{"local"=>"Universidade de São Paulo", "area"=>"Bacharelado em Ciências da Computação", "tipo_curso"=>"2", "estado"=>"1"}, "2"=>{"local"=>"COC", "area"=>"", "tipo_curso"=>"1", "estado"=>"0"}}, "area_id3"=>"1", "escolaridade"=>"4", "bairro"=>"Pq. Santa Mônica", "cidade"=>"São Carlos", "estado"=>"São Paulo", "numero"=>"2020", "estado_civil"=>"Solteiro(a)", "celular"=>"16 8128-1502", "sobrenome"=>"Queiroz", "salario"=>"2500"}}
+  [4;35;1mUser Columns (7.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mCurriculo Load (0.0ms)[0m   [0mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 2) LIMIT 1[0m
+  [4;36;1mCurriculo Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mExp Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `exps`[0m
+  [4;36;1mExp Load (0.0ms)[0m   [0;1mSELECT * FROM `exps` WHERE (`exps`.curriculo_id = 1) [0m
+
+NameError (undefined local variable or method `exp' for #<Curriculo:0x7d88c60>):
+  app/models/curriculo.rb:42:in `existing_exp_att='
+  app/models/curriculo.rb:41:in `each'
+  app/models/curriculo.rb:41:in `existing_exp_att='
+  app/controllers/curriculos_controller.rb:78
+  app/controllers/curriculos_controller.rb:77:in `update'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#update (for 127.0.0.1 at 2010-05-26 19:29:37) [PUT]
+  Parameters: {"commit"=>"Criar Curriculo", "authenticity_token"=>"NtJTcGQIhtwsyqoULE66PSENuc1wXJ9My3IUk+1CQko=", "id"=>"1", "curriculo"=>{"complemento"=>"Apto. 21 E", "endereco"=>"Av. Francisco Pereira Lopes", "telefone"=>"", "existing_exp_att"=>{"1"=>{"data_fim(2i)"=>"3", "motivo_saida"=>"Fim do Projeto", "local"=>"Santana Consultoria", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2009", "data_inicio(2i)"=>"1", "cargo"=>"Desenvolvimento Web", "departamento"=>"Marketing", "data_inicio(3i)"=>"1", "data_fim(1i)"=>"2010", "experiencia"=>"Desenvolvimento de um sistema que integra o cadastro de currículos, bem como busca de currículos por área de atuação."}}, "new_exp_att"=>[{"local"=>"12312", "motivo_saida"=>"12312", "data_fim(2i)"=>"5", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2010", "departamento"=>"12312", "cargo"=>"3123", "data_inicio(2i)"=>"5", "data_inicio(3i)"=>"1", "experiencia"=>"1231231231", "data_fim(1i)"=>"2010"}], "spanish"=>"Básico", "data_nasc(1i)"=>"1988", "nome"=>"Isaac", "informatica"=>"Avançado", "area_id1"=>"5", "data_nasc(2i)"=>"4", "new_escolaridade_att"=>[{"local"=>"123123", "tipo_curso"=>"0", "area"=>"123123", "estado"=>"0"}], "english"=>"Avançado", "area_id2"=>"6", "data_nasc(3i)"=>"19", "existing_escolaridade_att"=>{"1"=>{"local"=>"Universidade de São Paulo", "area"=>"Bacharelado em Ciências da Computação", "tipo_curso"=>"2", "estado"=>"1"}, "2"=>{"local"=>"COC", "area"=>"", "tipo_curso"=>"1", "estado"=>"0"}}, "area_id3"=>"1", "escolaridade"=>"4", "bairro"=>"Pq. Santa Mônica", "cidade"=>"São Carlos", "estado"=>"São Paulo", "numero"=>"2020", "estado_civil"=>"Solteiro(a)", "celular"=>"16 8128-1502", "sobrenome"=>"Queiroz", "salario"=>"2500"}}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mCurriculo Load (2.5ms)[0m   [0mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 2) LIMIT 1[0m
+  [4;36;1mCurriculo Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mExp Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `exps`[0m
+  [4;36;1mExp Load (0.0ms)[0m   [0;1mSELECT * FROM `exps` WHERE (`exps`.curriculo_id = 1) [0m
+
+NameError (undefined local variable or method `exp' for #<Curriculo:0x7ed8ba0>):
+  app/models/curriculo.rb:42:in `existing_exp_att='
+  app/models/curriculo.rb:41:in `each'
+  app/models/curriculo.rb:41:in `existing_exp_att='
+  app/controllers/curriculos_controller.rb:78
+  app/controllers/curriculos_controller.rb:77:in `update'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#update (for 127.0.0.1 at 2010-05-26 19:30:33) [PUT]
+  Parameters: {"commit"=>"Criar Curriculo", "authenticity_token"=>"NtJTcGQIhtwsyqoULE66PSENuc1wXJ9My3IUk+1CQko=", "id"=>"1", "curriculo"=>{"complemento"=>"Apto. 21 E", "endereco"=>"Av. Francisco Pereira Lopes", "telefone"=>"", "existing_exp_att"=>{"1"=>{"data_fim(2i)"=>"3", "motivo_saida"=>"Fim do Projeto", "local"=>"Santana Consultoria", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2009", "data_inicio(2i)"=>"1", "cargo"=>"Desenvolvimento Web", "departamento"=>"Marketing", "data_inicio(3i)"=>"1", "data_fim(1i)"=>"2010", "experiencia"=>"Desenvolvimento de um sistema que integra o cadastro de currículos, bem como busca de currículos por área de atuação."}}, "new_exp_att"=>[{"local"=>"12312", "motivo_saida"=>"12312", "data_fim(2i)"=>"5", "data_fim(3i)"=>"1", "data_inicio(1i)"=>"2010", "departamento"=>"12312", "cargo"=>"3123", "data_inicio(2i)"=>"5", "data_inicio(3i)"=>"1", "experiencia"=>"1231231231", "data_fim(1i)"=>"2010"}], "spanish"=>"Básico", "data_nasc(1i)"=>"1988", "nome"=>"Isaac", "informatica"=>"Avançado", "area_id1"=>"5", "data_nasc(2i)"=>"4", "new_escolaridade_att"=>[{"local"=>"123123", "tipo_curso"=>"0", "area"=>"123123", "estado"=>"0"}], "english"=>"Avançado", "area_id2"=>"6", "data_nasc(3i)"=>"19", "existing_escolaridade_att"=>{"1"=>{"local"=>"Universidade de São Paulo", "area"=>"Bacharelado em Ciências da Computação", "tipo_curso"=>"2", "estado"=>"1"}, "2"=>{"local"=>"COC", "area"=>"", "tipo_curso"=>"1", "estado"=>"0"}}, "area_id3"=>"1", "escolaridade"=>"4", "bairro"=>"Pq. Santa Mônica", "cidade"=>"São Carlos", "estado"=>"São Paulo", "numero"=>"2020", "estado_civil"=>"Solteiro(a)", "celular"=>"16 8128-1502", "sobrenome"=>"Queiroz", "salario"=>"2500"}}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mCurriculo Load (0.0ms)[0m   [0mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 2) LIMIT 1[0m
+  [4;36;1mCurriculo Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mExp Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `exps`[0m
+  [4;36;1mExp Load (0.0ms)[0m   [0;1mSELECT * FROM `exps` WHERE (`exps`.curriculo_id = 1) [0m
+  [4;35;1mEscolaridade Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `escolaridades`[0m
+  [4;36;1mEscolaridade Load (0.0ms)[0m   [0;1mSELECT * FROM `escolaridades` WHERE (`escolaridades`.curriculo_id = 1) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mEscolaridade Create (65.0ms)[0m   [0;1mINSERT INTO `escolaridades` (`local`, `created_at`, `updated_at`, `tipo_curso`, `area`, `curriculo_id`, `estado`) VALUES('123123', '2010-05-26 22:30:33', '2010-05-26 22:30:33', 0, '123123', 1, 0)[0m
+  [4;35;1mExp Create (2.5ms)[0m   [0mINSERT INTO `exps` (`local`, `motivo_saida`, `created_at`, `updated_at`, `departamento`, `cargo`, `data_inicio`, `curriculo_id`, `experiencia`, `data_fim`) VALUES('12312', '12312', '2010-05-26 22:30:33', '2010-05-26 22:30:33', '12312', '3123', '2010-05-01 00:00:00', 1, '1231231231', '2010-05-01 00:00:00')[0m
+  [4;36;1mSQL (250.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/curriculos/1
+Completed in 390ms (DB: 333) | 302 Found [http://127.0.0.1/curriculos/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#show (for 127.0.0.1 at 2010-05-26 19:30:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mCurriculo Load (0.0ms)[0m   [0mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 2) LIMIT 1[0m
+  [4;36;1mCurriculo Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mArea Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `areas`[0m
+  [4;36;1mArea Load (0.0ms)[0m   [0;1mSELECT * FROM `areas` WHERE (`areas`.`id` = 5) [0m
+  [4;35;1mArea Load (0.0ms)[0m   [0mSELECT * FROM `areas` WHERE (`areas`.`id` = 6) [0m
+  [4;36;1mArea Load (2.5ms)[0m   [0;1mSELECT * FROM `areas` WHERE (`areas`.`id` = 1) [0m
+  [4;35;1mEscolaridade Load (0.0ms)[0m   [0mSELECT * FROM `escolaridades` WHERE (`escolaridades`.curriculo_id = 1) [0m
+  [4;36;1mExp Load (0.0ms)[0m   [0;1mSELECT * FROM `exps` WHERE (`exps`.curriculo_id = 1) [0m
+Rendering template within layouts/curriculo_show
+Rendering curriculos/show
+  [4;35;1mEscolaridade Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `escolaridades`[0m
+  [4;36;1mExp Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `exps`[0m
+  [4;35;1mRole Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 2)) LIMIT 1[0m
+Completed in 95ms (View: 25, DB: 22) | 200 OK [http://127.0.0.1/curriculos/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#edit (for 127.0.0.1 at 2010-05-26 19:31:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (2.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mArea Load (0.0ms)[0m   [0mSELECT * FROM `areas` [0m
+  [4;36;1mArea Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `areas`[0m
+  [4;35;1mCurriculo Load (2.5ms)[0m   [0mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 2) LIMIT 1[0m
+Rendering template within layouts/curriculo
+Rendering curriculos/edit
+  [4;36;1mCurriculo Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mEscolaridade Load (0.0ms)[0m   [0mSELECT * FROM `escolaridades` WHERE (`escolaridades`.curriculo_id = 1) [0m
+  [4;36;1mEscolaridade Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `escolaridades`[0m
+Rendered curriculos/_escolaridade (2.5ms)
+Rendered curriculos/_escolaridade (2.5ms)
+Rendered curriculos/_escolaridade (2.5ms)
+Rendered curriculos/_escolaridade (2.5ms)
+Rendered curriculos/_escfields (32.5ms)
+  [4;35;1mExp Load (0.0ms)[0m   [0mSELECT * FROM `exps` WHERE (`exps`.curriculo_id = 1) [0m
+  [4;36;1mExp Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `exps`[0m
+Rendered curriculos/_exp (25.0ms)
+Rendered curriculos/_exp (12.5ms)
+Rendered curriculos/_exp (12.5ms)
+Rendered curriculos/_expfields (190.0ms)
+  [4;35;1mRole Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 2)) LIMIT 1[0m
+Completed in 344ms (View: 294, DB: 23) | 200 OK [http://127.0.0.1/curriculos/1/edit]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#show (for 127.0.0.1 at 2010-05-26 19:31:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mCurriculo Load (2.5ms)[0m   [0mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 2) LIMIT 1[0m
+  [4;36;1mCurriculo Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mArea Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `areas`[0m
+  [4;36;1mArea Load (0.0ms)[0m   [0;1mSELECT * FROM `areas` WHERE (`areas`.`id` = 5) [0m
+  [4;35;1mArea Load (0.0ms)[0m   [0mSELECT * FROM `areas` WHERE (`areas`.`id` = 6) [0m
+  [4;36;1mArea Load (0.0ms)[0m   [0;1mSELECT * FROM `areas` WHERE (`areas`.`id` = 1) [0m
+  [4;35;1mEscolaridade Load (0.0ms)[0m   [0mSELECT * FROM `escolaridades` WHERE (`escolaridades`.curriculo_id = 1) [0m
+  [4;36;1mExp Load (0.0ms)[0m   [0;1mSELECT * FROM `exps` WHERE (`exps`.curriculo_id = 1) [0m
+Rendering template within layouts/curriculo_show
+Rendering curriculos/show
+  [4;35;1mEscolaridade Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `escolaridades`[0m
+  [4;36;1mExp Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `exps`[0m
+  [4;35;1mRole Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 2)) LIMIT 1[0m
+Completed in 180ms (View: 100, DB: 17) | 200 OK [http://127.0.0.1/curriculos/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#edit (for 127.0.0.1 at 2010-05-26 19:33:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mArea Load (0.0ms)[0m   [0mSELECT * FROM `areas` [0m
+  [4;36;1mArea Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `areas`[0m
+  [4;35;1mCurriculo Load (0.0ms)[0m   [0mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 2) LIMIT 1[0m
+Rendering template within layouts/curriculo
+Rendering curriculos/edit
+  [4;36;1mCurriculo Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mEscolaridade Load (2.5ms)[0m   [0mSELECT * FROM `escolaridades` WHERE (`escolaridades`.curriculo_id = 1) [0m
+  [4;36;1mEscolaridade Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `escolaridades`[0m
+Rendered curriculos/_escolaridade (2.5ms)
+Rendered curriculos/_escolaridade (2.5ms)
+Rendered curriculos/_escolaridade (2.5ms)
+Rendered curriculos/_escolaridade (2.5ms)
+Rendered curriculos/_escfields (32.5ms)
+  [4;35;1mExp Load (0.0ms)[0m   [0mSELECT * FROM `exps` WHERE (`exps`.curriculo_id = 1) [0m
+  [4;36;1mExp Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `exps`[0m
+Rendered curriculos/_exp (12.5ms)
+Rendered curriculos/_exp (10.0ms)
+Rendered curriculos/_exp (72.5ms)
+Rendered curriculos/_expfields (182.5ms)
+  [4;35;1mRole Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 2)) LIMIT 1[0m
+Completed in 308ms (View: 255, DB: 20) | 200 OK [http://127.0.0.1/curriculos/1/edit]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#show (for 127.0.0.1 at 2010-05-26 19:41:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mCurriculo Load (0.0ms)[0m   [0mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 2) LIMIT 1[0m
+  [4;36;1mCurriculo Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mArea Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `areas`[0m
+  [4;36;1mArea Load (0.0ms)[0m   [0;1mSELECT * FROM `areas` WHERE (`areas`.`id` = 5) [0m
+  [4;35;1mArea Load (0.0ms)[0m   [0mSELECT * FROM `areas` WHERE (`areas`.`id` = 6) [0m
+  [4;36;1mArea Load (0.0ms)[0m   [0;1mSELECT * FROM `areas` WHERE (`areas`.`id` = 1) [0m
+  [4;35;1mEscolaridade Load (0.0ms)[0m   [0mSELECT * FROM `escolaridades` WHERE (`escolaridades`.curriculo_id = 1) [0m
+  [4;36;1mExp Load (0.0ms)[0m   [0;1mSELECT * FROM `exps` WHERE (`exps`.curriculo_id = 1) [0m
+Rendering template within layouts/curriculo_show
+Rendering curriculos/show
+
+ActionView::TemplateError (undefined method `strftime' for #<ActiveRecord::Associations::HasOneAssociation:0x7d203c8>) on line #9 of app/views/curriculos/show.html.erb:
+6:     <%=h @curriculo.nome %>  
+7:     <%=h @curriculo.sobrenome %>
+8: 	<b>Data de Nascimento: </b>
+9:     <%=h @curriculo.strftime('%j/%m/%Y') %> 
+10:   </p>
+11:   <p>
+12:   	<b>Estado Civíl: </b>
+
+    app/views/curriculos/show.html.erb:9
+    app/controllers/curriculos_controller.rb:32:in `show'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#show (for 127.0.0.1 at 2010-05-26 19:43:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mCurriculo Load (1.0ms)[0m   [0mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 2) LIMIT 1[0m
+  [4;36;1mCurriculo Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mArea Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `areas`[0m
+  [4;36;1mArea Load (0.0ms)[0m   [0;1mSELECT * FROM `areas` WHERE (`areas`.`id` = 5) [0m
+  [4;35;1mArea Load (0.0ms)[0m   [0mSELECT * FROM `areas` WHERE (`areas`.`id` = 6) [0m
+  [4;36;1mArea Load (0.0ms)[0m   [0;1mSELECT * FROM `areas` WHERE (`areas`.`id` = 1) [0m
+  [4;35;1mEscolaridade Load (0.0ms)[0m   [0mSELECT * FROM `escolaridades` WHERE (`escolaridades`.curriculo_id = 1) [0m
+  [4;36;1mExp Load (1.0ms)[0m   [0;1mSELECT * FROM `exps` WHERE (`exps`.curriculo_id = 1) [0m
+Rendering template within layouts/curriculo_show
+Rendering curriculos/show
+  [4;35;1mEscolaridade Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `escolaridades`[0m
+  [4;36;1mExp Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `exps`[0m
+  [4;35;1mRole Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 2)) LIMIT 1[0m
+Completed in 106ms (View: 35, DB: 22) | 200 OK [http://127.0.0.1/curriculos/1]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CurriculosController#show (for 127.0.0.1 at 2010-05-26 19:46:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [4;35;1mCurriculo Load (1.0ms)[0m   [0mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 2) LIMIT 1[0m
+  [4;36;1mCurriculo Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mArea Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `areas`[0m
+  [4;36;1mArea Load (1.0ms)[0m   [0;1mSELECT * FROM `areas` WHERE (`areas`.`id` = 5) [0m
+  [4;35;1mArea Load (0.0ms)[0m   [0mSELECT * FROM `areas` WHERE (`areas`.`id` = 6) [0m
+  [4;36;1mArea Load (0.0ms)[0m   [0;1mSELECT * FROM `areas` WHERE (`areas`.`id` = 1) [0m
+  [4;35;1mEscolaridade Load (1.0ms)[0m   [0mSELECT * FROM `escolaridades` WHERE (`escolaridades`.curriculo_id = 1) [0m
+  [4;36;1mExp Load (0.0ms)[0m   [0;1mSELECT * FROM `exps` WHERE (`exps`.curriculo_id = 1) [0m
+Rendering template within layouts/curriculo_show
+Rendering curriculos/show
+  [4;35;1mEscolaridade Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `escolaridades`[0m
+  [4;36;1mExp Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `exps`[0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 2)) LIMIT 1[0m
+Completed in 115ms (View: 44, DB: 19) | 200 OK [http://127.0.0.1/curriculos/1]

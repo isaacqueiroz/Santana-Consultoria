@@ -1,0 +1,8 @@
+  <h2>Experiência Profissional:</h2>
+  <p class="helper">Agora, você deve descrever as 3 experiências profissionais
+  mais recentes. Procure ser sucinto e lembre-se de colocar o nome fantasia da
+  empresa para o qual trabalhou, de forma a deixar claro a atividade da empresa.</p>
+  <div id="exps_div">
+    <%= render :partial => 'exp', :collection => @curriculo.exps %>
+  </div>
+  <p><%= add_exp_link "Adicionar Experiência" %></p>

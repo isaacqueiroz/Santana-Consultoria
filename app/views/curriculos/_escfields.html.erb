@@ -1,0 +1,8 @@
+  <h2>Informações de Escolaridade:</h2>
+  <p class="helper">Nesta seção, você deverá adicionar informações quanto à
+  suas formações academicas. Para cada curso (primeiro grau, segundo grau, etc)
+  clique em "Adicionar Curso".</p>
+  <div id="esc_divs">
+    <%= render :partial => 'escolaridade', :collection => @curriculo.escolaridades %>
+  </div>
+  <%= add_escolaridade_link "Adicionar Curso" %>

@@ -17,7 +17,7 @@
 		<%= f.error_messages %>
 		<p>Resposta:</p>
 		<%= f.text_field :resposta %>
-		<%= f.submit 'Avançar' %>
+		<%= f.submit 'Avançar', :disable_with => "Salvando..." %>
 	<% end %>
 <%else%>
 	<h1>Fim do Teste!</h1>

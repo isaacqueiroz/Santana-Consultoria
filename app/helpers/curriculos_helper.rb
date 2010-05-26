@@ -7,7 +7,7 @@ module CurriculosHelper
   
   def add_escolaridade_link(name) 
     link_to_function name, :id=>"escola" do |page| 
-      page.insert_html :top, :esc_divs, :partial => 'escolaridade', :object => Escolaridade.new 
+      page.insert_html :bottom, :esc_divs, :partial => 'escolaridade', :object => Escolaridade.new 
     end 
   end 
   
@@ -15,9 +15,10 @@ module CurriculosHelper
     prefix = exp.new_record? ? 'new' : 'existing'
     fields_for("curriculo[#{prefix}_exp_att][]", exp, &block)
   end
+  
   def add_exp_link(name) 
     link_to_function name, :id=>"xp" do |page| 
-      page.insert_html :top, :exps_div, :partial => 'exp', :object => Exp.new
+      page.insert_html :bottom, :exps_div, :partial => 'exp', :object => Exp.new
     end 
   end 
   

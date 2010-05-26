@@ -14,7 +14,7 @@ class Curriculo < ActiveRecord::Base
   
   #Define se vai excluir ou criar outro item na tabela.
   def existing_escolaridade_att=(escolaridade_att)
-    escolaridade.reject(&:new_record?).each do |task|
+    escolaridades.reject(&:new_record?).each do |escolaridade|
       attributes = escolaridade_att[escolaridade.id.to_s]
       if attributes
         escolaridade.attributes = attributes
@@ -38,10 +38,10 @@ class Curriculo < ActiveRecord::Base
   end
   
   def existing_exp_att=(exp_att)
-    exp.reject(&:new_record?).each do |task|
-      exp_attributes = exp_att[exp.id.to_s]
-      if exp_attributes
-        exp.exp_attributes = exp_attributes
+    exps.reject(&:new_record?).each do |exp|
+      attributes = exp_att[exp.id.to_s]
+      if attributes
+        exp.attributes = attributes
       else
         exps.delete(exp)
       end

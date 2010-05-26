@@ -2,11 +2,18 @@ Sistema Consultoria
 
 Bem vindo ao projeto de desenvolvimento do sistema de uma consultoria em R.H.
 
-O site conta com um sistema de gerenciamento de usuários, currículos, testes e vagas e está sendo implementado em Ruby, utilizando-se do framework Rails. Para utilizar o site, lembre-se de ter instalado a versão 1.8.6 ou 1.8.7 do Ruby e a versão 2.3.5 do Rails. Um upgrade para as próximas versões do Ruby e do Rails serão feitas assim que o Rails voltar à sua estabilidade usual.
+O site conta com um sistema de gerenciamento de usuÃ¡rios, currÃ­culos, testes e vagas e Ã© implementado em Ruby, utilizando-se do framework Rails. Para utilizar o site, lembre-se de ter instalado a versÃ£o 1.8.6 ou 1.8.7 do Ruby e a versÃ£o 2.3.5 do Rails. Um upgrade para as prï¿½ximas versÃµes do Ruby e do Rails serï¿½o feitas assim que o Rails voltar Ã  sua estabilidade usual.
 
-O sistema de implementação de usuários conta com uma versão modificada do Restful Authentication, além do WillPaginate e de outras libs que se encontram na pasta /lib do projeto.
+O sistema de implementaï¿½ï¿½o de usuï¿½rios conta com uma versï¿½o modificada do Restful Authentication, alï¿½m do WillPaginate e de outras libs que se encontram na pasta /lib do projeto.
 
 TODO:
-	Implementar Edição de Curriculos;
-	Implementar Validação;
-	Implementar Testes;
+	Implementar EdiÃ§Ã£o de Curriculos; (Concluido)
+	Formatar "show" de Curriculos; (ConcluÃ­do)
+	Fazer o botÃ£o "AvanÃ§ar" desaparecer em QuestÃµes; (ConcluÃ­do)
+	Escrever os alertas em Testes (de que o usuÃ¡rio deve ter certeza antes de avanÃ§ar);
+	Implementar Limite de Tempo para Testes;
+	Implementar Buscas em CurrÃ­culos;
+	Implementar Modo de ImpressÃ£o de CurrÃ­culos;
+	Implementar ValidaÃ§Ã£o;
+	Traduzir pÃ¡ginas de erro 404 e 500;
+	
