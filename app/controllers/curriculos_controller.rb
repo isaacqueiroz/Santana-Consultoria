@@ -5,8 +5,22 @@ class CurriculosController < ApplicationController
   layout 'application'
   
   before_filter :get_user
+  before_filter :get_areas
   before_filter :login_required
   before_filter :check_administrator_role, :only => [:index]
+  
+  
+  
+  #GET /print
+  def print
+    @curriculo = @user.curriculo
+    @area1 = Area.find(@curriculo.area_id1)
+    @area2 = Area.find(@curriculo.area_id2)
+    @area3 = Area.find(@curriculo.area_id3)
+    @escolaridades = @curriculo.escolaridades.all
+    @exps = @curriculo.exps.all
+    render :layout => 'curriculo_print'    
+  end
   
   # GET /curriculos
   # GET /curriculos.xml
@@ -39,13 +53,11 @@ class CurriculosController < ApplicationController
     @curriculo = @user.build_curriculo
     @curriculo.escolaridades.build
     @curriculo.exps.build
-    get_areas
     render :layout => 'curriculo'
   end
 
   # GET /curriculos/1/edit
   def edit
-    get_areas
     @curriculo = @user.curriculo
     render :layout => 'curriculo'
   end
@@ -77,7 +89,7 @@ class CurriculosController < ApplicationController
     respond_to do |format|
       if @curriculo.update_attributes(params[:curriculo])
         flash[:notice] = 'Seu currículo foi atualizado com sucesso.'
-        format.html { redirect_to(@curriculo) }
+        format.html { redirect_to(@user, @curriculo) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

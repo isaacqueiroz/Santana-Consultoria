@@ -24,8 +24,10 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :tests, :has_many => :questions
   
   map.resources :users, :has_many => :tests, :shallow => true
-  
   map.resources :users, :has_one => :curriculo
+
+  map.connect 'curriculo/print', :controller => 'curriculos', :action => 'print' 
+ 
   
   map.resources :users, :has_many => :allow_tests, :shallow => true
   

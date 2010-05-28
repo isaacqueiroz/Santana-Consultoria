@@ -14,7 +14,7 @@
 	<%= yield :javascript %>
 	<%= stylesheet_link_tag "elastic", "default"%>
 </head>
-
+<body>
 <div class=”unit”> 
     <!-- Div do Logo -->
     <div id="logo" class="container">
@@ -44,6 +44,11 @@
 					<li><%= link_to 'Editar Perfil', edit_user_path(current_user)%></li>
 					<li><%= link_to 'Mudar Senha', change_password_path %></li>
 					<li><%= link_to 'Seção de Testes', user_tests_path(current_user) %></li>
+					<%if !(current_user.curriculo.id.blank?) %>
+           <li><%= link_to 'Seção de Curriculos', user_curriculo_path(current_user) %></li>
+          <%else%>
+           <li><%= link_to 'Crie seu Curriculo!', user_curriculo_path(current_user) %></li>
+          <%end%>
 					<li><%= link_to 'Sair', logout_url %></li>
 				</ul>
 				<% if !(current_user.blank?) && (current_user.has_role?('administrator')) %>
@@ -81,7 +86,7 @@
 <!-- Rodapé -->
 <div id="foot" class="unit">
 	<p>Melhor visualizado em 1024x768</p>
-	<p>© 2009 Santana Consultoria em R.H. LTDA. Todos os direitos reservados.</p>
+	<p>© 2010 Santana Consultoria em R.H. LTDA. Todos os direitos reservados.</p>
 </div>
 </body>
 </html>

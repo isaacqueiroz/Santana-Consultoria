@@ -10,10 +10,14 @@ TODO:
 	Implementar Edição de Curriculos; (Concluido)
 	Formatar "show" de Curriculos; (Concluído)
 	Fazer o botão "Avançar" desaparecer em Questões; (Concluído)
-	Escrever os alertas em Testes (de que o usuário deve ter certeza antes de avançar);
+	Escrever os alertas em Testes; (Concluído)
 	Implementar Limite de Tempo para Testes;
 	Implementar Buscas em Currículos;
-	Implementar Modo de Impressão de Currículos;
+	Implementar Modo de Impressão de Currículos; (Concluido)
+	Elaborar CSS de Impressão; (Concluído)
 	Implementar Validação;
-	Traduzir páginas de erro 404 e 500;
+	Traduzir páginas de erro 404 e 500; (Concluído)
+	Colocar Links de Currículos na Página; (Concluído)
+	Elaborar Layouts de E-mails;
+	Garantir a segurança de acesso aos curriculos (quebrar vinculos com id); (60%)
 	

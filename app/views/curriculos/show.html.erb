@@ -119,4 +119,6 @@
 </div>
 
 <p><%= link_to 'Voltar', curriculos_path %> | 
-<%= link_to 'Editar', edit_curriculo_path(@curriculo) %></p>
+<%= link_to 'Editar', edit_curriculo_path(@curriculo) %> |
+<%= link_to 'Impressão', {:controller => "curriculo", :action => "print"},
+ :popup => ['Curriculo Simplificado', 'scrollbars=yes, menubar=yes']%></p>

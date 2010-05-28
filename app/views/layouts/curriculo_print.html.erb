@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="title" content="Santana Consultoria em RH" />
+    <meta name="url" content="www.santanarh.com.br" />
+    <meta name="description" content="Site da Santana Consultoria em RH. Seleções e recrutamentos em Franca e interior de São Paulo." />
+    <meta name="keywords" content="Consultoria, Relacionamentos humanos, RH, Santana Consultoria, Franca, São Paulo, Ribeirão preto, Interior de São Paulo, Seleção de pessoal, Seleção, pessoal, recrutamento, clima interno, seleção 360, profissionais, vagas, empregos" />
+    <meta name="charset" content="UTF-8" />
+    <meta name="autor" content="Isaac Queiroz" />
+    <meta name="company" content="Santana Consultoria em RH" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Santana Consultoria em R.H.</title>
+  <%= javascript_include_tag "jrails.js", "jquery.js", "jquery-ui.js", "elastic.js", :defaults, :cache => true%>
+  <%= yield :javascript %>
+  <%= stylesheet_link_tag "print"%>
+</head>
+
+<body>
+    <div id="logo" class="logo">
+      <%= link_to image_tag("logo_print.jpg"), noticias_path%>      
+    </div>
+    <h1>Currículo Simplificado</h1>
+    
+    <%= yield  %>
+    
+    <div class="footnote">
+      <p style="font-size:x-small;">www.santanarh.com.br</p>
+      <p style="font-size:x-small;">Currículo impresso do site da Santana Consultoria.</p>
+      <p style="font-size:x-small;">
+        © 2010 Santana Consultoria em R.H. LTDA. Todos os direitos reservados. A Santana
+        Consultoria não se responsabiliza pelo teor desde documento, bem como por seu uso,
+        quando externo ao site.
+      </p>
+    </div>
+</body>

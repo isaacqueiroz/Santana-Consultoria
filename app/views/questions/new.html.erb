@@ -15,8 +15,12 @@
 	
 	<% form_for([@test,@question]) do |f| %>
 		<%= f.error_messages %>
+		<p class="helper">Insira a resposta correspondente no campo abaixo. Em caso
+		de dúvidas, entre em contato com o responsável pela seleção.</p>
 		<p>Resposta:</p>
 		<%= f.text_field :resposta %>
+		<p class="helper">Atenção! Ao avançar, você não poderá mais mudar sua resposta!
+		Apenas clique em "Avançar" caso tenha certeza de que deseja continuar!</p>
 		<%= f.submit 'Avançar', :disable_with => "Salvando..." %>
 	<% end %>
 <%else%>
