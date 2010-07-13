@@ -1,0 +1,21 @@
+one:
+  nome: MyString
+  empregado: MyString
+  escolaridade: 1
+  cidade: MyString
+  estado: MyString
+  area_atuacao: 1
+  ingles: MyString
+  espanhol: MyString
+  informatica: MyString
+
+two:
+  nome: MyString
+  empregado: MyString
+  escolaridade: 1
+  cidade: MyString
+  estado: MyString
+  area_atuacao: 1
+  ingles: MyString
+  espanhol: MyString
+  informatica: MyString

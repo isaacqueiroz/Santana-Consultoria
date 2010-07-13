@@ -52381,3 +52381,2805 @@ Rendering curriculos/print
   [4;36;1mEscolaridade Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `escolaridades`[0m
   [4;35;1mExp Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `exps`[0m
 Completed in 88ms (View: 25, DB: 10) | 200 OK [http://127.0.0.1/curriculo/print]
+  [4;36;1mSQL (269.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (66.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing NoticiasController#index (for 127.0.0.1 at 2010-06-10 14:54:26) [GET]
+  [4;36;1mNoticia Load (377.0ms)[0m   [0;1mSELECT * FROM `noticias` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering noticias/index
+Completed in 5847ms (View: 5462, DB: 712) | 200 OK [http://127.0.0.1/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (474.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (279.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (1)
+Migrating to CreateRoles (2)
+Migrating to CreatePermissions (3)
+Migrating to CreateNoticias (5)
+Migrating to CreateWhos (6)
+Migrating to CreateServicos (7)
+Migrating to CreateContatos (8)
+Migrating to CreateSelections (9)
+Migrating to CreateTests (20091216031043)
+Migrating to CreateQuestions (20091216031057)
+Migrating to CreateTestTabs (20091216182642)
+Migrating to CreateQuestionTabs (20091216182701)
+Migrating to CreateAllowTests (20100105193138)
+Migrating to CreateCurriculos (20100113000758)
+Migrating to CreateEscolaridades (20100113211546)
+Migrating to CreateExps (20100116043454)
+Migrating to AddNameToUsers (20100213223445)
+Migrating to CreateAdminUser (20100213223446)
+Migrating to AddLanguagesToCurriculos (20100219063328)
+Migrating to CreateAreas (20100303214919)
+Migrating to AddAreaToCurriculos (20100304021415)
+Migrating to AddCurriculoIdToUser (20100310021230)
+Migrating to CreateSearches (20100610174949)
+  [4;36;1mSQL (209.0ms)[0m   [0;1mCREATE TABLE `searches` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(255), `empregado` varchar(255), `escolaridade` int(11), `cidade` varchar(255), `estado` varchar(255), `area_atuacao` int(11), `ingles` varchar(255), `espanhol` varchar(255), `informatica` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (48.0ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100610174949')[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (157.0ms)[0m   [0mSHOW FIELDS FROM `allow_tests`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mdescribe `allow_tests`[0m
+  [4;35;1mSQL (38.0ms)[0m   [0mSHOW KEYS FROM `allow_tests`[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mSHOW FIELDS FROM `areas`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mdescribe `areas`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `areas`[0m
+  [4;35;1mSQL (21.0ms)[0m   [0mSHOW FIELDS FROM `contatos`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `contatos`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `contatos`[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mdescribe `curriculos`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `curriculos`[0m
+  [4;35;1mSQL (89.0ms)[0m   [0mSHOW FIELDS FROM `escolaridades`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `escolaridades`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `escolaridades`[0m
+  [4;36;1mSQL (50.0ms)[0m   [0;1mSHOW FIELDS FROM `exps`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `exps`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `exps`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW FIELDS FROM `noticias`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mdescribe `noticias`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `noticias`[0m
+  [4;36;1mSQL (17.0ms)[0m   [0;1mSHOW FIELDS FROM `permissions`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mdescribe `permissions`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `permissions`[0m
+  [4;35;1mSQL (110.0ms)[0m   [0mSHOW FIELDS FROM `question_tabs`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mdescribe `question_tabs`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW KEYS FROM `question_tabs`[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSHOW FIELDS FROM `questions`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mdescribe `questions`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `questions`[0m
+  [4;35;1mSQL (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mdescribe `roles`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `roles`[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `searches`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `searches`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW FIELDS FROM `selections`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mdescribe `selections`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `selections`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW FIELDS FROM `servicos`[0m
+  [4;35;1mSQL (8.0ms)[0m   [0mdescribe `servicos`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `servicos`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSHOW FIELDS FROM `test_tabs`[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mdescribe `test_tabs`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `test_tabs`[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mSHOW FIELDS FROM `tests`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mdescribe `tests`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `tests`[0m
+  [4;35;1mSQL (18.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSHOW FIELDS FROM `whos`[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mdescribe `whos`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `whos`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-10 14:55:06) [GET]
+
+ActionController::RoutingError (No route matches "/search" with {:method=>:get}):
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#new (for 127.0.0.1 at 2010-06-10 14:55:21) [GET]
+  [4;35;1mSearch Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+Rendering template within layouts/application
+Rendering searches/new
+
+ActionView::TemplateError (undefined method `title' for #<ActionView::Base:0x7fafbb0>) on line #1 of app/views/searches/new.html.erb:
+1: <% title "New Search" %>
+2: 
+3: <% form_for @search do |f| %>
+4:   <%= f.error_messages %>
+
+    app/views/searches/new.html.erb:1
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (101.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#new (for 127.0.0.1 at 2010-06-10 14:58:02) [GET]
+  [4;36;1mSearch Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+Rendering template within layouts/application
+Rendering searches/new
+
+ActionView::TemplateError (undefined method `title' for #<ActionView::Base:0x807a4e8>) on line #1 of app/views/searches/new.html.erb:
+1: <% title "New Search" %>
+2: 
+3: <% form_for @search do |f| %>
+4:   <%= f.error_messages %>
+
+    app/views/searches/new.html.erb:1
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (37.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#new (for 127.0.0.1 at 2010-06-10 14:58:15) [GET]
+  [4;35;1mSearch Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+Rendering template within layouts/application
+Rendering searches/new
+
+ActionView::TemplateError (undefined method `logged_in?' for #<ActionView::Base:0x7e71b98>) on line #41 of app/views/layouts/application.html.erb:
+38:     <div id="painel" class="column">  
+39:         <div id="usrCont" class="container" style="padding-left:5px;">
+40: 			<h1>Painel do Usuário</h1>
+41:  			<% if logged_in? %>
+42: 				<p>Seja Bem Vindo, <b><%= link_to h(current_user.login.capitalize), user_path(current_user) %></b></p>
+43: 				<ul class="usrMenu">
+44: 					<li><%= link_to 'Editar Perfil', edit_user_path(current_user)%></li>
+
+    app/views/layouts/application.html.erb:41
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (38.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#new (for 127.0.0.1 at 2010-06-10 14:59:34) [GET]
+  [4;36;1mSearch Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+Rendering template within layouts/application
+Rendering searches/new
+
+ActionView::TemplateError (undefined local variable or method `current_user' for #<ActionView::Base:0x7faf508>) on line #41 of app/views/layouts/application.html.erb:
+38:     <div id="painel" class="column">  
+39:         <div id="usrCont" class="container" style="padding-left:5px;">
+40: 			<h1>Painel do Usuário</h1>
+41:  			<% if (!current_user.blank?) && (logged_in?) %>
+42: 				<p>Seja Bem Vindo, <b><%= link_to h(current_user.login.capitalize), user_path(current_user) %></b></p>
+43: 				<ul class="usrMenu">
+44: 					<li><%= link_to 'Editar Perfil', edit_user_path(current_user)%></li>
+
+    app/views/layouts/application.html.erb:41
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (39.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#new (for 127.0.0.1 at 2010-06-10 15:00:20) [GET]
+  [4;35;1mSearch Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+Rendering template within layouts/application
+Rendering searches/new
+Completed in 35ms (View: 24, DB: 3) | 200 OK [http://127.0.0.1/searches/new]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-06-10 15:00:29) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"HTm45XyrMo8DY/OAN/hhAPM7b78kPEZxKD2pz6qnO4o=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"Isaac", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;36;1mSearch Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSearch Create (23.0ms)[0m   [0;1mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(NULL, '', '2010-06-10 18:00:29', '', 'Isaac', '2010-06-10 18:00:29', '', '', NULL, '', '')[0m
+  [4;35;1mSQL (39.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://127.0.0.1:3000/searches/1
+Completed in 88ms (DB: 67) | 302 Found [http://127.0.0.1/searches]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-06-10 15:00:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSearch Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (40.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering searches/show
+Completed in 76ms (View: 21, DB: 42) | 200 OK [http://127.0.0.1/searches/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-06-10 15:06:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSearch Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (1.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering searches/show
+
+ActionView::TemplateError (uninitialized constant Search::Curriculos) on line #1 of app/views/searches/show.html.erb:
+1: <%= render :partial => @search.curriculos%>
+
+    app/models/search.rb:10:in `find_curriculos'
+    app/models/search.rb:4:in `curriculos'
+    app/views/searches/show.html.erb:1
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (39.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-06-10 15:08:08) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSearch Columns (23.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (1.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering searches/show
+
+ActionView::TemplateError (uninitialized constant Search::Curriculos) on line #1 of app/views/searches/show.html.erb:
+1: <%= render :partial => @search.curriculos%>
+
+    app/models/search.rb:10:in `find_curriculos'
+    app/models/search.rb:4:in `curriculos'
+    app/views/searches/show.html.erb:1
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (38.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-06-10 15:09:36) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSearch Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (0.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering searches/show
+
+ActionView::TemplateError (undefined local variable or method `conditions_parts' for #<Search:0x7e60990>) on line #1 of app/views/searches/show.html.erb:
+1: <%= render :partial => @search.curriculos%>
+
+    app/models/search.rb:54:in `conditions_clauses'
+    app/models/search.rb:50:in `conditions'
+    app/models/search.rb:10:in `find_curriculos'
+    app/models/search.rb:4:in `curriculos'
+    app/views/searches/show.html.erb:1
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (106.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-06-10 15:12:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSearch Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (0.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering searches/show
+
+ActionView::TemplateError (undefined local variable or method `conditions_parts' for #<Search:0x7fb1158>) on line #1 of app/views/searches/show.html.erb:
+1: <%= render :partial => @search.curriculos%>
+
+    app/models/search.rb:54:in `conditions_clauses'
+    app/models/search.rb:50:in `conditions'
+    app/models/search.rb:10:in `find_curriculos'
+    app/models/search.rb:4:in `curriculos'
+    app/views/searches/show.html.erb:1
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (41.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-06-10 15:13:24) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSearch Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (0.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering searches/show
+
+ActionView::TemplateError (undefined local variable or method `conditions_options' for #<Search:0x81480a8>) on line #1 of app/views/searches/show.html.erb:
+1: <%= render :partial => @search.curriculos%>
+
+    app/models/search.rb:50:in `conditions'
+    app/models/search.rb:10:in `find_curriculos'
+    app/models/search.rb:4:in `curriculos'
+    app/views/searches/show.html.erb:1
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (41.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-06-10 15:13:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSearch Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (1.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering searches/show
+
+ActionView::TemplateError (undefined local variable or method `conditions_options' for #<Search:0x7e90660>) on line #1 of app/views/searches/show.html.erb:
+1: <%= render :partial => @search.curriculos%>
+
+    app/models/search.rb:50:in `conditions'
+    app/models/search.rb:10:in `find_curriculos'
+    app/models/search.rb:4:in `curriculos'
+    app/views/searches/show.html.erb:1
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (105.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-06-10 15:13:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSearch Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (1.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering searches/show
+
+ActionView::TemplateError (undefined local variable or method `conditions_options' for #<Search:0x7fdfa18>) on line #1 of app/views/searches/show.html.erb:
+1: <%= render :partial => @search.curriculos%>
+
+    app/models/search.rb:50:in `conditions'
+    app/models/search.rb:10:in `find_curriculos'
+    app/models/search.rb:4:in `curriculos'
+    app/views/searches/show.html.erb:1
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (40.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-06-10 15:13:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSearch Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (1.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering searches/show
+
+ActionView::TemplateError (undefined local variable or method `conditions_options' for #<Search:0x81d8000>) on line #1 of app/views/searches/show.html.erb:
+1: <%= render :partial => @search.curriculos%>
+
+    app/models/search.rb:50:in `conditions'
+    app/models/search.rb:10:in `find_curriculos'
+    app/models/search.rb:4:in `curriculos'
+    app/views/searches/show.html.erb:1
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (41.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-06-10 15:13:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSearch Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (1.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering searches/show
+
+ActionView::TemplateError (undefined local variable or method `conditions_options' for #<Search:0x7ed2e58>) on line #1 of app/views/searches/show.html.erb:
+1: <%= render :partial => @search.curriculos%>
+
+    app/models/search.rb:50:in `conditions'
+    app/models/search.rb:10:in `find_curriculos'
+    app/models/search.rb:4:in `curriculos'
+    app/views/searches/show.html.erb:1
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (107.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-06-10 15:13:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSearch Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (1.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering searches/show
+
+ActionView::TemplateError (undefined local variable or method `conditions_options' for #<Search:0x8029290>) on line #1 of app/views/searches/show.html.erb:
+1: <%= render :partial => @search.curriculos%>
+
+    app/models/search.rb:50:in `conditions'
+    app/models/search.rb:10:in `find_curriculos'
+    app/models/search.rb:4:in `curriculos'
+    app/views/searches/show.html.erb:1
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (43.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-06-10 15:14:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSearch Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (1.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;36;1mCurriculo Load (0.0ms)[0m   [0;1mSELECT * FROM `curriculos` [0m
+
+ActionView::TemplateError (Missing template curriculos/_curriculo.erb in view path app/views) on line #1 of app/views/searches/show.html.erb:
+1: <%= render :partial => @search.curriculos%>
+
+    app/views/searches/show.html.erb:1
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    c:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    c:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (42.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing NoticiasController#index (for 127.0.0.1 at 2010-07-12 20:25:57) [GET]
+  [4;36;1mNoticia Load (250.0ms)[0m   [0;1mSELECT * FROM `noticias` ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering noticias/index
+Completed in 6280ms (View: 6021, DB: 250) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-07-12 20:26:19) [POST]
+  Parameters: {"commit"=>"Entrar", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "login"=>"admin", "password"=>"66286882"}
+  [4;35;1mUser Load (30.0ms)[0m   [0mSELECT * FROM `users` WHERE (login = 'admin') LIMIT 1[0m
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/application
+Rendering sessions/new
+Completed in 158ms (View: 38, DB: 35) | 200 OK [http://localhost/session]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-07-12 20:26:27) [POST]
+  Parameters: {"commit"=>"Log in", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "login"=>"admin", "password"=>"66286882rh"}
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (login = 'admin') LIMIT 1[0m
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Redirected to http://localhost:3000/users/1
+Completed in 520ms (DB: 4) | 302 Found [http://localhost/session]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-07-12 20:26:28) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (21.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;35;1mCurriculo Load (42.0ms)[0m   [0mSELECT * FROM `curriculos` WHERE (`curriculos`.user_id = 1) LIMIT 1[0m
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #47 of app/views/layouts/application.html.erb:
+44: 					<li><%= link_to 'Editar Perfil', edit_user_path(current_user)%></li>
+45: 					<li><%= link_to 'Mudar Senha', change_password_path %></li>
+46: 					<li><%= link_to 'Seção de Testes', user_tests_path(current_user) %></li>
+47: 					<%if !(current_user.curriculo.id.blank?) %>
+48: 					 <li><%= link_to 'Seção de Curriculos', user_curriculo_path(current_user) %></li>
+49: 					<%else%>
+50: 					 <li><%= link_to 'Crie seu Curriculo!', user_curriculo_path(current_user) %></li>
+
+    app/views/layouts/application.html.erb:47
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (203.0ms)
+Rendered rescues/_request_and_response (3.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-07-12 20:30:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/show
+ERROR: compiling _run_erb_app47views47layouts47application46html46erb RAISED compile error
+C:/Users/Darvius/Desktop/Santana-Consultoria/Santana-Testes/app/views/layouts/application.html.erb:49: syntax error, unexpected kELSE, expecting ')'
+; else; @output_buffer.concat "\n\t\t\t\t\t <li>"
+      ^
+C:/Users/Darvius/Desktop/Santana-Consultoria/Santana-Testes/app/views/layouts/application.html.erb:51: syntax error, unexpected kEND, expecting ')'
+; end; @output_buffer.concat "\n\t\t\t\t\t<li>"
+     ^
+C:/Users/Darvius/Desktop/Santana-Consultoria/Santana-Testes/app/views/layouts/application.html.erb:67: syntax error, unexpected kELSE, expecting ')'
+;  else ; @output_buffer.concat "\n\t\t\t\t"
+       ^
+C:/Users/Darvius/Desktop/Santana-Consultoria/Santana-Testes/app/views/layouts/application.html.erb:74: syntax error, unexpected kEND, expecting ')'
+;  end ; @output_buffer.concat "\n  ...
+      ^
+C:/Users/Darvius/Desktop/Santana-Consultoria/Santana-Testes/app/views/layouts/application.html.erb:101: syntax error, unexpected kENSURE, expecting ')'
+C:/Users/Darvius/Desktop/Santana-Consultoria/Santana-Testes/app/views/layouts/application.html.erb:103: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_erb_app47views47layouts47application46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "\357\273\277<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n    <meta name=\"title\" content=\"Santana Consultoria em RH\" />\n    <meta name=\"url\" content=\"www.santanarh.com.br\" />\n    <meta name=\"description\" content=\"Site da Santana Consultoria em RH. Sele\303\247\303\265es e recrutamentos em Franca e interior de S\303\243o Paulo.\" />\n    <meta name=\"keywords\" content=\"Consultoria, Relacionamentos humanos, RH, Santana Consultoria, Franca, S\303\243o Paulo, Ribeir\303\243o preto, Interior de S\303\243o Paulo, Sele\303\247\303\243o de pessoal, Sele\303\247\303\243o, pessoal, recrutamento, clima interno, sele\303\247\303\243o 360, profissionais, vagas, empregos\" />\n    <meta name=\"charset\" content=\"UTF-8\" />\n    <meta name=\"autor\" content=\"Isaac Queiroz\" />\n    <meta name=\"company\" content=\"Santana Consultoria em RH\" />\n    <meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n    <title>Santana Consultoria em R.H.</title>\n\t"
+
+
+
+
+
+
+
+
+
+
+
+; @output_buffer.concat(( javascript_include_tag "jrails.js", "jquery.js", "jquery-ui.js", "elastic.js", :defaults, :cache => true).to_s); @output_buffer.concat "\n\t"
+; @output_buffer.concat(( yield :javascript ).to_s); @output_buffer.concat "\n\t"
+; @output_buffer.concat(( stylesheet_link_tag "elastic", "default").to_s); @output_buffer.concat "\n</head>\n<body>\n<div class=\342\200\235unit\342\200\235> \n    <!-- Div do Logo -->\n    <div id=\"logo\" class=\"container\">\n    \t"
+
+
+
+
+
+; @output_buffer.concat(( link_to image_tag("logo.png"), noticias_path).to_s); @output_buffer.concat "    \t\n    </div>\n    <!-- Div do menu -->\n    <div id=\"menuDiv\" class=\"container\">\n    \t<p>\n        \t"
+
+
+
+
+; @output_buffer.concat(( link_to 'Notícias', noticias_path, :class => "menu" ).to_s); @output_buffer.concat "\n\t\t\t"
+; @output_buffer.concat(( link_to 'Conheça-nos', whos_path, :class => "menu" ).to_s); @output_buffer.concat "\n            "
+; @output_buffer.concat(( link_to 'Vagas Atuais', selections_path, :class => "menu" ).to_s); @output_buffer.concat "\n            "
+; @output_buffer.concat(( link_to 'Serviços Oferecidos', servicos_path, :class => "menu" ).to_s); @output_buffer.concat "\n            "
+; @output_buffer.concat(( link_to 'Contate-nos', contatos_path, :class => "menu" ).to_s); @output_buffer.concat "\n\t\t\t"
+; @output_buffer.concat(( link_to 'Cadastre-se', new_user_path, :class => "menu" ).to_s); @output_buffer.concat " \n        </p>\n    </div>\n</div>\n\n<!-- Content Div -->\n<div class=\"unit on-4 columns same-height\">  \n    <div id=\"painel\" class=\"column\">  \n        <div id=\"usrCont\" class=\"container\" style=\"padding-left:5px;\">\n\t\t\t<h1>Painel do Usu\303\241rio</h1>\n \t\t\t"
+
+
+
+
+
+
+
+
+
+;  if logged_in? ; @output_buffer.concat "\n\t\t\t\t<p>Seja Bem Vindo, <b>"
+; @output_buffer.concat(( link_to h(current_user.login.capitalize), user_path(current_user) ).to_s); @output_buffer.concat "</b></p>\n\t\t\t\t<ul class=\"usrMenu\">\n\t\t\t\t\t<li>"
+
+; @output_buffer.concat(( link_to 'Editar Perfil', edit_user_path(current_user)).to_s); @output_buffer.concat "</li>\n\t\t\t\t\t<li>"
+; @output_buffer.concat(( link_to 'Mudar Senha', change_password_path ).to_s); @output_buffer.concat "</li>\n\t\t\t\t\t<li>"
+; @output_buffer.concat(( link_to 'Seção de Testes', user_tests_path(current_user) ).to_s); @output_buffer.concat "</li>\n\t\t\t\t\t"
+; if (!(current_user.has_role?('administrator')) && (!(current_user.curriculo.blank?) && !(current_user.curriculo.id.blank?)) ; @output_buffer.concat "\n\t\t\t\t\t <li>"
+; @output_buffer.concat(( link_to 'Seção de Curriculos', user_curriculo_path(current_user) ).to_s); @output_buffer.concat "</li>\n\t\t\t\t\t"
+; else; @output_buffer.concat "\n\t\t\t\t\t <li>"
+; @output_buffer.concat(( link_to 'Crie seu Curriculo!', user_curriculo_path(current_user) ).to_s); @output_buffer.concat "</li>\n\t\t\t\t\t"
+; end; @output_buffer.concat "\n\t\t\t\t\t<li>"
+; @output_buffer.concat(( link_to 'Sair', logout_url ).to_s); @output_buffer.concat "</li>\n\t\t\t\t</ul>\n\t\t\t\t"
+
+;  if !(current_user.blank?) && (current_user.has_role?('administrator')) ; @output_buffer.concat "\n\t\t\t\t\t<p>Op\303\247\303\265es de Administrador:</p>\n\t\t\t\t\t<ul>\n\t\t\t\t\t\t<li>"
+
+
+; @output_buffer.concat(( link_to 'Administrar Contate-nos', contatos_path ).to_s); @output_buffer.concat "</li>\n\t\t\t\t\t\t<li>"
+; @output_buffer.concat(( link_to 'Administrar Notícias', noticias_path ).to_s); @output_buffer.concat "</li>\n\t\t\t\t\t\t<li>"
+; @output_buffer.concat(( link_to 'Administrar Conheça-nos', whos_path ).to_s); @output_buffer.concat "</li>\n\t\t\t\t\t\t<li>"
+; @output_buffer.concat(( link_to 'Administrar Vagas', selections_path ).to_s); @output_buffer.concat "</li>\n\t\t\t\t\t\t<li>"
+; @output_buffer.concat(( link_to 'Administrar Serviços Realizados', servicos_path ).to_s); @output_buffer.concat "</li>\n\t\t\t\t\t\t<li>"
+; @output_buffer.concat(( link_to 'Elaborar Teste', test_tabs_path ).to_s); @output_buffer.concat "</li>\n\t\t\t\t\t\t<li>"
+; @output_buffer.concat(( link_to 'Central de Testes e Resultados', allow_tests_path ).to_s); @output_buffer.concat "</li>\n\t\t\t\t\t\t<li>"
+; @output_buffer.concat(( link_to 'Seção Avançada - Usuários', users_path ).to_s); @output_buffer.concat "</li>\n\t\t\t\t\t</ul>\n\t\t\t\t"
+
+;  end ; @output_buffer.concat "\n\t\t\t"
+;  else ; @output_buffer.concat "\n\t\t\t\t"
+;  form_tag (session_path) do ; @output_buffer.concat "\n\t\t\t\t\t<p><label for=\"login\">Login: </label>"
+; @output_buffer.concat(( text_field_tag 'login','', :size => 15 ).to_s); @output_buffer.concat "</p>\n\t\t\t\t\t<p><label for=\"password\">Senha: </label>"
+; @output_buffer.concat(( password_field_tag 'password','', :size => 10 ).to_s); @output_buffer.concat "</p>\n\t\t\t\t\t<p><label for=\"remember_me\">Continuar conectado </label>"
+; @output_buffer.concat(( check_box_tag 'remember_me' ).to_s); @output_buffer.concat "</p>\t\t\t\t\t \n\t\t\t\t\t<p style=\"text-align:center\">"
+; @output_buffer.concat(( submit_tag 'Entrar', :class => "loginButton" ).to_s); @output_buffer.concat " | "; @output_buffer.concat(( link_to "Cadastrar", new_user_path ).to_s); @output_buffer.concat "</p>\n\t\t\t\t"
+;  end ; @output_buffer.concat "\n\t\t\t"
+;  end ; @output_buffer.concat "\n    \t</div> \n\t</div>\n\t<div class=\"column span-2\" >  \n        <div id=\"content\" class=\"container\">\n        \t<p style=\"color: green\">"
+
+
+
+
+; @output_buffer.concat(( flash[:notice] ).to_s); @output_buffer.concat "</p>\n            <p style=\"color: red\">"
+; @output_buffer.concat(( flash[:error] ).to_s); @output_buffer.concat "</p>\n            "
+; @output_buffer.concat(( yield  ).to_s); @output_buffer.concat "\n        </div> \n    </div>\n\t<div id=\"ads\" class=\"column\">  \n        <!-- Div de Ads -->    \n        <div id=\"addCont\" id=\"painel\" class=\"unit\" style=\"padding-top:20px;\">        \t\n            <p>"
+
+
+
+
+
+; @output_buffer.concat(( image_tag("ads.png")).to_s); @output_buffer.concat "</p>\n            <p>"
+; @output_buffer.concat(( image_tag("ads.png")).to_s); @output_buffer.concat "</p>\n            <p>"
+; @output_buffer.concat(( image_tag("ads.png")).to_s); @output_buffer.concat "</p>\n        </div>\n    </div>  \n\t</div>  \n<!-- Rodap\303\251 -->\n<div id=\"foot\" class=\"unit\">\n\t<p>Melhor visualizado em 1024x768</p>\n\t<p>\302\251 2010 Santana Consultoria em R.H. LTDA. Todos os direitos reservados.</p>\n</div>\n</body>\n</html>\n"
+
+
+
+
+
+
+
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: C:/Users/Darvius/Desktop/Santana-Consultoria/Santana-Testes/app/views/layouts/application.html.erb:103:in `compile!'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:352:in `_render_with_layout'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+C:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/Ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+C:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/Ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+C:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130
+C:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+C:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+C:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+C:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+C:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+C:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+C:/Users/Darvius/Desktop/Santana-Consultoria/Santana-Testes/app/views/layouts/application.html.erb:49: syntax error, unexpected kELSE, expecting ')'
+; else; @output_buffer.concat "\n\t\t\t\t\t <li>"
+      ^
+C:/Users/Darvius/Desktop/Santana-Consultoria/Santana-Testes/app/views/layouts/application.html.erb:51: syntax error, unexpected kEND, expecting ')'
+; end; @output_buffer.concat "\n\t\t\t\t\t<li>"
+     ^
+C:/Users/Darvius/Desktop/Santana-Consultoria/Santana-Testes/app/views/layouts/application.html.erb:67: syntax error, unexpected kELSE, expecting ')'
+;  else ; @output_buffer.concat "\n\t\t\t\t"
+       ^
+C:/Users/Darvius/Desktop/Santana-Consultoria/Santana-Testes/app/views/layouts/application.html.erb:74: syntax error, unexpected kEND, expecting ')'
+;  end ; @output_buffer.concat "\n  ...
+      ^
+C:/Users/Darvius/Desktop/Santana-Consultoria/Santana-Testes/app/views/layouts/application.html.erb:101: syntax error, unexpected kENSURE, expecting ')'
+C:/Users/Darvius/Desktop/Santana-Consultoria/Santana-Testes/app/views/layouts/application.html.erb:103: syntax error, unexpected kEND, expecting ')') on line #49 of app/views/layouts/application.html.erb:
+46: 					<li><%= link_to 'Seção de Testes', user_tests_path(current_user) %></li>
+47: 					<%if (!(current_user.has_role?('administrator')) && (!(current_user.curriculo.blank?) && !(current_user.curriculo.id.blank?)) %>
+48: 					 <li><%= link_to 'Seção de Curriculos', user_curriculo_path(current_user) %></li>
+49: 					<%else%>
+50: 					 <li><%= link_to 'Crie seu Curriculo!', user_curriculo_path(current_user) %></li>
+51: 					<%end%>
+52: 					<li><%= link_to 'Sair', logout_url %></li>
+
+    app/views/layouts/application.html.erb:103:in `compile!'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (40.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-07-12 20:31:59) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/show
+  [4;36;1mRole Columns (26.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (53.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 212ms (View: 106, DB: 84) | 200 OK [http://localhost/users/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#index (for 127.0.0.1 at 2010-07-12 20:33:17) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: create, new, and show):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (3.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-12 20:33:21) [GET]
+
+ActionController::RoutingError (No route matches "/search" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-12 20:33:29) [GET]
+
+ActionController::RoutingError (No route matches "/curriculo/search" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-12 20:33:34) [GET]
+
+ActionController::RoutingError (No route matches "/curriculo/search/new" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-07-12 20:33:40) [GET]
+
+ActionController::RoutingError (No route matches "/search/new" with {:method=>:get}):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#new (for 127.0.0.1 at 2010-07-12 20:33:49) [GET]
+  [4;35;1mSearch Columns (56.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+Rendering template within layouts/application
+Rendering searches/new
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 184ms (View: 84, DB: 65) | 200 OK [http://localhost/searches/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 20:33:56) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"Jose", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;35;1mSearch Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSearch Create (80.0ms)[0m   [0mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(NULL, '', '2010-07-12 23:33:56', '', 'Jose', '2010-07-12 23:33:56', '', '', NULL, '', '')[0m
+  [4;36;1mSQL (13.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/searches/2
+Completed in 120ms (DB: 97) | 302 Found [http://localhost/searches]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 20:33:56) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSearch Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSearch Load (0.0ms)[0m   [0;1mSELECT * FROM `searches` WHERE (`searches`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;35;1mCurriculo Load (1.0ms)[0m   [0mSELECT * FROM `curriculos` [0m
+
+ActionView::TemplateError (Missing template curriculos/_curriculo.erb in view path app/views) on line #1 of app/views/searches/show.html.erb:
+1: <%= render :partial => @search.curriculos%>
+
+    app/views/searches/show.html.erb:1
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (127.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 21:24:20) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSearch Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (0.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;36;1mCurriculo Load (1.0ms)[0m   [0;1mSELECT * FROM `curriculos` [0m
+
+ActionView::TemplateError (undefined method `nome' for nil:NilClass) on line #3 of app/views/curriculos/_curriculo.html.erb:
+1: <p>
+2:     <b>Nome:</b>
+3:     <%=h @curriculo.nome %>  
+4:     <%=h @curriculo.sobrenome %>
+5: 	<b>Data de Nascimento: </b>
+6:     <%=h @curriculo.data_nasc.strftime('%d/%m/%Y') %> 
+
+    app/views/curriculos/_curriculo.html.erb:3
+    app/views/searches/show.html.erb:1
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (47.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 21:25:06) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSearch Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSearch Load (0.0ms)[0m   [0;1mSELECT * FROM `searches` WHERE (`searches`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;35;1mCurriculo Load (0.0ms)[0m   [0mSELECT * FROM `curriculos` [0m
+
+ActionView::TemplateError (undefined method `sobrenome' for #<Search:0x857dee8>) on line #4 of app/views/curriculos/_curriculo.html.erb:
+1: <p>
+2:     <b>Nome:</b>
+3:     <%=h @search.nome %>  
+4:     <%=h @search.sobrenome %>
+5: 	<b>Data de Nascimento: </b>
+6:     <%=h @search.data_nasc.strftime('%d/%m/%Y') %> 
+7: </p>
+
+    app/views/curriculos/_curriculo.html.erb:4
+    app/views/searches/show.html.erb:1
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (50.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 21:26:40) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSearch Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (0.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;36;1mCurriculo Load (0.0ms)[0m   [0;1mSELECT * FROM `curriculos` [0m
+
+ActionView::TemplateError (undefined method `nome' for nil:NilClass) on line #3 of app/views/curriculos/_curriculo.html.erb:
+1: <p>
+2:     <b>Nome:</b>
+3:     <%=h @curriculos.nome %>  
+4:     <%=h @curriculos.sobrenome %>
+5: 	<b>Data de Nascimento: </b>
+6:     <%=h @curriculos.data_nasc.strftime('%d/%m/%Y') %> 
+
+    app/views/curriculos/_curriculo.html.erb:3
+    app/views/searches/show.html.erb:1
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (46.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 21:26:58) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"Isaac", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;35;1mSearch Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSearch Create (0.0ms)[0m   [0mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(NULL, '', '2010-07-13 00:26:58', '', 'Isaac', '2010-07-13 00:26:58', '', '', NULL, '', '')[0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/searches/3
+Completed in 25ms (DB: 10) | 302 Found [http://localhost/searches]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 21:26:58) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mSearch Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSearch Load (1.0ms)[0m   [0;1mSELECT * FROM `searches` WHERE (`searches`.`id` = 3) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;35;1mCurriculo Load (1.0ms)[0m   [0mSELECT * FROM `curriculos` [0m
+
+ActionView::TemplateError (undefined method `nome' for nil:NilClass) on line #3 of app/views/curriculos/_curriculo.html.erb:
+1: <p>
+2:     <b>Nome:</b>
+3:     <%=h @curriculos.nome %>  
+4:     <%=h @curriculos.sobrenome %>
+5: 	<b>Data de Nascimento: </b>
+6:     <%=h @curriculos.data_nasc.strftime('%d/%m/%Y') %> 
+
+    app/views/curriculos/_curriculo.html.erb:3
+    app/views/searches/show.html.erb:1
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (48.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 21:29:11) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mSearch Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (1.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 3) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;36;1mCurriculo Load (1.0ms)[0m   [0;1mSELECT * FROM `curriculos` [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/curriculos/_curriculo.html.erb:
+1: <% @curriculos.each do |curriculo| %>
+2: 	<p>
+3: 	    <b>Nome:</b>
+4: 	    <%=h curriculo.nome %>  
+
+    app/views/curriculos/_curriculo.html.erb:1
+    app/views/searches/show.html.erb:1
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (115.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 21:29:28) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"Teste", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;35;1mSearch Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSearch Create (0.0ms)[0m   [0mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(NULL, '', '2010-07-13 00:29:28', '', 'Teste', '2010-07-13 00:29:28', '', '', NULL, '', '')[0m
+  [4;36;1mSQL (24.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/searches/4
+Completed in 42ms (DB: 29) | 302 Found [http://localhost/searches]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 21:29:28) [GET]
+  Parameters: {"id"=>"4"}
+  [4;35;1mSearch Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSearch Load (0.0ms)[0m   [0;1mSELECT * FROM `searches` WHERE (`searches`.`id` = 4) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;35;1mCurriculo Load (0.0ms)[0m   [0mSELECT * FROM `curriculos` [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/curriculos/_curriculo.html.erb:
+1: <% @curriculos.each do |curriculo| %>
+2: 	<p>
+3: 	    <b>Nome:</b>
+4: 	    <%=h curriculo.nome %>  
+
+    app/views/curriculos/_curriculo.html.erb:1
+    app/views/searches/show.html.erb:1
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (115.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 21:29:32) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;36;1mSearch Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSearch Create (0.0ms)[0m   [0;1mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(NULL, '', '2010-07-13 00:29:32', '', '', '2010-07-13 00:29:32', '', '', NULL, '', '')[0m
+  [4;35;1mSQL (25.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/searches/5
+Completed in 42ms (DB: 29) | 302 Found [http://localhost/searches]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 21:29:32) [GET]
+  Parameters: {"id"=>"5"}
+  [4;36;1mSearch Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (0.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 5) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;36;1mCurriculo Load (0.0ms)[0m   [0;1mSELECT * FROM `curriculos` [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/curriculos/_curriculo.html.erb:
+1: <% @curriculos.each do |curriculo| %>
+2: 	<p>
+3: 	    <b>Nome:</b>
+4: 	    <%=h curriculo.nome %>  
+
+    app/views/curriculos/_curriculo.html.erb:1
+    app/views/searches/show.html.erb:1
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (117.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 21:29:39) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;35;1mSearch Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSearch Create (0.0ms)[0m   [0mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(NULL, '', '2010-07-13 00:29:39', '', '', '2010-07-13 00:29:39', '', '', NULL, '', '')[0m
+  [4;36;1mSQL (8.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/searches/6
+Completed in 25ms (DB: 11) | 302 Found [http://localhost/searches]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 21:29:39) [GET]
+  Parameters: {"id"=>"6"}
+  [4;35;1mSearch Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSearch Load (1.0ms)[0m   [0;1mSELECT * FROM `searches` WHERE (`searches`.`id` = 6) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;35;1mCurriculo Load (0.0ms)[0m   [0mSELECT * FROM `curriculos` [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/curriculos/_curriculo.html.erb:
+1: <% @curriculos.each do |curriculo| %>
+2: 	<p>
+3: 	    <b>Nome:</b>
+4: 	    <%=h curriculo.nome %>  
+
+    app/views/curriculos/_curriculo.html.erb:1
+    app/views/searches/show.html.erb:1
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (48.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 21:32:04) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mSearch Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (1.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;36;1mCurriculo Load (1.0ms)[0m   [0;1mSELECT * FROM `curriculos` [0m
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/curriculos/_curriculo.html.erb:
+1: <% @curriculos.each do |curriculo| %>
+2: 	<p>
+3: 	    <b>Nome:</b>
+4: 	    <%=h curriculo.nome %>  
+
+    app/views/curriculos/_curriculo.html.erb:1
+    app/views/searches/show.html.erb:1
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (48.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 21:34:35) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSearch Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSearch Load (1.0ms)[0m   [0;1mSELECT * FROM `searches` WHERE (`searches`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering searches/show
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #1 of app/views/searches/show.html.erb:
+1: <% @curriculos.each do |curriculo| %>
+2: 	<p>
+3: 	    <b>Nome:</b>
+4: 	    <%=h curriculo.nome %>  
+
+    app/views/searches/show.html.erb:1
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (36.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 21:34:52) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSearch Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSearch Load (1.0ms)[0m   [0;1mSELECT * FROM `searches` WHERE (`searches`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;35;1mCurriculo Load (1.0ms)[0m   [0mSELECT * FROM `curriculos` [0m
+  [4;36;1mCurriculo Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+
+ActionView::TemplateError (undefined method `escolaridade' for nil:NilClass) on line #11 of app/views/searches/show.html.erb:
+8: 	</p>
+9: 	
+10: 	<p>
+11: 	    <b>Escolaridade:</b> <%=h escol_method(@curriculo.escolaridade)%>
+12: 	</p>
+13: 	
+14: 	<p>
+
+    app/views/searches/show.html.erb:11
+    app/views/searches/show.html.erb:1:in `each'
+    app/views/searches/show.html.erb:1
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (40.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 21:35:06) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mSearch Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSearch Load (1.0ms)[0m   [0;1mSELECT * FROM `searches` WHERE (`searches`.`id` = 2) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;35;1mCurriculo Load (2.0ms)[0m   [0mSELECT * FROM `curriculos` [0m
+  [4;36;1mCurriculo Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 96ms (View: 68, DB: 19) | 200 OK [http://localhost/searches/2]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#new (for 127.0.0.1 at 2010-07-12 21:35:14) [GET]
+  [4;36;1mSearch Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+Rendering template within layouts/application
+Rendering searches/new
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 73ms (View: 52, DB: 11) | 200 OK [http://localhost/searches/new]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 21:35:17) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"Isaac", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;36;1mSearch Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSearch Create (0.0ms)[0m   [0;1mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(NULL, '', '2010-07-13 00:35:17', '', 'Isaac', '2010-07-13 00:35:17', '', '', NULL, '', '')[0m
+  [4;35;1mSQL (7.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/searches/7
+Completed in 34ms (DB: 12) | 302 Found [http://localhost/searches]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 21:35:17) [GET]
+  Parameters: {"id"=>"7"}
+  [4;36;1mSearch Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (0.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 7) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;36;1mCurriculo Load (0.0ms)[0m   [0;1mSELECT * FROM `curriculos` [0m
+  [4;35;1mCurriculo Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `curriculos`[0m
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (1.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 169ms (View: 138, DB: 18) | 200 OK [http://localhost/searches/7]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 21:36:17) [GET]
+  Parameters: {"id"=>"7"}
+  [4;35;1mSearch Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSearch Load (1.0ms)[0m   [0;1mSELECT * FROM `searches` WHERE (`searches`.`id` = 7) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;35;1mCurriculo Load (1.0ms)[0m   [0mSELECT * FROM `curriculos` [0m
+  [4;36;1mCurriculo Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 147ms (View: 122, DB: 17) | 200 OK [http://localhost/searches/7]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#new (for 127.0.0.1 at 2010-07-12 21:36:23) [GET]
+  [4;36;1mSearch Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+Rendering template within layouts/application
+Rendering searches/new
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 94ms (View: 71, DB: 10) | 200 OK [http://localhost/searches/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 21:36:27) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"Isaac", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;36;1mSearch Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSearch Create (0.0ms)[0m   [0;1mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(NULL, '', '2010-07-13 00:36:27', '', 'Isaac', '2010-07-13 00:36:27', '', '', NULL, '', '')[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/searches/8
+Completed in 33ms (DB: 9) | 302 Found [http://localhost/searches]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 21:36:27) [GET]
+  Parameters: {"id"=>"8"}
+  [4;36;1mSearch Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (1.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 8) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;36;1mCurriculo Load (1.0ms)[0m   [0;1mSELECT * FROM `curriculos` [0m
+  [4;35;1mCurriculo Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `curriculos`[0m
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 106ms (View: 78, DB: 16) | 200 OK [http://localhost/searches/8]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 21:36:34) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;35;1mSearch Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSearch Create (0.0ms)[0m   [0mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(NULL, '', '2010-07-13 00:36:34', '', '', '2010-07-13 00:36:34', '', '', NULL, '', '')[0m
+  [4;36;1mSQL (24.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/searches/9
+Completed in 51ms (DB: 31) | 302 Found [http://localhost/searches]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 21:36:34) [GET]
+  Parameters: {"id"=>"9"}
+  [4;35;1mSearch Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSearch Load (0.0ms)[0m   [0;1mSELECT * FROM `searches` WHERE (`searches`.`id` = 9) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;35;1mCurriculo Load (0.0ms)[0m   [0mSELECT * FROM `curriculos` [0m
+  [4;36;1mCurriculo Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 106ms (View: 79, DB: 13) | 200 OK [http://localhost/searches/9]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 21:36:39) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>"Franca"}}
+  [4;36;1mSearch Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSearch Create (0.0ms)[0m   [0;1mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(NULL, '', '2010-07-13 00:36:39', '', '', '2010-07-13 00:36:39', '', '', NULL, 'Franca', '')[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/searches/10
+Completed in 31ms (DB: 8) | 302 Found [http://localhost/searches]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 21:36:39) [GET]
+  Parameters: {"id"=>"10"}
+  [4;36;1mSearch Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (0.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 10) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;36;1mCurriculo Load (0.0ms)[0m   [0;1mSELECT * FROM `curriculos` [0m
+  [4;35;1mCurriculo Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `curriculos`[0m
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (1.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 104ms (View: 76, DB: 16) | 200 OK [http://localhost/searches/10]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#new (for 127.0.0.1 at 2010-07-12 21:37:51) [GET]
+  [4;35;1mSearch Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+Rendering template within layouts/application
+Rendering searches/new
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 70ms (View: 50, DB: 11) | 200 OK [http://localhost/searches/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 21:38:01) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"Isaac Queiroz", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;35;1mSearch Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSearch Create (0.0ms)[0m   [0mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(NULL, '', '2010-07-13 00:38:01', '', 'Isaac Queiroz', '2010-07-13 00:38:01', '', '', NULL, '', '')[0m
+  [4;36;1mSQL (6.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/searches/11
+Completed in 31ms (DB: 11) | 302 Found [http://localhost/searches]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 21:38:01) [GET]
+  Parameters: {"id"=>"11"}
+  [4;35;1mSearch Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSearch Load (0.0ms)[0m   [0;1mSELECT * FROM `searches` WHERE (`searches`.`id` = 11) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;35;1mCurriculo Load (0.0ms)[0m   [0mSELECT * FROM `curriculos` [0m
+  [4;36;1mCurriculo Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 109ms (View: 79, DB: 16) | 200 OK [http://localhost/searches/11]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 21:38:11) [GET]
+  Parameters: {"id"=>"11"}
+  [4;36;1mSearch Columns (28.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (1.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 11) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;36;1mCurriculo Load (0.0ms)[0m   [0;1mSELECT * FROM `curriculos` [0m
+  [4;35;1mCurriculo Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `curriculos`[0m
+Rendered curriculos/_curriculo (15.0ms)
+Rendered curriculos/_curriculo (1.0ms)
+Rendered curriculos/_curriculo (1.0ms)
+Rendered curriculos/_curriculo (0.0ms)
+Rendered curriculos/_curriculo (1.0ms)
+Rendered curriculos/_curriculo (1.0ms)
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 156ms (View: 103, DB: 41) | 200 OK [http://localhost/searches/11]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#new (for 127.0.0.1 at 2010-07-12 22:10:52) [GET]
+  [4;35;1mSearch Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+Rendering template within layouts/application
+Rendering searches/new
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 96ms (View: 71, DB: 13) | 200 OK [http://localhost/searches/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 22:10:56) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"Isaac", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;35;1mSearch Columns (7.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSearch Create (16.0ms)[0m   [0mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(NULL, '', '2010-07-13 01:10:56', '', 'Isaac', '2010-07-13 01:10:56', '', '', NULL, '', '')[0m
+  [4;36;1mSQL (16.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/searches/12
+Completed in 68ms (DB: 40) | 302 Found [http://localhost/searches]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 22:10:56) [GET]
+  Parameters: {"id"=>"12"}
+  [4;35;1mSearch Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSearch Load (0.0ms)[0m   [0;1mSELECT * FROM `searches` WHERE (`searches`.`id` = 12) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;35;1mCurriculo Load (1.0ms)[0m   [0mSELECT * FROM `curriculos` [0m
+  [4;36;1mCurriculo Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+Rendered curriculos/_curriculo (13.0ms)
+Rendered curriculos/_curriculo (2.0ms)
+Rendered curriculos/_curriculo (1.0ms)
+Rendered curriculos/_curriculo (0.0ms)
+Rendered curriculos/_curriculo (1.0ms)
+Rendered curriculos/_curriculo (1.0ms)
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mRole Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 205ms (View: 97, DB: 18) | 200 OK [http://localhost/searches/12]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 22:11:06) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"Vendas", "ingles"=>"", "nome"=>"Isaac", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;36;1mSearch Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSearch Create (0.0ms)[0m   [0;1mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(0, '', '2010-07-13 01:11:06', '', 'Isaac', '2010-07-13 01:11:06', '', '', NULL, '', '')[0m
+  [4;35;1mSQL (11.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/searches/13
+Completed in 40ms (DB: 15) | 302 Found [http://localhost/searches]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 22:11:06) [GET]
+  Parameters: {"id"=>"13"}
+  [4;36;1mSearch Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (1.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 13) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;36;1mCurriculo Load (3.0ms)[0m   [0;1mSELECT * FROM `curriculos` [0m
+  [4;35;1mCurriculo Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `curriculos`[0m
+Rendered curriculos/_curriculo (9.0ms)
+Rendered curriculos/_curriculo (0.0ms)
+Rendered curriculos/_curriculo (1.0ms)
+Rendered curriculos/_curriculo (1.0ms)
+Rendered curriculos/_curriculo (1.0ms)
+Rendered curriculos/_curriculo (0.0ms)
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 104ms (View: 71, DB: 24) | 200 OK [http://localhost/searches/13]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 22:11:19) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"1", "ingles"=>"", "nome"=>"Isaac", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;35;1mSearch Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSearch Create (0.0ms)[0m   [0mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(1, '', '2010-07-13 01:11:19', '', 'Isaac', '2010-07-13 01:11:19', '', '', NULL, '', '')[0m
+  [4;36;1mSQL (21.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/searches/14
+Completed in 48ms (DB: 25) | 302 Found [http://localhost/searches]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 22:11:19) [GET]
+  Parameters: {"id"=>"14"}
+  [4;35;1mSearch Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSearch Load (1.0ms)[0m   [0;1mSELECT * FROM `searches` WHERE (`searches`.`id` = 14) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;35;1mCurriculo Load (1.0ms)[0m   [0mSELECT * FROM `curriculos` [0m
+  [4;36;1mCurriculo Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+Rendered curriculos/_curriculo (11.0ms)
+Rendered curriculos/_curriculo (1.0ms)
+Rendered curriculos/_curriculo (1.0ms)
+Rendered curriculos/_curriculo (0.0ms)
+Rendered curriculos/_curriculo (1.0ms)
+Rendered curriculos/_curriculo (1.0ms)
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 117ms (View: 88, DB: 17) | 200 OK [http://localhost/searches/14]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 22:14:12) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"Isaac", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;36;1mSearch Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSearch Create (0.0ms)[0m   [0;1mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(NULL, '', '2010-07-13 01:14:12', '', 'Isaac', '2010-07-13 01:14:12', '', '', NULL, '', '')[0m
+  [4;35;1mSQL (22.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/searches/15
+Completed in 40ms (DB: 25) | 302 Found [http://localhost/searches]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 22:14:13) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSearch Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (0.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 15) [0m
+Rendering template within layouts/application
+Rendering searches/show
+
+ActionView::TemplateError (undefined local variable or method `condition_parts' for #<Search:0x865dda8>) on line #1 of app/views/searches/show.html.erb:
+1: <%= render :partial => @search.curriculos%>
+
+    app/models/search.rb:54:in `conditions_clauses'
+    app/models/search.rb:50:in `conditions'
+    app/models/search.rb:10:in `find_curriculos'
+    app/models/search.rb:4:in `curriculos'
+    app/views/searches/show.html.erb:1
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (42.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 22:14:46) [GET]
+  Parameters: {"id"=>"15"}
+  [4;36;1mSearch Columns (12.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (0.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 15) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;36;1mCurriculo Load (8.0ms)[0m   [0;1mSELECT * FROM `curriculos` WHERE (curriculos.nome LIKE '%Isaac%') [0m
+  [4;35;1mCurriculo Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `curriculos`[0m
+Rendered curriculos/_curriculo (7.0ms)
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (1.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 99ms (View: 58, DB: 31) | 200 OK [http://localhost/searches/15]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 22:15:08) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"", "informatica"=>"", "empregado"=>"NÃO", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;35;1mSearch Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSearch Create (1.0ms)[0m   [0mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(NULL, '', '2010-07-13 01:15:08', '', '', '2010-07-13 01:15:08', 'NÃO', '', NULL, '', '')[0m
+  [4;36;1mSQL (9.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/searches/16
+Completed in 29ms (DB: 14) | 302 Found [http://localhost/searches]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 22:15:08) [GET]
+  Parameters: {"id"=>"16"}
+  [4;35;1mSearch Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSearch Load (0.0ms)[0m   [0;1mSELECT * FROM `searches` WHERE (`searches`.`id` = 16) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;35;1mCurriculo Load (1.0ms)[0m   [0mSELECT * FROM `curriculos` WHERE (curriculos.empregado LIKE '%NÃO%') [0m
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 191ms (View: 163, DB: 10) | 200 OK [http://localhost/searches/16]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 22:15:16) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>"Franca"}}
+  [4;35;1mSearch Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSearch Create (1.0ms)[0m   [0mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(NULL, '', '2010-07-13 01:15:16', '', '', '2010-07-13 01:15:16', '', '', NULL, 'Franca', '')[0m
+  [4;36;1mSQL (8.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/searches/17
+Completed in 37ms (DB: 11) | 302 Found [http://localhost/searches]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 22:15:16) [GET]
+  Parameters: {"id"=>"17"}
+  [4;35;1mSearch Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSearch Load (1.0ms)[0m   [0;1mSELECT * FROM `searches` WHERE (`searches`.`id` = 17) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;35;1mCurriculo Load (0.0ms)[0m   [0mSELECT * FROM `curriculos` WHERE (curriculos.cidade LIKE '%Franca%') [0m
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (1.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 185ms (View: 155, DB: 13) | 200 OK [http://localhost/searches/17]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 22:15:29) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>"São Carlos"}}
+  [4;35;1mSearch Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSearch Create (1.0ms)[0m   [0mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(NULL, '', '2010-07-13 01:15:29', '', '', '2010-07-13 01:15:29', '', '', NULL, 'São Carlos', '')[0m
+  [4;36;1mSQL (8.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/searches/18
+Completed in 35ms (DB: 13) | 302 Found [http://localhost/searches]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 22:15:29) [GET]
+  Parameters: {"id"=>"18"}
+  [4;35;1mSearch Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSearch Load (1.0ms)[0m   [0;1mSELECT * FROM `searches` WHERE (`searches`.`id` = 18) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;35;1mCurriculo Load (0.0ms)[0m   [0mSELECT * FROM `curriculos` WHERE (curriculos.cidade LIKE '%São Carlos%') [0m
+  [4;36;1mCurriculo Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+Rendered curriculos/_curriculo (12.0ms)
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 195ms (View: 167, DB: 16) | 200 OK [http://localhost/searches/18]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 22:15:42) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"Acre", "cidade"=>""}}
+  [4;36;1mSearch Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSearch Create (0.0ms)[0m   [0;1mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(NULL, '', '2010-07-13 01:15:42', '', '', '2010-07-13 01:15:42', '', '', NULL, '', 'Acre')[0m
+  [4;35;1mSQL (7.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/searches/19
+Completed in 38ms (DB: 10) | 302 Found [http://localhost/searches]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 22:15:42) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mSearch Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (1.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 19) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;36;1mCurriculo Load (0.0ms)[0m   [0;1mSELECT * FROM `curriculos` WHERE (curriculos.estado LIKE '%Acre%') [0m
+  [4;35;1mCurriculo Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `curriculos`[0m
+Rendered curriculos/_curriculo (11.0ms)
+Rendered curriculos/_curriculo (1.0ms)
+Rendered curriculos/_curriculo (0.0ms)
+Rendered curriculos/_curriculo (1.0ms)
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 194ms (View: 166, DB: 16) | 200 OK [http://localhost/searches/19]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 22:32:03) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"Isaac", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;35;1mSearch Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSearch Create (0.0ms)[0m   [0mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(NULL, '', '2010-07-13 01:32:03', '', 'Isaac', '2010-07-13 01:32:03', '', '', NULL, '', '')[0m
+  [4;36;1mSQL (7.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/searches/20
+Completed in 31ms (DB: 13) | 302 Found [http://localhost/searches]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 22:32:03) [GET]
+  Parameters: {"id"=>"20"}
+  [4;35;1mSearch Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSearch Load (0.0ms)[0m   [0;1mSELECT * FROM `searches` WHERE (`searches`.`id` = 20) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;35;1mCurriculo Load (1.0ms)[0m   [0mSELECT * FROM `curriculos` WHERE (curriculos.nome LIKE '%Isaac%') [0m
+  [4;36;1mCurriculo Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+Rendered curriculos/_curriculo (10.0ms)
+  [4;35;1mUser Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mRole Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (3.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 213ms (View: 174, DB: 24) | 200 OK [http://localhost/searches/20]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 22:35:41) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"Isaac", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;36;1mSearch Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSearch Create (0.0ms)[0m   [0;1mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(NULL, NULL, '2010-07-13 01:35:41', NULL, NULL, '2010-07-13 01:35:41', NULL, NULL, NULL, NULL, NULL)[0m
+  [4;35;1mSQL (24.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/searches/21
+Completed in 47ms (DB: 29) | 302 Found [http://localhost/searches]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 22:35:41) [GET]
+  Parameters: {"id"=>"21"}
+  [4;36;1mSearch Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (0.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 21) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;36;1mCurriculo Load (0.0ms)[0m   [0;1mSELECT * FROM `curriculos` [0m
+  [4;35;1mCurriculo Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `curriculos`[0m
+Rendered curriculos/_curriculo (9.0ms)
+Rendered curriculos/_curriculo (0.0ms)
+Rendered curriculos/_curriculo (1.0ms)
+Rendered curriculos/_curriculo (0.0ms)
+Rendered curriculos/_curriculo (1.0ms)
+Rendered curriculos/_curriculo (1.0ms)
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (1.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 176ms (View: 145, DB: 16) | 200 OK [http://localhost/searches/21]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 22:36:18) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"Isaac", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;35;1mSearch Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+Redirected to http://localhost:3000/searches
+Completed in 14ms (DB: 4) | 302 Found [http://localhost/searches]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#index (for 127.0.0.1 at 2010-07-12 22:36:18) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: create, new, and show):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 22:36:56) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"Isaac", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;36;1mSearch Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+Redirected to http://localhost:3000/searches
+Completed in 16ms (DB: 6) | 302 Found [http://localhost/searches]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#index (for 127.0.0.1 at 2010-07-12 22:36:57) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: create, new, and show):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 22:39:40) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"Isaac", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;35;1mSearch Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+Redirected to http://localhost:3000/searches
+Completed in 15ms (DB: 3) | 302 Found [http://localhost/searches]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#index (for 127.0.0.1 at 2010-07-12 22:39:40) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: create, new, and show):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 22:39:50) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"Isaac", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;36;1mSearch Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSearch Create (0.0ms)[0m   [0;1mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(NULL, NULL, '2010-07-13 01:39:50', NULL, NULL, '2010-07-13 01:39:50', NULL, NULL, NULL, NULL, NULL)[0m
+  [4;35;1mSQL (10.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/searches/22
+Completed in 28ms (DB: 14) | 302 Found [http://localhost/searches]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 22:39:50) [GET]
+  Parameters: {"id"=>"22"}
+  [4;36;1mSearch Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (1.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 22) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;36;1mCurriculo Load (0.0ms)[0m   [0;1mSELECT * FROM `curriculos` [0m
+  [4;35;1mCurriculo Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `curriculos`[0m
+Rendered curriculos/_curriculo (9.0ms)
+Rendered curriculos/_curriculo (1.0ms)
+Rendered curriculos/_curriculo (0.0ms)
+Rendered curriculos/_curriculo (0.0ms)
+Rendered curriculos/_curriculo (1.0ms)
+Rendered curriculos/_curriculo (0.0ms)
+  [4;36;1mUser Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (1.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 162ms (View: 66, DB: 15) | 200 OK [http://localhost/searches/22]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 22:43:53) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"Isaac", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;35;1mSearch Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSearch Create (0.0ms)[0m   [0mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(NULL, NULL, '2010-07-13 01:43:53', NULL, NULL, '2010-07-13 01:43:53', NULL, NULL, NULL, NULL, NULL)[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/searches/23
+Completed in 25ms (DB: 11) | 302 Found [http://localhost/searches]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 22:43:53) [GET]
+  Parameters: {"id"=>"23"}
+  [4;35;1mSearch Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSearch Load (1.0ms)[0m   [0;1mSELECT * FROM `searches` WHERE (`searches`.`id` = 23) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;35;1mCurriculo Load (1.0ms)[0m   [0mSELECT * FROM `curriculos` [0m
+  [4;36;1mCurriculo Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+Rendered curriculos/_curriculo (9.0ms)
+Rendered curriculos/_curriculo (0.0ms)
+Rendered curriculos/_curriculo (1.0ms)
+Rendered curriculos/_curriculo (0.0ms)
+Rendered curriculos/_curriculo (0.0ms)
+Rendered curriculos/_curriculo (0.0ms)
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 94ms (View: 67, DB: 18) | 200 OK [http://localhost/searches/23]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 22:44:41) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"Isaac", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;36;1mSearch Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSearch Create (1.0ms)[0m   [0;1mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(NULL, '', '2010-07-13 01:44:41', '', 'Isaac', '2010-07-13 01:44:41', '', '', NULL, '', '')[0m
+  [4;35;1mSQL (27.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/searches/24
+Completed in 44ms (DB: 31) | 302 Found [http://localhost/searches]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 22:44:42) [GET]
+  Parameters: {"id"=>"24"}
+  [4;36;1mSearch Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+  [4;35;1mSearch Load (1.0ms)[0m   [0mSELECT * FROM `searches` WHERE (`searches`.`id` = 24) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;36;1mCurriculo Load (0.0ms)[0m   [0;1mSELECT * FROM `curriculos` WHERE (curriculos.nome LIKE '%Isaac%') [0m
+  [4;35;1mCurriculo Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `curriculos`[0m
+Rendered curriculos/_curriculo (9.0ms)
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 85ms (View: 62, DB: 14) | 200 OK [http://localhost/searches/24]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-12 22:44:49) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"Isaac", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;35;1mSearch Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSearch Create (1.0ms)[0m   [0mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(NULL, '', '2010-07-13 01:44:49', '', 'Isaac', '2010-07-13 01:44:49', '', '', NULL, '', '')[0m
+  [4;36;1mSQL (11.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/searches/25
+Completed in 36ms (DB: 16) | 302 Found [http://localhost/searches]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-12 22:44:49) [GET]
+  Parameters: {"id"=>"25"}
+  [4;35;1mSearch Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSearch Load (1.0ms)[0m   [0;1mSELECT * FROM `searches` WHERE (`searches`.`id` = 25) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;35;1mCurriculo Load (1.0ms)[0m   [0mSELECT * FROM `curriculos` WHERE (curriculos.nome LIKE '%Isaac%') [0m
+  [4;36;1mCurriculo Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+Rendered curriculos/_curriculo (11.0ms)
+  [4;35;1mUser Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mRole Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 111ms (View: 83, DB: 16) | 200 OK [http://localhost/searches/25]
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-13 01:32:30) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"Isaac", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;36;1mSearch Columns (140.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+Redirected to http://localhost:3000/searches
+Completed in 376ms (DB: 141) | 302 Found [http://localhost/searches]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#index (for 127.0.0.1 at 2010-07-13 01:32:31) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: create, new, and show):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-13 01:34:31) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"Isaac", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+Redirected to http://localhost:3000/searches?area_atuacao=&cidade=&empregado=&escolaridade=&espanhol=&estado=&informatica=&ingles=&nome=Isaac
+Completed in 5ms (DB: 0) | 302 Found [http://localhost/searches]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#index (for 127.0.0.1 at 2010-07-13 01:34:32) [GET]
+  Parameters: {"area_atuacao"=>"", "espanhol"=>"", "ingles"=>"", "nome"=>"Isaac", "empregado"=>"", "informatica"=>"", "escolaridade"=>"", "cidade"=>"", "estado"=>""}
+
+ActionController::UnknownAction (No action responded to index. Actions: create, new, and show):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-13 01:34:38) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"Isaac", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+Redirected to http://localhost:3000/searches?area_atuacao=&cidade=&empregado=&escolaridade=&espanhol=&estado=&informatica=&ingles=&nome=Isaac
+Completed in 4ms (DB: 0) | 302 Found [http://localhost/searches]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#index (for 127.0.0.1 at 2010-07-13 01:34:38) [GET]
+  Parameters: {"area_atuacao"=>"", "espanhol"=>"", "ingles"=>"", "nome"=>"Isaac", "empregado"=>"", "informatica"=>"", "escolaridade"=>"", "cidade"=>"", "estado"=>""}
+
+ActionController::UnknownAction (No action responded to index. Actions: create, new, and show):
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-13 01:38:02) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"Isaac", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+Redirected to http://localhost:3000/searches/show?search%5Barea_atuacao%5D=&search%5Bcidade%5D=&search%5Bempregado%5D=&search%5Bescolaridade%5D=&search%5Bespanhol%5D=&search%5Bestado%5D=&search%5Binformatica%5D=&search%5Bingles%5D=&search%5Bnome%5D=Isaac
+Completed in 8ms (DB: 1) | 302 Found [http://localhost/searches]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-13 01:38:02) [GET]
+  Parameters: {"id"=>"show", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"Isaac", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+Rendering template within layouts/application
+Rendering searches/show
+
+ActionView::TemplateError (undefined method `curriculos' for #<HashWithIndifferentAccess:0x851ffb8>) on line #1 of app/views/searches/show.html.erb:
+1: <%= render :partial => @search.curriculos%>
+
+    app/views/searches/show.html.erb:1
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (60.0ms)
+Rendered rescues/_request_and_response (18.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (328.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (127.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-13 06:06:36) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"Isaac", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;35;1mSearch Columns (1069.1ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSearch Create (333.0ms)[0m   [0mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(NULL, NULL, '2010-07-13 09:06:39', NULL, NULL, '2010-07-13 09:06:39', NULL, NULL, NULL, NULL, NULL)[0m
+  [4;36;1mSQL (133.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/searches/26
+Completed in 3570ms (DB: 1990) | 302 Found [http://localhost/searches]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (17.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-13 06:06:42) [GET]
+  Parameters: {"id"=>"26"}
+  [4;35;1mSearch Columns (5.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSearch Load (126.0ms)[0m   [0;1mSELECT * FROM `searches` WHERE (`searches`.`id` = 26) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;35;1mCurriculo Load (70.0ms)[0m   [0mSELECT * FROM `curriculos` [0m
+  [4;36;1mCurriculo Columns (26.0ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+Rendered curriculos/_curriculo (47.0ms)
+Rendered curriculos/_curriculo (13.0ms)
+Rendered curriculos/_curriculo (0.0ms)
+Rendered curriculos/_curriculo (1.0ms)
+Rendered curriculos/_curriculo (1.0ms)
+Rendered curriculos/_curriculo (1.0ms)
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSearch Destroy (48.0ms)[0m   [0;1mDELETE FROM `searches` WHERE `id` = 26[0m
+  [4;35;1mSQL (254.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Columns (26.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (19.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Columns (18.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (55.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 5008ms (View: 1096, DB: 664) | 200 OK [http://localhost/searches/26]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-13 06:07:39) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"Isaac", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;35;1mSearch Columns (10.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSearch Create (0.0ms)[0m   [0mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(NULL, '', '2010-07-13 09:07:39', '', 'Isaac', '2010-07-13 09:07:39', '', '', NULL, '', '')[0m
+  [4;36;1mSQL (11.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/searches/27
+Completed in 58ms (DB: 24) | 302 Found [http://localhost/searches]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-13 06:07:39) [GET]
+  Parameters: {"id"=>"27"}
+  [4;35;1mSearch Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSearch Load (0.0ms)[0m   [0;1mSELECT * FROM `searches` WHERE (`searches`.`id` = 27) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;35;1mCurriculo Load (22.0ms)[0m   [0mSELECT * FROM `curriculos` WHERE (curriculos.nome LIKE '%Isaac%') [0m
+  [4;36;1mCurriculo Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+Rendered curriculos/_curriculo (11.0ms)
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSearch Destroy (20.0ms)[0m   [0;1mDELETE FROM `searches` WHERE `id` = 27[0m
+  [4;35;1mSQL (29.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Columns (5.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (1.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 228ms (View: 118, DB: 93) | 200 OK [http://localhost/searches/27]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#create (for 127.0.0.1 at 2010-07-13 06:07:49) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"GgVyxv+x4Fvi+/eacPc+gNK7ryb6fis6DazcKp17aK4=", "search"=>{"espanhol"=>"", "area_atuacao"=>"", "ingles"=>"", "nome"=>"Isaac", "informatica"=>"", "empregado"=>"", "escolaridade"=>"", "estado"=>"", "cidade"=>""}}
+  [4;35;1mSearch Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSearch Create (0.0ms)[0m   [0mINSERT INTO `searches` (`area_atuacao`, `espanhol`, `created_at`, `ingles`, `nome`, `updated_at`, `empregado`, `informatica`, `escolaridade`, `cidade`, `estado`) VALUES(NULL, '', '2010-07-13 09:07:49', '', 'Isaac', '2010-07-13 09:07:49', '', '', NULL, '', '')[0m
+  [4;36;1mSQL (11.0ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/searches/28
+Completed in 37ms (DB: 16) | 302 Found [http://localhost/searches]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#show (for 127.0.0.1 at 2010-07-13 06:07:49) [GET]
+  Parameters: {"id"=>"28"}
+  [4;35;1mSearch Columns (52.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+  [4;36;1mSearch Load (0.0ms)[0m   [0;1mSELECT * FROM `searches` WHERE (`searches`.`id` = 28) [0m
+Rendering template within layouts/application
+Rendering searches/show
+  [4;35;1mCurriculo Load (1.0ms)[0m   [0mSELECT * FROM `curriculos` WHERE (curriculos.nome LIKE '%Isaac%') [0m
+  [4;36;1mCurriculo Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `curriculos`[0m
+Rendered curriculos/_curriculo (9.0ms)
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSearch Destroy (1.0ms)[0m   [0;1mDELETE FROM `searches` WHERE `id` = 28[0m
+  [4;35;1mSQL (14.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 168ms (View: 79, DB: 79) | 200 OK [http://localhost/searches/28]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#new (for 127.0.0.1 at 2010-07-13 06:25:23) [GET]
+  [4;35;1mSearch Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+Rendering template within layouts/application
+Rendering searches/new
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;36;1mRole Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `roles`[0m
+  [4;35;1mRole Load (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 228ms (View: 210, DB: 11) | 200 OK [http://localhost/searches/new]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#new (for 127.0.0.1 at 2010-07-13 06:25:51) [GET]
+  [4;35;1mSearch Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `searches`[0m
+Rendering template within layouts/application
+Rendering searches/new
+ERROR: compiling _run_erb_app47views47searches47new46html46erb RAISED compile error
+C:/Users/Darvius/Desktop/Santana-Consultoria/Santana-Testes/app/views/searches/new.html.erb:43: unterminated string meets end of file
+C:/Users/Darvius/Desktop/Santana-Consultoria/Santana-Testes/app/views/searches/new.html.erb:43: syntax error, unexpected $end, expecting ')'
+Function body:           def _run_erb_app47views47searches47new46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Busca de Curr\303\255culos</h1>\n\n\n<p class=\"helper\">Seja bem vindo ao nosso Sistema de Busca de Curriculo. Para fazer sua\nbusca, escreva nos campos abaixo as informa\303\247\303\265es que deseja ter na busca. Caso n\303\243o queira\nbuscar por algum campo, apenas deixe-o em branco.</p>\n"
+
+
+
+
+
+;  form_for @search do |f| ; @output_buffer.concat "\n  "
+; @output_buffer.concat(( f.error_messages ).to_s); @output_buffer.concat "\n  <p>\n    Nome: \n    "
+
+
+; @output_buffer.concat(( f.text_field :nome ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    J\303\241 est\303\241 empregado? \n    "
+
+
+
+; @output_buffer.concat(( f.text_field :empregado ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    Escolaridade: \n    "
+
+
+
+; @output_buffer.concat(( f.text_field :escolaridade ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    Cidade: \n    "
+
+
+
+; @output_buffer.concat(( f.text_field :cidade ).to_s); @output_buffer.concat "\n    Estado:\n    "
+
+; @output_buffer.concat(( f.text_field :estado ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    \303\201rea de atua\303\247\303\243o:\n    "
+
+
+
+; @output_buffer.concat(( f.text_field :area_atuacao ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    N\303\255vel de Ingl\303\252s:\n    "
+
+
+
+; @output_buffer.concat(( f.text_field :ingles ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    N\303\255vel de Espanhol:\n    "
+
+
+
+; @output_buffer.concat(( f.text_field :espanhol ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    Conhecimentos em inform\303\241tica:\n    "
+
+
+
+; @output_buffer.concat(( f.text_field :informatica ).to_s); @output_buffer.concat "\n  </p>\n  <p>"
+
+; @output_buffer.concat(( f.submit 'Pesquisar!" ).to_s); @output_buffer.concat "</p>\n"
+;  end ; @output_buffer.concat "\n\n\n"
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: C:/Users/Darvius/Desktop/Santana-Consultoria/Santana-Testes/app/views/searches/new.html.erb:43:in `compile!'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+C:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/Ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+C:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/Ruby/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+C:/Ruby/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130
+C:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+C:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+C:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+C:/Ruby/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+C:/Ruby/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/webrick.rb:14:in `run'
+C:/Ruby/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+C:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+C:/Ruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+C:/Users/Darvius/Desktop/Santana-Consultoria/Santana-Testes/app/views/searches/new.html.erb:43: unterminated string meets end of file
+C:/Users/Darvius/Desktop/Santana-Consultoria/Santana-Testes/app/views/searches/new.html.erb:43: syntax error, unexpected $end, expecting ')') on line #43 of app/views/searches/new.html.erb:
+40:     Conhecimentos em informática:
+41:     <%= f.text_field :informatica %>
+42:   </p>
+43:   <p><%= f.submit 'Pesquisar!" %></p>
+44: <% end %>
+
+    app/views/searches/new.html.erb:43:in `compile!'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/Ruby/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/Ruby/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (185.0ms)
+Rendered rescues/_request_and_response (39.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SearchesController#new (for 127.0.0.1 at 2010-07-13 06:26:07) [GET]
+  [4;36;1mSearch Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `searches`[0m
+Rendering template within layouts/application
+Rendering searches/new
+  [4;35;1mUser Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [4;35;1mRole Columns (4.0ms)[0m   [0mSHOW FIELDS FROM `roles`[0m
+  [4;36;1mRole Load (1.0ms)[0m   [0;1mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT `roles`.* FROM `roles` INNER JOIN `permissions` ON `roles`.id = `permissions`.role_id WHERE (`roles`.`rolename` = 'administrator') AND ((`permissions`.user_id = 1)) LIMIT 1[0m
+Completed in 91ms (View: 68, DB: 11) | 200 OK [http://localhost/searches/new]

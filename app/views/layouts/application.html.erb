@@ -44,7 +44,7 @@
 					<li><%= link_to 'Editar Perfil', edit_user_path(current_user)%></li>
 					<li><%= link_to 'Mudar Senha', change_password_path %></li>
 					<li><%= link_to 'Seção de Testes', user_tests_path(current_user) %></li>
-					<%if !(current_user.curriculo.id.blank?) %>
+					<%if (!(current_user.has_role?('administrator')) && !(current_user.curriculo.blank?) && !(current_user.curriculo.id.blank?)) %>
 					 <li><%= link_to 'Seção de Curriculos', user_curriculo_path(current_user) %></li>
 					<%else%>
 					 <li><%= link_to 'Crie seu Curriculo!', user_curriculo_path(current_user) %></li>

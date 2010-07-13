@@ -12,7 +12,9 @@ TODO:
 	Fazer o botão "Avançar" desaparecer em Questões; (Concluído)
 	Escrever os alertas em Testes; (Concluído)
 	Implementar Limite de Tempo para Testes;
-	Implementar Buscas em Currículos;
+	Implementar Buscas em Currículos; (Concluído)
+	Acabar layout de nova busca;
+	Implementar layout de exibição de currículos;
 	Implementar Modo de Impressão de Currículos; (Concluido)
 	Elaborar CSS de Impressão; (Concluído)
 	Implementar Validação;

@@ -1,0 +1,40 @@
+<% @search.curriculos.each do |curriculo| %>
+	<p>
+	    <b>Nome:</b>
+	    <%=h curriculo.nome %>  
+	    <%=h curriculo.sobrenome %>
+		<b>Data de Nascimento: </b>
+	    <%=h curriculo.data_nasc.strftime('%d/%m/%Y') %> 
+	</p>
+	<p>
+		<b>Empregado? </b>
+		<%if @curriculo.empregado%>
+		Sim
+		<%else%>
+		Não
+		<%end%>
+		<b>Escolaridade:</b> <%=h escol_method(curriculo.escolaridade)%>
+	</p>
+	
+	<p>
+		<b>Estado:</b>
+		<%=h curriculo.estado%>
+		<b>Cidade:</b> 
+		<%=h curriculo.cidade%>
+	</p>
+	<p>
+		<b>Pretensão salarial:</b>
+		<%=h curriculo.salario%>
+	</p>
+	
+	<p><b>Áreas de Atuação:</b></p>
+  	<p><b>Área 1:</b> <%=h @area1.name%></p>
+  	<p><b>Área 2:</b> <%=h @area2.name%></p>
+  	<p><b>Área 3:</b> <%=h @area3.name%></p>
+	<p><b>Nível de inglês: </b><%=h @curriculo.english%> 
+  	<b>Nível de espanhol: </b><%=h @curriculo.spanish%>
+  	<p><b>Nível de conhecimentos em informática: </b><%=h @curriculo.informatica%></p>
+	
+	
+	
+<%end%>

@@ -1,4 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :searches
+
+
   map.resources :areas
 
   map.resources :curriculos

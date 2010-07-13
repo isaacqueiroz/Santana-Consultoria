@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100310021230) do
+ActiveRecord::Schema.define(:version => 20100610174949) do
 
   create_table "allow_tests", :force => true do |t|
     t.boolean  "authorization", :default => true
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(:version => 20100310021230) do
     t.string   "estado"
     t.string   "celular"
     t.string   "telefone"
-    t.integer  "salario"
+    t.integer  "salario",      :limit => 11, :precision => 11, :scale => 0
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -121,6 +121,20 @@ ActiveRecord::Schema.define(:version => 20100310021230) do
 
   create_table "roles", :force => true do |t|
     t.string   "rolename"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "searches", :force => true do |t|
+    t.string   "nome"
+    t.string   "empregado"
+    t.integer  "escolaridade"
+    t.string   "cidade"
+    t.string   "estado"
+    t.integer  "area_atuacao"
+    t.string   "ingles"
+    t.string   "espanhol"
+    t.string   "informatica"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
