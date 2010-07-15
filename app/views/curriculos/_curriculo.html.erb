@@ -1,4 +1,6 @@
-<% @search.curriculos.each do |curriculo| %>
+
+<div style="border-bottom:dashed; border-bottom-width:thin; border-bottom-color:#00628B;">
+	
 	<p>
 	    <b>Nome:</b>
 	    <%=h curriculo.nome %>  
@@ -8,14 +10,13 @@
 	</p>
 	<p>
 		<b>Empregado? </b>
-		<%if @curriculo.empregado%>
+		<%if curriculo.empregado%>
 		Sim
 		<%else%>
 		Não
 		<%end%>
 		<b>Escolaridade:</b> <%=h escol_method(curriculo.escolaridade)%>
 	</p>
-	
 	<p>
 		<b>Estado:</b>
 		<%=h curriculo.estado%>
@@ -24,17 +25,13 @@
 	</p>
 	<p>
 		<b>Pretensão salarial:</b>
-		<%=h curriculo.salario%>
+		<%=h number_to_currency(curriculo.salario, :unit => "R$", :separator => ",") %>
 	</p>
+	<p><b>Nível de inglês: </b><%=h curriculo.english%> 
+  	<b>Nível de espanhol: </b><%=h curriculo.spanish%></p>
+  	<p><b>Nível de conhecimentos em informática: </b><%=h curriculo.informatica%></p>
 	
-	<p><b>Áreas de Atuação:</b></p>
-  	<p><b>Área 1:</b> <%=h @area1.name%></p>
-  	<p><b>Área 2:</b> <%=h @area2.name%></p>
-  	<p><b>Área 3:</b> <%=h @area3.name%></p>
-	<p><b>Nível de inglês: </b><%=h @curriculo.english%> 
-  	<b>Nível de espanhol: </b><%=h @curriculo.spanish%>
-  	<p><b>Nível de conhecimentos em informática: </b><%=h @curriculo.informatica%></p>
-	
-	
-	
-<%end%>
+	<td><%= link_to 'Ler Currículo', curriculo_path(curriculo)  %></td>
+	<br>
+</div>
+<br>

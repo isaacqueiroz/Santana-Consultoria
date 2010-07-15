@@ -1,0 +1,46 @@
+<h1>Busca de Currículos</h1>
+
+
+<p class="helper">Seja bem vindo ao nosso Sistema de Busca de Curriculo. Para fazer sua
+busca, escreva nos campos abaixo as informações que deseja ter na busca. Caso não queira
+buscar por algum campo, apenas deixe-o em branco.</p>
+<% form_for @search do |f| %>
+  <%= f.error_messages %>
+  <p>
+    Nome: 
+    <%= f.text_field :nome %>
+  </p>
+  <p>
+    Já está empregado? 
+    <%= f.text_field :empregado %>
+  </p>
+  <p>
+    Escolaridade: 
+    <%= f.text_field :escolaridade %>
+  </p>
+  <p>
+    Cidade: 
+    <%= f.text_field :cidade %>
+    Estado:
+    <%= f.text_field :estado %>
+  </p>
+  <p>
+    Área de atuação:
+    <%= f.text_field :area_atuacao %>
+  </p>
+  <p>
+    Nível de Inglês:
+    <%= f.text_field :ingles %>
+  </p>
+  <p>
+    Nível de Espanhol:
+    <%= f.text_field :espanhol %>
+  </p>
+  <p>
+    Conhecimentos em informática:
+    <%= f.text_field :informatica %>
+  </p>
+  <p><%= f.submit 'Pesquisar!' %></p>
+<% end %>
+
+

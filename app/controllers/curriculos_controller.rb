@@ -13,7 +13,7 @@ class CurriculosController < ApplicationController
   
   #GET /print
   def print
-    @curriculo = @user.curriculo
+    @curriculo = Curriculo.find(params[:curriculo_id])
     @area1 = Area.find(@curriculo.area_id1)
     @area2 = Area.find(@curriculo.area_id2)
     @area3 = Area.find(@curriculo.area_id3)
@@ -22,22 +22,14 @@ class CurriculosController < ApplicationController
     render :layout => 'curriculo_print'    
   end
   
-  # GET /curriculos
-  # GET /curriculos.xml
-  def index
-    @curriculos = @user.curriculo
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @curriculos }
-    end
-  end
-
   # GET /curriculos/1
   # GET /curriculos/1.xml
   def show
-    
-    @curriculo = @user.curriculo
+    if (params[:id].blank?)
+      @curriculo = @user.curriculo
+    else
+      @curriculo = Curriculo.find(params[:id])
+    end
     @area1 = Area.find(@curriculo.area_id1)
     @area2 = Area.find(@curriculo.area_id2)
     @area3 = Area.find(@curriculo.area_id3)

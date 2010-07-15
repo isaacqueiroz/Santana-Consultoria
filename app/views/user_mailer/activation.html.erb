@@ -1,5 +1,16 @@
-<h2>Você finalizou o seu cadastrou no site da Santana Consultoria em R.H.!</h2>
+<h2>Ativação Realizada - Santana Consultoria em R.H.</h2>
 
-<%=h @user.login %>, para voltar ao site e cadastrar seu currículo, por favor, siga para o seguinte link: %>
+<p>A ativação de seu cadastro no site da Santana Consultoria em R.H. foi realizada
+com sucesso!</p>
 
-<%= @url %>
+<p>Agora você já pode usufruir de todas as vantagens do site, criar o seu currículo e
+ficar por dentro de todas as futuras seleções da Santana Consultoria. Por favor, retorne
+ao site e utilize seu nome de usuário (login) e senha para começar a utilizar o site!
+
+Nome de usuário: <%=h @user.login %>
+
+Site: <%= @url %>
+
+<p>Obrigado!</p>
+
+<p><%= link_to "Equipe da Santana Consultoria em R.H.", "http://www.santanarh.com.br" %></p>

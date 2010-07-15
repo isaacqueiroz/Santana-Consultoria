@@ -16,7 +16,7 @@ class Search < ActiveRecord::Base
   end
   
   def empregado_conditions
-    ["curriculos.empregado LIKE ?", "%#{empregado}%"] unless empregado.blank?
+    ["curriculos.empregado = ?", empregado] unless empregado.blank?
   end
   
   def escolaridade_conditions
@@ -36,15 +36,15 @@ class Search < ActiveRecord::Base
   end
   
   def ingles_conditions
-    ["curriculos.ingles LIKE ?", "%#{ingles}%"] unless ingles.blank?
+    ["curriculos.english LIKE ?", "%#{ingles}%"] unless ingles.blank?
   end
   
   def espanhol_conditions
-    ["curriculos.espanhol LIKE ?", "%#{espanhol}%"] unless espanhol.blank?
+    ["curriculos.spanish LIKE ?", "%#{espanhol}%"] unless espanhol.blank?
   end
   
   def informatica_conditions
-    ["informatica.ingles LIKE ?", "%#{informatica}%"] unless informatica.blank?
+    ["curriculos.informatica LIKE ?", "%#{informatica}%"] unless informatica.blank?
   end
   
   def conditions

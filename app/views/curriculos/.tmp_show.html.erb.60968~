@@ -59,7 +59,7 @@
 	<h2>Informações Profissionais:</h2>
   <p>
     <b>Pretensão salarial:</b>
-    <%=h number_to_currency(@curriculo.salario, :unit => "R$", :separator => ",") %>
+    <%=h @curriculo.salario%>
   </p>
   <p><b>Áreas de Atuação:</b></p>
   <p><b>Área 1:</b> <%=h @area1.name%></p>
@@ -120,5 +120,5 @@
 
 <p><%= link_to 'Voltar', curriculos_path %> | 
 <%= link_to 'Editar', edit_curriculo_path(@curriculo) %> |
-<%= link_to 'Impressão', {:controller => "curriculo", :action => "print", :curriculo_id => @curriculo.id},
+<%= link_to 'Impressão', {:controller => "curriculo", :action => "print"},
  :popup => ['Curriculo Simplificado', 'scrollbars=yes, menubar=yes']%></p>

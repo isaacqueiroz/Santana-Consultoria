@@ -127,7 +127,7 @@ ActiveRecord::Schema.define(:version => 20100610174949) do
 
   create_table "searches", :force => true do |t|
     t.string   "nome"
-    t.string   "empregado"
+    t.boolean  "empregado"
     t.integer  "escolaridade"
     t.string   "cidade"
     t.string   "estado"

@@ -1,9 +1,11 @@
 class AddCurriculoIdToUser < ActiveRecord::Migration
   def self.up
-    add_column :users, :curriculo_id, :integer
+    remove_column :searches, :empregado
+    add_column :searches, :empregado, :boolean
   end
 
   def self.down
-    remove_column :users, :curriculo_id
+     remove_column :searches, :empregado
+       add_column :searches, :empregado, :integer
   end
 end

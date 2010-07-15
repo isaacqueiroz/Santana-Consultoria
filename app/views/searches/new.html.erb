@@ -12,33 +12,45 @@ buscar por algum campo, apenas deixe-o em branco.</p>
   </p>
   <p>
     Já está empregado? 
-    <%= f.text_field :empregado %>
+    <%= f.radio_button(:empregado, "1") %>Sim
+	<%= f.radio_button(:empregado, "0") %>Não
   </p>
   <p>
-    Escolaridade: 
-    <%= f.text_field :escolaridade %>
+    Escolaridade:
+    <%= f.select(:escolaridade, [['Primeiro Grau (Incompleto)', 0],
+								['Primeiro Grau (Completo)', 1],
+								['Segundo Grau (Incompleto)', 2],
+								['Segundo Grau (Completo)', 3],
+								['Ensino Superior (Incompleto)', 4],
+								['Ensino Superior (Completo)', 5],
+								['Pós Graduação', 6]], :include_blank => true)%>
   </p>
   <p>
     Cidade: 
     <%= f.text_field :cidade %>
     Estado:
-    <%= f.text_field :estado %>
+	<%= f.select(:estado, ['Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará', 'Distrito Federal', 'Espírito Santo',
+						 'Goiás', 'Maranhão', 'Mato Grosso', 'Mato Grosso do Sul', 'Minas Gerais',
+						 'Pará', 'Paraíba', 'Paraná', 'Pernambuco', 'Piauí', 'Rio de Janeiro', 'Rio Grande do Norte',
+						 'Rio Grande do Sul', 'Rondônia', 'Rorâima', 'Santa Catarina', 'São Paulo', 'Sergipe',
+						 'Tocantins'], :include_blank => true)%>
   </p>
   <p>
     Área de atuação:
-    <%= f.text_field :area_atuacao %>
+  <%= select(:curriculo, :area_atuacao, @areas, :include_blank => true )%><br>
   </p>
   <p>
     Nível de Inglês:
-    <%= f.text_field :ingles %>
+	<%= f.select(:ingles, ['Nenhum', 'Básico', 'Intermediário', 'Avançado'], :include_blank => true)%><br><br>
+  
   </p>
   <p>
     Nível de Espanhol:
-    <%= f.text_field :espanhol %>
+    <%= f.select(:espanhol, ['Nenhum', 'Básico', 'Intermediário', 'Avançado'], :include_blank => true)%><br><br>
   </p>
   <p>
     Conhecimentos em informática:
-    <%= f.text_field :informatica %>
+    <%= f.select(:informatica, ['Nenhum', 'Básico', 'Intermediário', 'Avançado'], :include_blank => true)%>
   </p>
   <p><%= f.submit 'Pesquisar!' %></p>
 <% end %>

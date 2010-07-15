@@ -1,3 +1,6 @@
+<h1>Resultados da Busca</h1>
+
 <%= render :partial => @search.curriculos%>
 
-<% @search.destroy %>
+<%= link_to 'Voltar', new_search_path%>
+<%@search.destroy%>

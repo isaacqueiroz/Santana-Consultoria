@@ -1,7 +1,14 @@
-﻿Sua conta foi criada com sucesso.
+﻿<h2>Cadastro Realizado - Santana Consultoria em R.H.</h2>
 
-  Nome de usuário: <%= @user.login %>
+<p>Seu cadastro no site da Santana Consultoria em R.H. foi realizada com sucesso!</p>
 
-Visite este link para ativar sua conta:
+<p>Para usufruir do site da Santana Consultoria e de todos os nossos serviços, por favor,
+clique no link abaixo para ativar seu link.</p>
+Nome de usuário: <%=h @user.login %>
 
-  <%= @url %>
+Site: <%= @url %>
+
+<p>Obrigado!</p>
+
+<p><%= link_to "Equipe da Santana Consultoria em R.H.", "http://www.santanarh.com.br" %></p>
+

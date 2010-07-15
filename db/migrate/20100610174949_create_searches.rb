@@ -2,7 +2,7 @@ class CreateSearches < ActiveRecord::Migration
   def self.up
     create_table :searches do |t|
       t.string :nome
-      t.string :empregado
+      t.boolean :empregado
       t.integer :escolaridade
       t.string :cidade
       t.string :estado

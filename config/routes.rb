@@ -4,7 +4,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :areas
 
-  map.resources :curriculos
+  map.resources :curriculos, :except => :index 
 
  
 
