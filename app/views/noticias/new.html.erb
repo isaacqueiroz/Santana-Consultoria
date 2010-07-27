@@ -8,8 +8,8 @@ manter sempre o padrão de Título (letra grante) e conteúdo (letra de texto).<
 sub-título e conteúdo), basta criar este bloco e, na próxima tela, clicar em "Novo texto
 para Notícias".</p>
 
-<%= error_messages_for :noticias %>
 <% form_for(@noticia) do |f| %>
+  <%= error_messages_for 'noticia', :object_name => "Texto de Notícia" %>
   <p>
     <b>Título</b><br />
     <%= f.text_field :title %>

@@ -19,6 +19,8 @@ class SearchesController < ApplicationController
   
   def show
     @search = Search.find(params[:id])
+    
+    @curriculos = @search.curriculos.paginate :per_page => 5, :page => params[:page], :order => 'nome'    
   end
 end
 

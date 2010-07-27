@@ -9,9 +9,8 @@ buscadores eletrônicos.</p>
 <p class="helper">Para cada seleção, crie um novo bloco de texto (com título,
 sub-título e conteúdo) na próxima tela, clicando em "Novo texto para Conheça-nos".</p>
 
-<%= error_messages_for :who %>
-
 <% form_for(@who) do |f| %>
+	<%= error_messages_for 'who', :object_name => "Texto de Quem Somos" %>
   <p>
     <b>Título</b><br />
     <%= f.text_field :title %>

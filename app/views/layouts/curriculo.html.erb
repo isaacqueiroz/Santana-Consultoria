@@ -45,10 +45,11 @@
 					<li><%= link_to 'Mudar Senha', change_password_path %></li>
 					<li><%= link_to 'Seção de Testes', user_tests_path(current_user) %></li>
 					<%if !(current_user.curriculo.id.blank?) %>
-           <li><%= link_to 'Seção de Curriculos', user_curriculo_path(current_user) %></li>
-          <%else%>
-           <li><%= link_to 'Crie seu Curriculo!', user_curriculo_path(current_user) %></li>
-          <%end%>
+					<li><%= link_to 'Seção de Curriculos', user_curriculo_path(current_user) %></li>
+					<%else%>
+					<li><%= link_to 'Crie seu Curriculo!', new_user_curriculo_path(current_user) %></li>
+					<%end%>
+					<li><%= link_to 'Lista de Áreas de Interesse', areas_path %></li>
 					<li><%= link_to 'Sair', logout_url %></li>
 				</ul>
 				<% if !(current_user.blank?) && (current_user.has_role?('administrator')) %>
@@ -59,6 +60,8 @@
 						<li><%= link_to 'Administrar Conheça-nos', whos_path %></li>
 						<li><%= link_to 'Administrar Vagas', selections_path %></li>
 						<li><%= link_to 'Administrar Serviços Realizados', servicos_path %></li>
+						<li><%= link_to 'Administrar Áreas de Interesse', areas_path %></li>
+						<li><%= link_to 'Buscar Currículos', new_search_path %></li>
 						<li><%= link_to 'Elaborar Teste', test_tabs_path %></li>
 						<li><%= link_to 'Central de Testes e Resultados', allow_tests_path %></li>
 						<li><%= link_to 'Seção Avançada - Usuários', users_path %></li>

@@ -4,7 +4,7 @@
 Nessa página, você poderá editar as informações inseridas em nossos bancos anteriormente.</p>
 
 <% form_for(@curriculo) do |f| %>
-  <%= f.error_messages %>
+  <%= error_messages_for 'curriculo', :object_name => "Currículo" %>
   <h2>Informações Pessoais:</h2>
   <p>
     <%= f.label :nome %>: 

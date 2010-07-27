@@ -1,7 +1,7 @@
 <h1>Editing area</h1>
 
 <% form_for(@area) do |f| %>
-  <%= f.error_messages %>
+  <%= error_messages_for 'area', :object_name => "Área" %>
 
   <p>
     <%= f.label :name %><br />
@@ -16,5 +16,4 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', @area %> |
-<%= link_to 'Back', areas_path %>
+<%= link_to 'Voltar', areas_path %>

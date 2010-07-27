@@ -8,8 +8,7 @@ nomes pouco conhecidos.</p>
 procure sempre manter o padrão utilizado inicialmente.</p>
 
 <% form_for(@area) do |f| %>
-  <%= f.error_messages %>
-
+  <%= error_messages_for 'area', :object_name => "Área" %>
   <p>
     <%= f.label "Nome: " %>
     <%= f.text_field :name %>

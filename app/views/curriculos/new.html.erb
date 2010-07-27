@@ -8,7 +8,7 @@ todas as informações inseridas estão corretas. Você poderá modificar o curr
 em sua Seção de Usuário posteriormente.</p>
 
 <% form_for(@curriculo) do |f| %>
-  <%= f.error_messages %>
+  <%= error_messages_for 'curriculo', :object_name => "Currículo" %>
   <h2>Informações Pessoais:</h2>
   <p>
     <%= f.label :nome %>: 

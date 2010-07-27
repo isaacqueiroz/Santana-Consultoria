@@ -4,6 +4,26 @@ class Curriculo < ActiveRecord::Base
   has_many :exps, :dependent => :destroy
    
   after_update :save_escolaridade, :save_exp
+  
+  #Validação
+
+   validates_length_of :nome, :sobrenome, :bairro, :cidade,
+    :in => 2..255
+   
+   validates_numericality_of :numero
+   
+   validates_presence_of :data_nasc, :estado_civil, :empregado,:escolaridade,
+    :filhos, :estado
+   
+   validates_length_of :endereco, :telefone,
+    :in => 8..255
+    
+   validates_length_of :numero,
+    :in => 2..4
+    
+   validates_length_of :complemento, :celular,
+    :in => 0..255
+  
 
   #Atributo especial para permitir a manipulação da tabela escolaridade.
   def new_escolaridade_att=(escolaridade_att)

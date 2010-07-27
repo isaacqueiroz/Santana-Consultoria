@@ -1,7 +1,7 @@
 <h1>Editando Teste <%=h @test_tab.nome%></h1>
 
 <% form_for(@test_tab) do |f| %>
-  <%= f.error_messages %>
+  <%= error_messages_for 'test_tab', :object_name => "Teste" %>
 
   <p>
     <%= f.label :Nome %><br />

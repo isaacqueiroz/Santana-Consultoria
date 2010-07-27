@@ -2,7 +2,7 @@
 <h2>Teste: <%=h @test_tab.nome%></h2>
 
 <% form_for([@test_tab,@question_tab]) do |f| %>
-  <%= f.error_messages %>
+  <%= error_messages_for 'question_tab', :object_name => "Questão" %>
 
   <p>
     <%= f.label :título %><br />

@@ -4,7 +4,7 @@ Bem vindo ao projeto de desenvolvimento do sistema de uma consultoria em R.H.
 
 O site conta com um sistema de gerenciamento de usuários, currículos, testes e vagas e é implementado em Ruby, utilizando-se do framework Rails. Para utilizar o site, lembre-se de ter instalado a versão 1.8.6 ou 1.8.7 do Ruby e a versão 2.3.5 do Rails. Um upgrade para as pr�ximas versões do Ruby e do Rails ser�o feitas assim que o Rails voltar à sua estabilidade usual.
 
-O sistema de implementação de usuários conta com uma versão modificada do Restful Authentication, al�m do WillPaginate e de outras libs que se encontram na pasta /lib do projeto.
+O sistema de implementação de usuários conta com uma versão modificada do Restful Authentication, além do WillPaginate e de outras libs que se encontram na pasta /lib do projeto.
 
 TODO:
 	Implementar Edição de Curriculos; (Concluido)
@@ -17,9 +17,13 @@ TODO:
 	Implementar layout de exibição de currículos; (Concluído)
 	Implementar Modo de Impressão de Currículos; (Concluido)
 	Elaborar CSS de Impressão; (Concluído)
-	Implementar Validação;
+	Implementar Validação; (Concluído)
 	Traduzir páginas de erro 404 e 500; (Concluído)
 	Colocar Links de Currículos na Página; (Concluído)
 	Elaborar Layouts de E-mails; (Concluído)
 	Garantir a segurança de acesso aos curriculos (quebrar vinculos com id); (60%)
+	Inserir menu de áreas; (Concluído)
+	Inserir menu de buscas; (Concluído)
+	Paginar as buscas; (Concluído)
+	Resolver problema de buscas salvas;
 	

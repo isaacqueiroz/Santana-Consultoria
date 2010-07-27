@@ -8,9 +8,8 @@ conteúdo (letra de texto).</p>
 sub-título e conteúdo), basta criar este bloco e, na próxima tela, clicar em "Novo texto
 para Contate-nos".</p>
 
-<%= error_messages_for :contato %>
-
 <% form_for(@contato) do |f| %>
+  <%= error_messages_for 'contato', :object_name => "Texto de Contato" %>
   <p>
     <b>Título</b><br />
     <%= f.text_field :title %>

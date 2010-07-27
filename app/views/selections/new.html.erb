@@ -9,9 +9,8 @@ buscadores eletrônicos.</p>
 <p class="helper">Para cada seleção, crie um novo bloco de texto (com título,
 sub-título e conteúdo) na próxima tela, clicando em "Novo texto para Seleções".</p>
 
-<%= error_messages_for :selection %>
-
 <% form_for(@selection) do |f| %>
+  <%= error_messages_for 'selection', :object_name => "Texto de Vaga" %>
   <p>
     <b>Título</b><br />
     <%= f.text_field :title %>

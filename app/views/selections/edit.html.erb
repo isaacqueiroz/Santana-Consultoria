@@ -9,9 +9,8 @@ o padrão de formatação.</p>
 sub-título e conteúdo), basta criar este bloco e, na próxima tela, clicar em "Novo texto
 para Seleções".</p>
 
-<%= error_messages_for :selection %>
-
 <% form_for(@selection) do |f| %>
+  <%= error_messages_for 'selection', :object_name => "Texto de Vaga" %>
   <p>
     <b>Título</b><br />
     <%= f.text_field :title %>

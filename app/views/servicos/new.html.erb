@@ -10,9 +10,8 @@ conteúdo (letra de texto).</p>
 sub-título e conteúdo), basta criar este bloco e, na próxima tela, clicar em "Novo texto
 para Serviços".</p>
 
-<%= error_messages_for :servico %>
-
 <% form_for(@servico) do |f| %>
+  <%= error_messages_for 'servico', :object_name => "Texto de Serviço" %>
   <p>
     <b>Título</b><br />
     <%= f.text_field :title %>

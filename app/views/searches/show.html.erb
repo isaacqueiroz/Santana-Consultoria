@@ -1,6 +1,7 @@
 <h1>Resultados da Busca</h1>
 
-<%= render :partial => @search.curriculos%>
+<%= render :partial => @curriculos%>
 
 <%= link_to 'Voltar', new_search_path%>
-<%@search.destroy%>
+<%=will_paginate @curriculos, :previous_label => "« Anterior", :next_label => "Próximo »"%>
+<%#@search.destroy%>

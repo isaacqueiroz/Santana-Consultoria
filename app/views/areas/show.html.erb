@@ -9,5 +9,5 @@
 
 <%= link_to 'Voltar', areas_path %>
 <% if !(current_user.blank?) && (current_user.has_role?('administrator')) %>
-	<%= link_to 'Editar', edit_area_path(area)%>
+	<%= link_to 'Editar', edit_area_path(@area)%>
 <% end %>
