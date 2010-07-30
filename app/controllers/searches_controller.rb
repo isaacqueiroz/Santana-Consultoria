@@ -22,10 +22,20 @@ class SearchesController < ApplicationController
     
     @curriculos = @search.curriculos.paginate :per_page => 5, :page => params[:page], :order => 'nome'    
   end
+  
+  def destroy
+    @search = Search.find(params[:id])
+    @search.destroy
+  
+    respond_to do |format|
+      format.html { redirect_to(new_search_path) }
+      format.xml  { head :ok }
+    end
+  end
 end
 
-  def get_areas
-    @areas = Area.all
-    @areas = @areas.map{|u|[u.name,u.id]}
-  end
+def get_areas
+  @areas = Area.all
+  @areas = @areas.map{|u|[u.name,u.id]}
+end
 

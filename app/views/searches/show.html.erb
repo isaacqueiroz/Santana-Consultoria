@@ -2,6 +2,6 @@
 
 <%= render :partial => @curriculos%>
 
-<%= link_to 'Voltar', new_search_path%>
 <%=will_paginate @curriculos, :previous_label => "« Anterior", :next_label => "Próximo »"%>
-<%#@search.destroy%>
+<%= link_to 'Voltar', @search, :method => :delete %>
+

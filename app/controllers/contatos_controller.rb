@@ -2,7 +2,7 @@ class ContatosController < ApplicationController
 
   include AuthenticatedSystem
   layout 'application'
-	before_filter :check_administrator_role, :except => :index
+	before_filter :check_administrator_role, :except => [:index, :send_mail]
 
   # GET /contatos
   # GET /contatos.xml
@@ -40,7 +40,7 @@ class ContatosController < ApplicationController
   def send_mail
     if !params[:email].blank?
       UserMailer.deliver_question(params[:email])
-      redirect_to :action => "index"
+      redirect_to (noticias_path)
       flash[:notice] = "E-mail enviado com sucesso!"
     else
       flash[:notice] = "Falha no envio."

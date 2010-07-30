@@ -35,11 +35,23 @@ Rails::Initializer.run do |config|
   # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
   # Run "rake -D time" for a list of tasks for finding time zone names.
   config.time_zone = 'UTC'
-  ENV['RECAPTCHA_PUBLIC_KEY'] = '6LfTLwsAAAAAAD4kBW5tD9Hb1vyWC4BFr6u80OK9'
-  ENV['RECAPTCHA_PRIVATE_KEY'] = '6LfTLwsAAAAAAAf7XcNpklIO2JrzTPxcMNQTk1kW'
+  ENV['RECAPTCHA_PUBLIC_KEY'] = '6Lcr4rsSAAAAAIBvUK5Bm4VnId4aB5ujmHy_fJH0'
+  ENV['RECAPTCHA_PRIVATE_KEY'] = '6Lcr4rsSAAAAAApxNGG04UwFCER7HrQzDUzU_wP_'
 
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
   config.i18n.default_locale = "pt-BR"
 end
+
+  require 'smtp_tls'
+  ActionMailer::Base.default_content_type = "text/html"
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    :address => "localhost",
+    :port => 587,
+    :authentication => :login,
+    :domain => "www.santanarh.com.br",
+    :user_name => "santanaconsultoria",
+    :password => "rh37275059"  
+}
